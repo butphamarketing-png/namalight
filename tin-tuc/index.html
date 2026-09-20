@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tin tức &amp; kiến thức | NOMA LIGHT</title>
+  <meta name="description" content="Kiến thức chọn đèn năng lượng mặt trời, ứng dụng và tư vấn NOMA LIGHT." />
+  <link rel="canonical" href="../tin-tuc/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css?v=23" />
+</head>
+<body data-page="news" data-root="../">
+  <div id="header-root"></div>
+  <header class="inner-hero" style="background-image:url(../assets/noma-lifestyle.png)">
+    <div class="wrap">
+      <p class="crumb"><a href="../index.html">Trang chủ</a> / Tin tức</p>
+      <h1>Tin tức &amp; kiến thức</h1>
+    </div>
+  </header>
+  <main id="main" class="page-body">
+    <div class="wrap" id="news-root"></div>
+  </main>
+  <div id="footer-root"></div>
+  <script src="../js/products.js"></script>
+  <script src="../js/content.js"></script>
+  <script src="../js/site.js"></script>
+  <script>
+    (function () {
+      var R = document.body.getAttribute('data-root') || '';
+      var list = NOMA.articles || [];
+      var feat = list[0];
+      var rest = list.slice(1);
+      var html = '';
+      if (feat) {
+        html += '<article class="news-feature"><img src="' + R + feat.img + '" alt="" /><div>' +
+          '<p class="eyebrow">' + feat.cat + ' · ' + feat.date + '</p>' +
+          '<h2><a href="' + R + 'tin-tuc/' + feat.slug + '/">' + feat.title + '</a></h2>' +
+          '<p>' + feat.excerpt + '</p>' +
+          '<a href="' + R + 'tin-tuc/' + feat.slug + '/">Đọc tiếp →</a></div></article>';
+      }
+      html += '<div class="news-grid">' + rest.map(function (a) {
+        return '<article class="news-card"><a href="' + R + 'tin-tuc/' + a.slug + '/"><img src="' + R + a.img + '" alt="" /></a>' +
+          '<div class="news-card__body"><p class="eyebrow">' + a.cat + '</p><h3><a href="' + R + 'tin-tuc/' + a.slug + '/">' + a.title + '</a></h3><p>' + a.excerpt + '</p></div></article>';
+      }).join('') + '</div>';
+      document.getElementById('news-root').innerHTML = html;
+    })();
+  </script>
+</body>
+</html>

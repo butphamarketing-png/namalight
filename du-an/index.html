@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dự án | NOMA LIGHT</title>
+  <meta name="description" content="Không gian lắp đèn năng lượng mặt trời NOMA LIGHT — ảnh minh họa theo loại công trình." />
+  <link rel="canonical" href="../du-an/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css?v=23" />
+</head>
+<body data-page="projects" data-root="../">
+  <div id="header-root"></div>
+  <header class="inner-hero" style="background-image:url(../assets/noma-cover.png)">
+    <div class="wrap">
+      <p class="crumb"><a href="../index.html">Trang chủ</a> / Dự án</p>
+      <h1>Dự án thực tế</h1>
+      <p>NOMA LIGHT đồng hành cùng nhiều loại công trình. Ảnh dưới đây là minh họa theo ứng dụng — chưa gắn địa điểm khách hàng khi chưa có dữ liệu.</p>
+    </div>
+  </header>
+  <main id="main" class="page-body">
+    <div class="wrap">
+      <div class="works__grid" id="project-grid"></div>
+    </div>
+  </main>
+  <div id="footer-root"></div>
+  <script src="../js/products.js"></script>
+  <script src="../js/content.js"></script>
+  <script src="../js/site.js"></script>
+  <script>
+    (function () {
+      var R = document.body.getAttribute('data-root') || '';
+      var el = document.getElementById('project-grid');
+      if (!el || !NOMA.projects) return;
+      el.innerHTML = NOMA.projects.map(function (p, i) {
+        var cls = i === 0 ? ' work--lg' : (i === 3 ? ' work--wide' : '');
+        return '<a class="work' + cls + '" href="' + R + 'du-an/' + p.slug + '/">' +
+          '<img src="' + R + p.img + '" alt="' + p.title + '" />' +
+          '<span><strong>' + p.title + '</strong><small>' + p.type + ' · ' + p.lamp + '</small></span></a>';
+      }).join('');
+    })();
+  </script>
+</body>
+</html>
