@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css?v=23" />
+  <link rel="stylesheet" href="../css/style.css?v=24" />
 </head>
 <body data-page="booking" data-root="../">
   <div id="header-root"></div>
@@ -35,13 +35,14 @@
               <a class="booknow__hotline" href="tel:0974169141"><span>☎</span><span><small>Hotline</small><strong>0974 169 141</strong></span></a>
             </div>
           </aside>
-          <form class="booknow__form" id="book-form" action="https://zalo.me/0974169141" method="get">
+          <form class="booknow__form" id="book-form" action="https://zalo.me/0974169141" method="get" novalidate>
             <p class="booknow__form-kicker">Đặt lịch hẹn tư vấn</p>
             <p class="booknow__form-lead">Gửi form — nội dung được sao chép để bạn gửi Zalo, không reload trang.</p>
+            <p class="form-err" id="book-form-err" role="alert"></p>
             <div class="booknow__fields">
               <label>Họ và tên <i>*</i><input name="name" type="text" required placeholder="Nhập họ và tên" autocomplete="name" /></label>
               <label>Số điện thoại <i>*</i><input name="phone" type="tel" required placeholder="Nhập số điện thoại" autocomplete="tel" /></label>
-              <label>Email<input name="email" type="email" placeholder="Nếu có" autocomplete="email" /></label>
+              <label>Email<input name="email" type="text" inputmode="email" placeholder="Nếu có" autocomplete="email" /></label>
               <label>Khu vực
                 <select name="area">
                   <option value="">Chọn khu vực</option>
@@ -56,7 +57,10 @@
                   <option>Sân vườn</option><option>Nhà xưởng</option><option>Khu công cộng</option>
                 </select>
               </label>
-              <label>Ngày mong muốn<input name="date" type="date" /></label>
+              <label>Ngày mong muốn
+                <input name="date" type="text" inputmode="numeric" placeholder="dd/mm/yyyy" maxlength="10" autocomplete="off" />
+                <small class="field-hint">Không bắt buộc</small>
+              </label>
               <label class="full">Nhu cầu<textarea name="need" placeholder="Mô tả không gian cần chiếu sáng"></textarea></label>
               <label>Khung giờ
                 <select name="slot">

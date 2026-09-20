@@ -3,29 +3,62 @@
   var e = NOMA.esc;
   var R = NOMA.root();
 
-  var bookForm = document.getElementById('book-form');
-  if (bookForm) {
-    var dateInput = bookForm.querySelector('input[type="date"]');
-    if (dateInput) dateInput.min = new Date().toISOString().slice(0, 10);
-    bookForm.addEventListener('submit', function (ev) {
+  function vnPhone(v) {
+    var d = String(v || '').replace(/\D/g, '');
+    if (d.indexOf('84') === 0) d = '0' + d.slice(2);
+    return /^0\d{9}$/.test(d);
+  }
+  function vnDate(v) {
+    v = String(v || '').trim();
+    if (!v) return true;
+    var m = v.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    if (!m) return false;
+    var d = Number(m[1]), mo = Number(m[2]), y = Number(m[3]);
+    if (mo < 1 || mo > 12 || d < 1 || d > 31 || y < 2020 || y > 2100) return false;
+    var dt = new Date(y, mo - 1, d);
+    return dt.getFullYear() === y && dt.getMonth() === mo - 1 && dt.getDate() === d;
+  }
+  function vnEmail(v) {
+    v = String(v || '').trim();
+    if (!v) return true;
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+  function clearMarks(form) {
+    form.querySelectorAll('label.is-invalid').forEach(function (el) { el.classList.remove('is-invalid'); });
+  }
+  function mark(input) {
+    var lab = input.closest('label');
+    if (lab) lab.classList.add('is-invalid');
+  }
+  function bindLeadForm(form, errId, okId, linesFrom) {
+    if (!form) return;
+    var err = document.getElementById(errId);
+    form.addEventListener('submit', function (ev) {
       ev.preventDefault();
-      var fd = new FormData(bookForm);
-      var lines = [
-        'Đặt lịch tư vấn NOMA LIGHT',
-        'Họ tên: ' + (fd.get('name') || ''),
-        'Điện thoại: ' + (fd.get('phone') || ''),
-        'Email: ' + (fd.get('email') || '—'),
-        'Khu vực: ' + (fd.get('area') || '—'),
-        'Loại công trình: ' + (fd.get('work') || '—'),
-        'Nhu cầu: ' + (fd.get('need') || '—'),
-        'Ngày hẹn: ' + (fd.get('date') || '—'),
-        'Khung giờ: ' + (fd.get('slot') || '—'),
-        'Ghi chú: ' + (fd.get('note') || '—')
-      ];
+      clearMarks(form);
+      if (err) { err.classList.remove('is-on'); err.textContent = ''; }
+      var name = form.querySelector('[name="name"]');
+      var phone = form.querySelector('[name="phone"]');
+      var email = form.querySelector('[name="email"]');
+      var date = form.querySelector('[name="date"]');
+      var note = form.querySelector('[name="note"]');
+      var msgs = [];
+      if (name && !String(name.value).trim()) { msgs.push('Nhập họ và tên.'); mark(name); }
+      if (phone && !vnPhone(phone.value)) { msgs.push('Số điện thoại gồm 10 số, bắt đầu bằng 0.'); mark(phone); }
+      if (email && !vnEmail(email.value)) { msgs.push('Email chưa đúng định dạng.'); mark(email); }
+      if (date && !vnDate(date.value)) { msgs.push('Ngày hẹn theo dạng dd/mm/yyyy.'); mark(date); }
+      if (note && note.hasAttribute('required') && !String(note.value).trim()) { msgs.push('Nhập nội dung cần tư vấn.'); mark(note); }
+      if (msgs.length) {
+        if (err) { err.textContent = msgs[0]; err.classList.add('is-on'); }
+        var first = form.querySelector('label.is-invalid input, label.is-invalid textarea, label.is-invalid select');
+        if (first) first.focus();
+        return;
+      }
+      var lines = linesFrom(new FormData(form));
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(lines.join('\n')).catch(function () {});
       }
-      var ok = document.getElementById('book-ok');
+      var ok = document.getElementById(okId);
       if (ok) {
         ok.hidden = false;
         ok.textContent = 'Đã tiếp nhận yêu cầu. Nội dung đã sao chép — cửa sổ Zalo Minh Trọng sẽ mở để bạn gửi tin.';
@@ -34,26 +67,30 @@
     });
   }
 
-  var contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (ev) {
-      ev.preventDefault();
-      var fd = new FormData(contactForm);
-      var lines = [
-        'Liên hệ NOMA LIGHT',
-        'Họ tên: ' + (fd.get('name') || ''),
-        'Điện thoại: ' + (fd.get('phone') || ''),
-        'Email: ' + (fd.get('email') || '—'),
-        'Nội dung: ' + (fd.get('note') || fd.get('need') || '—')
-      ];
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(lines.join('\n')).catch(function () {});
-      }
-      var ok = document.getElementById('contact-ok');
-      if (ok) ok.hidden = false;
-      window.open('https://zalo.me/0974169141', '_blank', 'noopener');
-    });
-  }
+  bindLeadForm(document.getElementById('book-form'), 'book-form-err', 'book-ok', function (fd) {
+    return [
+      'Đặt lịch tư vấn NOMA LIGHT',
+      'Họ tên: ' + (fd.get('name') || ''),
+      'Điện thoại: ' + (fd.get('phone') || ''),
+      'Email: ' + (fd.get('email') || '—'),
+      'Khu vực: ' + (fd.get('area') || '—'),
+      'Loại công trình: ' + (fd.get('work') || '—'),
+      'Nhu cầu: ' + (fd.get('need') || '—'),
+      'Ngày hẹn: ' + (fd.get('date') || '—'),
+      'Khung giờ: ' + (fd.get('slot') || '—'),
+      'Ghi chú: ' + (fd.get('note') || '—')
+    ];
+  });
+
+  bindLeadForm(document.getElementById('contact-form'), 'contact-form-err', 'contact-ok', function (fd) {
+    return [
+      'Liên hệ NOMA LIGHT',
+      'Họ tên: ' + (fd.get('name') || ''),
+      'Điện thoại: ' + (fd.get('phone') || ''),
+      'Email: ' + (fd.get('email') || '—'),
+      'Nội dung: ' + (fd.get('note') || fd.get('need') || '—')
+    ];
+  });
 
   var root = document.getElementById('product-root');
   if (root) {

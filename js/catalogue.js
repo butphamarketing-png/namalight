@@ -78,6 +78,7 @@
       zoom = zoom >= 1.5 ? 1 : Math.round((zoom + 0.25) * 100) / 100;
       zoomEl.style.transform = 'scale(' + zoom + ')';
       stage.classList.toggle('is-zoomed', zoom > 1);
+      zoomBtn.setAttribute('aria-label', zoom > 1 ? 'Thu nhỏ Catalogue' : 'Phóng to Catalogue');
     };
   }
 
@@ -105,7 +106,8 @@
   if (dl) {
     dl.disabled = true;
     dl.setAttribute('aria-disabled', 'true');
-    dl.title = 'Tải Catalogue';
+    dl.title = 'PDF chưa sẵn sàng';
+    dl.setAttribute('aria-label', 'Tải PDF — chưa có file');
     dl.addEventListener('click', function (ev) { ev.preventDefault(); });
   }
 

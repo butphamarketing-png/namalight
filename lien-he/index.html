@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css?v=23" />
+  <link rel="stylesheet" href="../css/style.css?v=24" />
 </head>
 <body data-page="contact" data-root="../">
   <div id="header-root"></div>
@@ -32,12 +32,13 @@
           <a class="btn btn--ghost btn--full" href="https://zalo.me/0974169141" target="_blank" rel="noopener">Zalo Minh Trọng</a>
         </div>
       </aside>
-      <form class="contact-form" id="contact-form">
+      <form class="contact-form" id="contact-form" novalidate>
         <p class="eyebrow">Gửi yêu cầu</p>
         <h2>Chúng tôi sẽ liên hệ lại</h2>
+        <p class="form-err" id="contact-form-err" role="alert"></p>
         <label>Họ tên<input name="name" type="text" required /></label>
         <label>Số điện thoại<input name="phone" type="tel" required /></label>
-        <label>Email<input name="email" type="email" /></label>
+        <label>Email<input name="email" type="text" inputmode="email" /></label>
         <label>Nội dung<textarea name="note" required placeholder="Nhu cầu tư vấn"></textarea></label>
         <button class="btn btn--primary" type="submit">Gửi yêu cầu</button>
         <p class="booknow__ok" id="contact-ok" hidden>Đã tiếp nhận yêu cầu. Cửa sổ Zalo sẽ mở để bạn gửi tin.</p>

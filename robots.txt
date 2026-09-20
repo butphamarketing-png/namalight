@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://namalight.vercel.app/sitemap.xml
