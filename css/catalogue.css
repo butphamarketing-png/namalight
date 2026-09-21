@@ -1421,6 +1421,141 @@ body.is-cat-fs .cat-room {
   color: #c9daf5;
 }
 
+.pg-c3__head b {
+  margin-left: auto;
+  font-weight: 700;
+  color: #8aa0bc;
+}
+
+.pg-c11, .pg-c12 {
+  padding: 12px 12px 22px !important;
+  background: #fff;
+  color: #12305c;
+  overflow: hidden;
+}
+.pg-c11 h2, .pg-c12 h2 {
+  margin: 2px 0 6px;
+  max-width: 78%;
+  color: #0a2a78 !important;
+  font-size: clamp(17px, 4.2vw, 24px);
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+.pg-c11 h2 em, .pg-c12 h2 em {
+  display: block;
+  font-style: normal;
+  font-size: 0.72em;
+  color: #1b4f9c;
+}
+.pg-c11__lead, .pg-c12__lead {
+  max-width: 70%;
+  margin: 0 0 6px;
+  font-size: 9.5px;
+  line-height: 1.4;
+  color: #4a5b72 !important;
+}
+.pg-c11__hero {
+  margin: 0 0 8px;
+  position: relative;
+}
+.pg-c11__hero img {
+  width: 100%;
+  height: 92px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+.pg-c11__hero figcaption {
+  position: absolute;
+  left: 8px;
+  bottom: 6px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+.pg-c11__tag {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  margin: 0;
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8aa0bc !important;
+}
+.pg-c12__top {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+  justify-content: flex-end;
+}
+.pg-c12__top li {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1b4f9c;
+  max-width: 72px;
+  text-align: center;
+}
+.pg-c12__banner {
+  margin: 0 0 8px;
+  position: relative;
+}
+.pg-c12__banner img {
+  width: 100%;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+.pg-c12__banner figcaption {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  max-width: 46%;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: right;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+.pg-c12__apps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+.pg-c12__apps img {
+  width: 100%;
+  height: 48px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+.pg-c12__apps figcaption {
+  margin-top: 3px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0a2a78;
+}
+.pg-c12__hand {
+  margin: 8px 0 0;
+  font-family: "Dancing Script", cursive;
+  font-size: 15px;
+  color: #1b4f9c !important;
+  text-align: right;
+}
+
 .print-sheet { padding: 0 !important; background: #fff; }
 .print-sheet__head {
   display: flex;
