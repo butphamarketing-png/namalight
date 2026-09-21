@@ -63,7 +63,10 @@
   pageFlip.on('flip', function (e) { setIndex(e.data); });
   pageFlip.on('init', function (e) {
     setIndex(e.data.page);
-    if (loader) loader.hidden = true;
+    if (loader) {
+      loader.hidden = true;
+      loader.setAttribute('aria-hidden', 'true');
+    }
     stage.classList.add('is-ready');
   });
 
@@ -124,7 +127,11 @@
   });
 
   setTimeout(function () {
-    if (loader && !loader.hidden) loader.hidden = true;
-    setIndex(pageFlip.getCurrentPageIndex());
+    if (loader && !loader.hidden) {
+      loader.hidden = true;
+      loader.setAttribute('aria-hidden', 'true');
+    }
+    if (stage) stage.classList.add('is-ready');
+    try { setIndex(pageFlip.getCurrentPageIndex()); } catch (err) {}
   }, 1400);
 })();
