@@ -323,6 +323,9 @@ body[data-page="home"] .site-head {
   right: 0;
   width: 100%;
 }
+body[data-page="home"] main > section[id] {
+  scroll-margin-top: 80px;
+}
 body[data-page="home"] .site-head--over {
   background: linear-gradient(180deg, rgba(4, 12, 28, 0.55) 0%, rgba(4, 12, 28, 0.12) 70%, transparent 100%);
   box-shadow: none;
@@ -781,7 +784,7 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); color: var(--navy); }
 
 .lineup {
   position: relative;
-  padding: 36px 0 88px;
+  padding: 88px 0 96px;
   background: #f4f8fc;
   overflow: hidden;
 }
@@ -884,6 +887,7 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); color: var(--navy); }
   width: 100%;
   height: 210px;
   object-fit: cover;
+  object-position: center 72%;
   transition: transform 0.55s ease;
 }
 .lineup__track article:hover img { transform: scale(1.06); }
@@ -2608,7 +2612,7 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); color: var(--navy); }
     grid-auto-flow: column;
     grid-auto-columns: min(72vw, 300px);
   }
-  .lineup__foot { grid-template-columns: 1fr; text-align: center; }
+  .lineup__foot { grid-template-columns: 1fr; text-align: center; padding-inline-end: 64px; }
   .lineup__foot span:last-child { text-align: center; }
   .sol__visual, .intro__visual { min-height: 320px; }
   .intro__feats { gap: 12px; }
@@ -2632,7 +2636,7 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); color: var(--navy); }
   .page-body { padding: 28px 0 64px; }
   .noma-dock { right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); }
   .noma-dock a { width: 48px; height: 48px; }
-  .cta-band { padding: 22px 18px; }
+  .cta-band { padding: 22px 72px 22px 18px; }
   .lineup__track img { height: 190px; }
 }
 
