@@ -176,4 +176,25 @@
     hero.addEventListener('mouseleave', play);
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) play();
   }
+
+  var lineup = document.querySelector('[data-lineup]');
+  if (lineup) {
+    var track = lineup.querySelector('.lineup__track');
+    var prevL = lineup.querySelector('[data-lineup-prev]');
+    var nextL = lineup.querySelector('[data-lineup-next]');
+    function step() {
+      var card = track.querySelector('article');
+      return card ? card.getBoundingClientRect().width + 20 : 280;
+    }
+    if (prevL) prevL.addEventListener('click', function () {
+      track.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+    if (nextL) nextL.addEventListener('click', function () {
+      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 8) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: step(), behavior: 'smooth' });
+      }
+    });
+  }
 })();

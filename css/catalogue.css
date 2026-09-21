@@ -188,6 +188,26 @@ body.is-cat-fs .cat-room {
   opacity: 0.38;
   cursor: not-allowed;
 }
+.cat-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 8px;
+  background: #f0c21a;
+  color: #07183f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.cat-download:hover {
+  background: #fff;
+  color: #07183f;
+}
 
 .page { background: #fff; color: var(--ink); overflow: hidden; }
 .page .inner {
@@ -198,6 +218,44 @@ body.is-cat-fs .cat-room {
   display: flex;
   flex-direction: column;
 }
+.page .inner.pg-photo {
+  padding: 0;
+  display: block;
+  background: #07183f;
+}
+.pg-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+.pg-photo .pg-qr-real {
+  position: absolute;
+  left: 51.5%;
+  bottom: 4.4%;
+  width: 12.4%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #fff;
+  padding: 3px;
+  pointer-events: none;
+}
+.pg-hotspots {
+  position: absolute;
+  inset: 0;
+}
+.pg-hotspots a {
+  position: absolute;
+  display: block;
+}
+.hs-tel { left: 4%; bottom: 10.5%; width: 36%; height: 4.2%; }
+.hs-mail { left: 4%; bottom: 6.4%; width: 36%; height: 3.6%; }
+.hs-web { left: 4%; bottom: 2.6%; width: 36%; height: 3.6%; }
+.hs-qr { right: 4%; bottom: 2.4%; width: 42%; height: 14%; }
 .pn {
   position: absolute;
   right: 16px;

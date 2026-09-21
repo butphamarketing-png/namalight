@@ -10,13 +10,13 @@
   var pages = bookEl.querySelectorAll('.page');
   var total = pages.length;
   var pageFlip = new St.PageFlip(bookEl, {
-    width: 520,
-    height: 736,
+    width: 540,
+    height: 720,
     size: 'stretch',
     minWidth: 280,
-    maxWidth: 920,
-    minHeight: 400,
-    maxHeight: 1180,
+    maxWidth: 980,
+    minHeight: 380,
+    maxHeight: 1320,
     showCover: false,
     drawShadow: true,
     flippingTime: 1500,
@@ -101,15 +101,6 @@
     document.body.classList.toggle('is-cat-fs', on);
     stage.classList.toggle('is-fs', on);
   });
-
-  var dl = document.getElementById('btn-dl');
-  if (dl) {
-    dl.disabled = true;
-    dl.setAttribute('aria-disabled', 'true');
-    dl.title = 'PDF chưa sẵn sàng';
-    dl.setAttribute('aria-label', 'Tải PDF — chưa có file');
-    dl.addEventListener('click', function (ev) { ev.preventDefault(); });
-  }
 
   document.addEventListener('keydown', function (ev) {
     var tag = (ev.target && ev.target.tagName) || '';

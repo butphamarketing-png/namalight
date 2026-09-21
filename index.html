@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=39" />
+  <link rel="stylesheet" href="css/style.css?v=44" />
 </head>
 <body data-page="home">
   <div id="header-root"></div>
@@ -81,58 +81,60 @@
       </div>
     </section>
 
-    <section class="lineup" id="san-pham">
+    <section class="lineup" id="san-pham" data-lineup>
       <div class="wrap">
         <div class="lineup__head">
           <div>
-            <p class="sol__kicker">Sản phẩm</p>
-            <h2>Hệ sản phẩm <em>NOMA LIGHT</em></h2>
-            <p class="lineup__sub">Đa dạng giải pháp – phù hợp mọi không gian</p>
+            <h2>Sản phẩm <em>nổi bật</em></h2>
+            <p class="lineup__sub">Giải pháp chiếu sáng hiện đại, bền bỉ và tiết kiệm cho mọi công trình</p>
           </div>
-          <a class="lineup__all" href="san-pham/">Xem tất cả sản phẩm →</a>
+          <div class="lineup__aside">
+            <p>Ánh sáng chất lượng<br />kiến tạo giá trị bền vững</p>
+            <div class="lineup__nav">
+              <button type="button" data-lineup-prev aria-label="Sản phẩm trước"></button>
+              <button type="button" data-lineup-next aria-label="Sản phẩm sau"></button>
+            </div>
+          </div>
         </div>
-        <div class="lineup__grid">
+        <div class="lineup__track">
           <article>
             <a href="san-pham/den-duong-nang-luong-mat-troi/">
-              <img src="assets/noma-prod-street.png" alt="Đèn đường năng lượng mặt trời" />
+              <img src="assets/noma-card-street.jpg" alt="Đèn đường năng lượng mặt trời" />
             </a>
-            <h3>Đèn đường năng lượng mặt trời</h3>
-            <p>Giải pháp chiếu sáng hiệu quả cho đường phố và hạ tầng ngoài trời.</p>
+            <h3>Đèn đường LED</h3>
+            <p>Hiệu suất cao – Bền bỉ – Tiết kiệm</p>
             <a href="san-pham/den-duong-nang-luong-mat-troi/">Xem sản phẩm →</a>
           </article>
           <article>
             <a href="san-pham/den-pha-nang-luong-mat-troi/">
-              <img src="assets/noma-prod-flood.png" alt="Đèn pha năng lượng mặt trời" />
+              <img src="assets/noma-card-flood.jpg" alt="Đèn pha năng lượng mặt trời cho nhà xưởng" />
             </a>
-            <h3>Đèn pha năng lượng mặt trời</h3>
-            <p>Chiếu sáng mạnh mẽ cho sân bãi, nhà xưởng và công trình.</p>
+            <h3>Đèn pha nhà xưởng</h3>
+            <p>Chiếu sáng mạnh mẽ – Ổn định – Dài lâu</p>
             <a href="san-pham/den-pha-nang-luong-mat-troi/">Xem sản phẩm →</a>
           </article>
           <article>
             <a href="san-pham/den-san-vuon-nang-luong-mat-troi/">
-              <img src="assets/noma-prod-garden.png" alt="Đèn sân vườn năng lượng mặt trời" />
+              <img src="assets/noma-card-garden.jpg" alt="Đèn trụ sân vườn năng lượng mặt trời" />
             </a>
-            <h3>Đèn sân vườn năng lượng mặt trời</h3>
-            <p>Tạo điểm nhấn cho sân vườn, lối đi và cảnh quan.</p>
+            <h3>Đèn trụ sân vườn</h3>
+            <p>Tinh tế – Hiện đại – Tạo điểm nhấn</p>
             <a href="san-pham/den-san-vuon-nang-luong-mat-troi/">Xem sản phẩm →</a>
           </article>
           <article>
             <a href="san-pham/den-dan-dung-nang-luong-mat-troi/">
-              <img src="assets/noma-prod-home.png" alt="Đèn dân dụng năng lượng mặt trời" />
+              <img src="assets/noma-card-solar.jpg" alt="Đèn năng lượng mặt trời dân dụng" />
             </a>
-            <h3>Đèn dân dụng năng lượng mặt trời</h3>
-            <p>Lựa chọn tiện lợi cho nhà ở, cổng, ban công và không gian ngoài trời.</p>
+            <h3>Đèn năng lượng mặt trời</h3>
+            <p>Linh hoạt – Dễ lắp đặt – Tiết kiệm điện</p>
             <a href="san-pham/den-dan-dung-nang-luong-mat-troi/">Xem sản phẩm →</a>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section class="quote-band" aria-label="Khẩu hiệu">
-      <img src="assets/noma-quote-mountains.jpg" alt="" />
-      <div class="quote-band__copy">
-        <p>“Chiếu sáng mọi con đường”</p>
-        <small>Cùng NOMA LIGHT kiến tạo cuộc sống xanh</small>
+        <div class="lineup__foot">
+          <span>NOMA LIGHT</span>
+          <a class="btn btn--primary" href="san-pham/">Xem tất cả sản phẩm →</a>
+          <span>Giải pháp chiếu sáng toàn diện</span>
+        </div>
       </div>
     </section>
 
@@ -212,7 +214,10 @@
           <p class="sol__kicker">Catalogue</p>
           <h2>Khám phá Catalogue<br /><em>NOMA LIGHT</em></h2>
           <p>Khám phá toàn bộ dòng sản phẩm và giải pháp chiếu sáng của NOMA LIGHT.</p>
-          <a class="btn--hero" href="catalogue/">Xem catalogue →</a>
+          <div class="cat-spread__actions">
+            <a class="btn--hero" href="catalogue/">Xem catalogue →</a>
+            <a class="btn--hero btn--hero-ghost" href="assets/catalogue/NOMA-LIGHT-Catalogue.pdf" download="NOMA-LIGHT-Catalogue.pdf">Tải về</a>
+          </div>
         </div>
         <a class="cat-spread__book" href="catalogue/">
           <img src="assets/noma-cat-books.jpg" alt="Catalogue sản phẩm NOMA LIGHT" />
@@ -264,7 +269,7 @@
   <div id="footer-root"></div>
   <script src="js/products.js"></script>
   <script src="js/content.js"></script>
-  <script src="js/site.js?v=3"></script>
+  <script src="js/site.js?v=4"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
