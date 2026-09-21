@@ -401,7 +401,7 @@
       if (sec.classList.contains('cat-spread')) return 'tilt';
       if (sec.classList.contains('voices')) return 'cards';
       if (sec.classList.contains('call-night')) return 'zoom';
-      if (sec.classList.contains('contact-split') || sec.classList.contains('booknow')) return 'form';
+      if (sec.classList.contains('contact-split') || sec.classList.contains('booknow') || sec.classList.contains('book-stage')) return 'form';
       if (sec.classList.contains('alt-row--flip')) return 'right';
       if (sec.classList.contains('alt-row')) return 'left';
       if (sec.classList.contains('intro')) return 'split';
@@ -417,7 +417,7 @@
         '.cat-spread__copy', '.cat-spread__book',
         '.voices__head', '.voices__track article',
         '.call-night__inner > *',
-        '.contact-split__visual', '.contact-split__form',
+        '.contact-split__visual', '.contact-split__form', '.book-stage__card',
         '.alt-row > img', '.alt-row > div',
         '.inner-hero h1', '.inner-hero p',
         '.product', '.news-card', '.grid-products > *',

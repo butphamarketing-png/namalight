@@ -10,80 +10,81 @@
   <link rel="canonical" href="../dat-lich/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css?v=68" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css?v=75" />
 </head>
 <body data-page="booking" data-root="../">
   <div id="header-root"></div>
-  <header class="inner-hero" style="background-image:url(../assets/noma-contact-villa.jpg)">
-    <div class="wrap">
-      <p class="crumb"><a href="../index.html">Trang chủ</a> / Đặt lịch</p>
-      <h1>Đặt lịch tư vấn</h1>
-      <p>Nhận giải pháp chiếu sáng phù hợp cho công trình của bạn.</p>
-    </div>
-  </header>
   <main id="main">
-    <section class="booknow" id="dat-lich">
-      <div class="wrap">
-        <div class="booknow__grid">
-          <aside class="booknow__visual">
-            <div class="booknow__visual-inner">
-              <p class="booknow__quote">Ánh sáng tốt hơn<br /><em>Cuộc sống tốt đẹp hơn</em></p>
-              <ul class="booknow__points">
-                <li><span aria-hidden="true">☎</span><div><strong>Tư vấn 1:1</strong><small>Giải pháp phù hợp nhu cầu</small></div></li>
-                <li><span aria-hidden="true">✎</span><div><strong>Khảo sát tận nơi</strong><small>Theo hiện trạng công trình</small></div></li>
-                <li><span aria-hidden="true">▣</span><div><strong>Báo giá rõ ràng</strong><small>Chốt qua Minh Trọng</small></div></li>
-              </ul>
-              <a class="booknow__hotline" href="tel:0974169141"><span>☎</span><span><small>Hotline</small><strong>0974 169 141</strong></span></a>
-            </div>
-          </aside>
-          <form class="booknow__form" id="book-form" action="https://zalo.me/0974169141" method="get" novalidate>
-            <p class="booknow__form-kicker">Đặt lịch hẹn tư vấn</p>
-            <p class="booknow__form-lead">Điền form — Minh Trọng nhận thông tin qua Zalo 0974 169 141.</p>
-            <p class="form-err" id="book-form-err" role="alert"></p>
-            <div class="booknow__fields">
-              <label>Họ và tên <i>*</i><input name="name" type="text" required placeholder="Nhập họ và tên" autocomplete="name" /></label>
-              <label>Số điện thoại <i>*</i><input name="phone" type="tel" required placeholder="Nhập số điện thoại" autocomplete="tel" /></label>
-              <label>Email<input name="email" type="text" inputmode="email" placeholder="Nếu có" autocomplete="email" /></label>
-              <label>Khu vực
-                <select name="area">
-                  <option value="">Chọn khu vực</option>
-                  <option>Hà Nội</option><option>Hà Nam</option><option>Hưng Yên</option>
-                  <option>Nam Định</option><option>Ninh Bình</option><option>Tỉnh / thành khác</option>
-                </select>
-              </label>
-              <label>Loại công trình
-                <select name="work">
-                  <option value="">Chọn loại</option>
-                  <option>Nhà ở</option><option>Đường phố / nội bộ</option>
-                  <option>Sân vườn</option><option>Nhà xưởng</option><option>Khu công cộng</option>
-                </select>
-              </label>
-              <label>Ngày mong muốn
-                <input name="date" type="text" inputmode="numeric" placeholder="dd/mm/yyyy" maxlength="10" autocomplete="off" />
-                <small class="field-hint">Không bắt buộc</small>
-              </label>
-              <label class="full">Nhu cầu<textarea name="need" placeholder="Mô tả không gian cần chiếu sáng"></textarea></label>
-              <label>Khung giờ
-                <select name="slot">
-                  <option value="">Chọn khung giờ</option>
-                  <option>08:00 – 10:00</option><option>10:00 – 12:00</option>
-                  <option>14:00 – 16:00</option><option>16:00 – 18:00</option>
-                </select>
-              </label>
-              <label class="full">Ghi chú<textarea name="note" placeholder="Thông tin thêm"></textarea></label>
-            </div>
-            <button class="btn btn--primary booknow__submit" type="submit">Đặt lịch hẹn</button>
-            <p class="booknow__ok" id="book-ok" hidden></p>
-          </form>
-        </div>
+    <section class="contact-split book-stage" id="dat-lich">
+      <p class="book-stage__crumb"><a href="../index.html">Trang chủ</a> / Đặt lịch</p>
+      <img class="book-stage__bg" src="../assets/noma-intro-path.jpg" alt="" width="1600" height="1000" decoding="async" />
+      <p class="book-stage__quote">Ánh sáng<br />kiến tạo<br />tương lai</p>
+      <div class="book-stage__card contact-split__form">
+        <p class="book-stage__kicker">Đặt lịch hẹn</p>
+        <h2>Tư vấn ngay</h2>
+        <p class="book-stage__sub">Giải pháp chiếu sáng phù hợp cho bạn</p>
+        <p class="book-stage__lead">Để lại thông tin, chúng tôi sẽ liên hệ sớm nhất!</p>
+        <form id="book-form" action="https://zalo.me/0974169141" method="get" novalidate>
+          <p class="form-err" id="book-form-err" role="alert"></p>
+          <div class="book-stage__fields">
+            <label class="book-stage__field">
+              <span class="visually-hidden">Họ và tên</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z"/></svg>
+              <input name="name" type="text" required placeholder="Họ và tên *" autocomplete="name" />
+            </label>
+            <label class="book-stage__field">
+              <span class="visually-hidden">Số điện thoại</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.5a16 16 0 0 0 6.4 6.4l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+              <input name="phone" type="tel" required placeholder="Số điện thoại *" autocomplete="tel" />
+            </label>
+            <label class="book-stage__field">
+              <span class="visually-hidden">Email</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              <input name="email" type="email" placeholder="Email" autocomplete="email" />
+            </label>
+            <label class="book-stage__field">
+              <span class="visually-hidden">Nhu cầu tư vấn</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M8 7h12M8 12h12M8 17h12M4 7h.01M4 12h.01M4 17h.01"/></svg>
+              <select name="need">
+                <option value="">Nhu cầu tư vấn</option>
+                <option>Đèn đường năng lượng mặt trời</option>
+                <option>Đèn pha năng lượng mặt trời</option>
+                <option>Đèn sân vườn</option>
+                <option>Đèn dân dụng</option>
+                <option>Tư vấn công trình</option>
+              </select>
+            </label>
+            <label class="book-stage__field book-stage__field--full">
+              <span class="visually-hidden">Ghi chú</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <input name="note" type="text" placeholder="Ghi chú (nếu có)" autocomplete="off" />
+            </label>
+          </div>
+          <button class="book-stage__submit" type="submit">Đặt lịch hẹn ngay <span aria-hidden="true">→</span></button>
+          <p class="booknow__ok" id="book-ok" hidden></p>
+        </form>
+        <ul class="book-stage__trust">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 5-3.4 7.7-7 9-3.6-1.3-7-4-7-9V6z"/><path d="M9 12l2 2 4-4" fill="none" stroke="#fff" stroke-width="1.6"/></svg>
+            Tư vấn miễn phí
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            Phản hồi nhanh
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-7 7v2H4v6h6v-6H8v-2a4 4 0 0 1 8 0v2h-2v6h6v-6h-1v-2a7 7 0 0 0-7-7z"/></svg>
+            Hỗ trợ tận tâm
+          </li>
+        </ul>
       </div>
     </section>
   </main>
   <div id="footer-root"></div>
   <script defer src="../js/products.js?v=6"></script>
   <script defer src="../js/content.js?v=6"></script>
-  <script defer src="../js/site.js?v=18"></script>
-  <script defer src="../js/main.js?v=8"></script>
+  <script defer src="../js/site.js?v=19"></script>
+  <script defer src="../js/main.js?v=9"></script>
 </body>
 </html>

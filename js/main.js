@@ -87,22 +87,19 @@
       'Họ tên: ' + (fd.get('name') || ''),
       'Điện thoại: ' + (fd.get('phone') || ''),
       'Email: ' + (fd.get('email') || '—'),
-      'Khu vực: ' + (fd.get('area') || '—'),
-      'Loại công trình: ' + (fd.get('work') || '—'),
       'Nhu cầu: ' + (fd.get('need') || '—'),
-      'Ngày hẹn: ' + (fd.get('date') || '—'),
-      'Khung giờ: ' + (fd.get('slot') || '—'),
       'Ghi chú: ' + (fd.get('note') || '—')
     ];
   });
 
   bindLeadForm(document.getElementById('contact-form'), 'contact-form-err', 'contact-ok', function (fd) {
     return [
-      'Liên hệ NOMA LIGHT',
+      'Đặt lịch tư vấn NOMA LIGHT',
       'Họ tên: ' + (fd.get('name') || ''),
       'Điện thoại: ' + (fd.get('phone') || ''),
       'Email: ' + (fd.get('email') || '—'),
-      'Nội dung: ' + (fd.get('note') || fd.get('need') || '—')
+      'Nhu cầu: ' + (fd.get('need') || '—'),
+      'Ghi chú: ' + (fd.get('note') || '—')
     ];
   });
 
