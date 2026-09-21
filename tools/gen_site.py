@@ -65,7 +65,7 @@ def redir(src, dest):
 </head><body><p><a href="{dest}">Tiếp tục</a></p></body></html>
 ''')
 
-css2 = "../../css/style.css?v=24"
+css2 = "../../css/style.css?v=26"
 js2 = "../../js/"
 
 for slug, title, lead, img in GROUPS:
@@ -136,7 +136,7 @@ redir("chinh-sach-bao-hanh.html", "chinh-sach-bao-hanh/")
 write("chinh-sach-bao-hanh/index.html", HEAD.format(
     title="Chính sách bảo hành",
     desc="Bảo hành sản phẩm NOMA LIGHT theo catalogue / phiếu xuất.",
-    css="../css/style.css?v=24",
+    css="../css/style.css?v=26",
     page="",
     root="../",
     js="../js/",

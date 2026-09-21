@@ -19,7 +19,7 @@
     maxHeight: 1180,
     showCover: false,
     drawShadow: true,
-    flippingTime: 700,
+    flippingTime: 1500,
     usePortrait: true,
     autoSize: true,
     maxShadowOpacity: 0.55,

@@ -22,7 +22,7 @@
           '<div class="wrap nav-bar__inner">' +
             '<a class="brand brand--slim" href="' + h('index.html') + '" aria-label="NOMA LIGHT — Trang chủ">' +
               '<span class="brand__mark" aria-hidden="true">' +
-                '<svg viewBox="0 0 36 36" fill="none"><path d="M10 22c4-9 8-14 8-14s4 5 8 14c-5 6-11 6-16 0Z" fill="#5aad3a"/><path d="M18 8c0 8-3 12-6 16" stroke="#2e7d32" stroke-width="1.4" fill="none"/></svg>' +
+                '<svg viewBox="0 0 36 36" fill="none"><path d="M10 22c4-9 8-14 8-14s4 5 8 14c-5 6-11 6-16 0Z" fill="#f5c518"/><path d="M18 8c0 8-3 12-6 16" stroke="#062a6b" stroke-width="1.4" fill="none"/></svg>' +
               '</span>' +
               '<span class="brand__text"><strong>NOMA LIGHT</strong></span>' +
             '</a>' +
@@ -66,7 +66,7 @@
         '<div class="wrap masthead__inner">' +
           '<a class="brand" href="' + h('index.html') + '" aria-label="NOMA LIGHT — Trang chủ">' +
             '<span class="brand__mark" aria-hidden="true">' +
-              '<svg viewBox="0 0 36 36" fill="none"><path d="M10 22c4-9 8-14 8-14s4 5 8 14c-5 6-11 6-16 0Z" fill="#5aad3a"/><path d="M18 8c0 8-3 12-6 16" stroke="#2e7d32" stroke-width="1.4" fill="none"/></svg>' +
+              '<svg viewBox="0 0 36 36" fill="none"><path d="M10 22c4-9 8-14 8-14s4 5 8 14c-5 6-11 6-16 0Z" fill="#f5c518"/><path d="M18 8c0 8-3 12-6 16" stroke="#062a6b" stroke-width="1.4" fill="none"/></svg>' +
             '</span>' +
             '<span class="brand__text"><strong>NOMA LIGHT</strong><small>Sáng hơn cho cuộc sống xanh</small></span>' +
           '</a>' +
