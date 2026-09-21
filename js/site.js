@@ -42,6 +42,7 @@
       done = true;
       boot.classList.add('is-out');
       document.body.classList.remove('noma-booting');
+      startSectionFx();
       setTimeout(function () {
         if (boot && boot.parentNode) boot.parentNode.removeChild(boot);
       }, 800);
@@ -291,7 +292,10 @@
   }
 
   document.addEventListener('contextmenu', function (e) { e.preventDefault(); });
-  document.addEventListener('dragstart', function (e) { e.preventDefault(); });
+  document.addEventListener('dragstart', function (e) {
+    if (page === 'ecatalogue') return;
+    e.preventDefault();
+  });
   document.addEventListener('copy', function (e) {
     if (isTyping(e.target)) return;
     e.preventDefault();
@@ -313,6 +317,122 @@
   document.querySelectorAll('img').forEach(function (img) {
     img.setAttribute('draggable', 'false');
   });
+
+  var sectionFxStarted = false;
+  function startSectionFx() {
+    if (page === 'ecatalogue') return;
+    if (sectionFxStarted && document.documentElement.classList.contains('noma-fx')) return;
+
+    function kindFor(sec, idx) {
+      if (sec.classList.contains('hero')) return 'hero';
+      if (sec.classList.contains('inner-hero')) return 'hero';
+      if (sec.classList.contains('lineup')) return 'cards';
+      if (sec.classList.contains('tech-globe') || sec.classList.contains('techx')) return 'rise';
+      if (sec.classList.contains('proj-mosaic')) return 'mosaic';
+      if (sec.classList.contains('cat-spread')) return 'tilt';
+      if (sec.classList.contains('contact-split') || sec.classList.contains('booknow')) return 'form';
+      if (sec.classList.contains('alt-row--flip')) return 'right';
+      if (sec.classList.contains('alt-row')) return 'left';
+      if (sec.classList.contains('intro')) return 'split';
+      return idx % 2 ? 'right' : 'up';
+    }
+
+    function markItems(root) {
+      var sel = [
+        '.intro__visual', '.intro__copy', '.intro__feats li',
+        '.lineup__head', '.lineup__track article', '.lineup__foot',
+        '.tech-globe__copy', '.tech-globe__notes li',
+        '.proj-mosaic__copy', '.proj-mosaic__feature', '.proj-mosaic__stack > a',
+        '.cat-spread__copy', '.cat-spread__book',
+        '.contact-split__visual', '.contact-split__form',
+        '.alt-row > img', '.alt-row > div',
+        '.inner-hero h1', '.inner-hero p',
+        '.product', '.news-card', '.grid-products > *',
+        '.techx__notes li', '.cta-band', '.cats__cta'
+      ].join(',');
+      var items = root.querySelectorAll(sel);
+      var n = 0;
+      for (var i = 0; i < items.length && n < 12; i++) {
+        if (items[i].closest('#book, .flip-stage, .noma-boot')) continue;
+        items[i].classList.add('noma-fx-item');
+        items[i].style.setProperty('--i', String(n));
+        n += 1;
+      }
+    }
+
+    function collect() {
+      var list = [];
+      document.querySelectorAll('header.inner-hero, main > section').forEach(function (el) {
+        list.push(el);
+      });
+      var pr = document.getElementById('product-root');
+      if (pr && pr.children.length) list.push(pr);
+      return list;
+    }
+
+    var blocks = collect();
+    if (!blocks.length) {
+      if (!sectionFxStarted) setTimeout(startSectionFx, 450);
+      return;
+    }
+    sectionFxStarted = true;
+    blocks.forEach(function (sec, idx) {
+      if (!sec.getAttribute('data-fx')) sec.setAttribute('data-fx', kindFor(sec, idx));
+      markItems(sec);
+    });
+    document.documentElement.classList.add('noma-fx');
+
+    function inView(el) {
+      var r = el.getBoundingClientRect();
+      return r.top < window.innerHeight * 0.9 && r.bottom > 48;
+    }
+
+    function reveal(el) {
+      el.classList.add('is-in');
+    }
+
+    function observe(nodes) {
+      if (!('IntersectionObserver' in window)) {
+        nodes.forEach(reveal);
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          reveal(e.target);
+          io.unobserve(e.target);
+        });
+      }, { threshold: [0, 0.08, 0.2], rootMargin: '72px 0px -4% 0px' });
+      nodes.forEach(function (el) {
+        if (inView(el)) reveal(el);
+        else io.observe(el);
+      });
+    }
+
+    requestAnimationFrame(function () {
+      observe(blocks);
+    });
+
+    setTimeout(function () {
+      var extra = [];
+      document.querySelectorAll('#catalog-grid .product, #product-root > *').forEach(function (el) {
+        if (el.classList.contains('noma-fx-item') || el.getAttribute('data-fx')) return;
+        el.classList.add('noma-fx-item');
+        extra.push(el);
+      });
+      extra.forEach(function (el, i) { el.style.setProperty('--i', String(i % 12)); });
+      var late = collect().filter(function (el) { return !el.classList.contains('is-in'); });
+      if (late.length) observe(late);
+      extra.forEach(function (el) {
+        if (inView(el) || (el.closest('[data-fx]') && el.closest('[data-fx]').classList.contains('is-in'))) {
+          el.classList.add('is-in');
+        }
+      });
+    }, 700);
+  }
+
+  if (!document.body.classList.contains('noma-booting')) startSectionFx();
+  else setTimeout(startSectionFx, 4800);
 
   var cmsSrc = (document.body.getAttribute('data-root') || '') + 'js/noma-cms.js';
   var cmsEl = document.createElement('script');

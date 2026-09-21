@@ -58,6 +58,7 @@ body[data-page="ecatalogue"].is-cat-fs #header-root {
   overflow: auto;
 }
 .flip-zoom {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -65,6 +66,15 @@ body[data-page="ecatalogue"].is-cat-fs #header-root {
   justify-content: center;
   transform-origin: center center;
   transition: transform 0.4s ease;
+}
+.flip-zoom::after {
+  content: "";
+  position: absolute;
+  inset: 12% 18%;
+  z-index: -1;
+  border-radius: 8px;
+  box-shadow: 0 28px 48px rgba(18, 22, 28, 0.45);
+  pointer-events: none;
 }
 .flip-stage.is-fs,
 body.is-cat-fs .flip-stage {
@@ -81,7 +91,6 @@ body.is-cat-fs .cat-room {
   width: 100%;
   height: 100%;
   max-height: 85vh;
-  filter: drop-shadow(0 28px 48px rgba(18, 22, 28, 0.45));
 }
 
 .flip-loader {

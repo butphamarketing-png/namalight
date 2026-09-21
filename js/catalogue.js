@@ -19,7 +19,7 @@
     maxHeight: 1320,
     showCover: false,
     drawShadow: true,
-    flippingTime: 1500,
+    flippingTime: 800,
     usePortrait: true,
     autoSize: true,
     maxShadowOpacity: 0.55,
@@ -45,7 +45,7 @@
 
   function eagerNear(i) {
     pages.forEach(function (pg, idx) {
-      if (Math.abs(idx - i) > 2) return;
+      if (Math.abs(idx - i) > 3) return;
       pg.querySelectorAll('img[loading="lazy"]').forEach(function (img) {
         img.loading = 'eager';
       });
@@ -67,8 +67,19 @@
     stage.classList.add('is-ready');
   });
 
-  function prev() { pageFlip.flipPrev(); }
-  function next() { pageFlip.flipNext(); }
+  var busy = false;
+  pageFlip.on('changeState', function (e) {
+    busy = e.data === 'flipping' || e.data === 'user_fold';
+  });
+
+  function prev() {
+    if (busy) return;
+    pageFlip.flipPrev();
+  }
+  function next() {
+    if (busy) return;
+    pageFlip.flipNext();
+  }
   prevBtns.forEach(function (b) { if (b) b.onclick = prev; });
   nextBtns.forEach(function (b) { if (b) b.onclick = next; });
 
