@@ -10,6 +10,7 @@
   <url><loc>https://namalight.vercel.app/tin-tuc/</loc></url>
   <url><loc>https://namalight.vercel.app/dat-lich/</loc></url>
   <url><loc>https://namalight.vercel.app/lien-he/</loc></url>
+  <url><loc>https://namalight.vercel.app/search/</loc></url>
   <url><loc>https://namalight.vercel.app/chinh-sach-bao-hanh/</loc></url>
   <url><loc>https://namalight.vercel.app/chinh-sach-bao-mat/</loc></url>
   <url><loc>https://namalight.vercel.app/dieu-khoan-su-dung/</loc></url>
@@ -17,5 +18,31 @@
   <url><loc>https://namalight.vercel.app/san-pham/den-pha-nang-luong-mat-troi/</loc></url>
   <url><loc>https://namalight.vercel.app/san-pham/den-san-vuon-nang-luong-mat-troi/</loc></url>
   <url><loc>https://namalight.vercel.app/san-pham/den-dan-dung-nang-luong-mat-troi/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-st60/</loc></url>
   <url><loc>https://namalight.vercel.app/san-pham/nl-st100/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-st150/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-st200/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-fl100/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-fl200/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-fl300/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-fl400/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-fl500/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-gd40/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-gd60/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-sp120/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-sp200/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-gt120/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-wl50/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-bc40/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-pl90/</loc></url>
+  <url><loc>https://namalight.vercel.app/san-pham/nl-pir80/</loc></url>
+  <url><loc>https://namalight.vercel.app/du-an/tuyen-duong-noi-bo/</loc></url>
+  <url><loc>https://namalight.vercel.app/du-an/khong-gian-san-vuon/</loc></url>
+  <url><loc>https://namalight.vercel.app/du-an/khuon-vien-nha-xuong/</loc></url>
+  <url><loc>https://namalight.vercel.app/du-an/cong-va-nha-o/</loc></url>
+  <url><loc>https://namalight.vercel.app/du-an/khong-gian-cong-cong/</loc></url>
+  <url><loc>https://namalight.vercel.app/tin-tuc/chon-den-theo-khong-gian/</loc></url>
+  <url><loc>https://namalight.vercel.app/tin-tuc/den-duong-lien-the-va-roi-the/</loc></url>
+  <url><loc>https://namalight.vercel.app/tin-tuc/den-san-vuon-va-canh-quan/</loc></url>
+  <url><loc>https://namalight.vercel.app/tin-tuc/dat-lich-tu-van-chieu-sang/</loc></url>
 </urlset>

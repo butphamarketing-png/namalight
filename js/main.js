@@ -54,6 +54,20 @@
         if (first) first.focus();
         return;
       }
+      try {
+        var leads = JSON.parse(localStorage.getItem('noma-cms-leads') || '[]');
+        leads.unshift({
+          id: String(Date.now()),
+          at: Date.now(),
+          name: name ? name.value : '',
+          phone: phone ? phone.value : '',
+          email: email ? email.value : '',
+          need: (form.querySelector('[name="need"]') || {}).value || '',
+          note: note ? note.value : '',
+          source: form.id || 'form'
+        });
+        localStorage.setItem('noma-cms-leads', JSON.stringify(leads.slice(0, 300)));
+      } catch (e) {}
       var lines = linesFrom(new FormData(form));
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(lines.join('\n')).catch(function () {});
@@ -129,7 +143,7 @@
           '</div>' +
         '</div>' +
         '<h2 class="pd__h">Thông số kỹ thuật</h2>' +
-        '<p class="spec-note">Thông số kỹ thuật chính thức sẽ được cập nhật theo catalogue NOMA LIGHT. Hiện chưa công bố số liệu công suất, pin, IP hay thời gian chiếu sáng trên website.</p>' +
+        '<p class="spec-note">' + e(g.catalog || 'Xem catalogue 16 trang NOMA LIGHT.') + ' Liên hệ Minh Trọng 0974 169 141 hoặc <a href="' + R + 'catalogue/">mở catalogue</a> để đối chiếu mã in. Website không công bố watt, pin hay IP ngoài catalogue.</p>' +
         '<h2 class="pd__h">Ứng dụng</h2>' +
         '<p>' + e(p.use) + '</p>' +
         '<div class="pd-apps"><img src="' + R + g.img + '" alt="" /></div>' +
@@ -180,8 +194,9 @@
       var prodLinks = NOMA.products.filter(function (x) { return x.cat === pr.cat; }).slice(0, 3).map(NOMA.cardHtml).join('');
       projEl.innerHTML =
         '<p class="crumb"><a href="' + R + 'index.html">Trang chủ</a> / <a href="' + R + 'du-an/">Dự án</a> / ' + e(pr.title) + '</p>' +
-        '<div class="inner-hero" style="background-image:url(' + R + pr.img + ')"><div class="wrap">' +
-        '<h1>' + e(pr.title) + '</h1><p>' + e(pr.place) + ' · ' + e(pr.type) + '</p></div></div>' +
+        '<h1>' + e(pr.title) + '</h1>' +
+        '<p class="lede">' + e(pr.place) + ' · ' + e(pr.type) + ' · ' + e(pr.lamp) + '</p>' +
+        '<div class="pd-apps"><img src="' + R + pr.img + '" alt="' + e(pr.title) + '" /></div>' +
         '<h2>Tổng quan</h2><p>' + e(pr.summary) + '</p>' +
         '<h2>Giải pháp chiếu sáng</h2><p>' + e(pr.solution) + '</p>' +
         '<h2>Hình ảnh</h2><div class="pd-apps" style="display:grid;gap:12px">' + gals + '</div>' +

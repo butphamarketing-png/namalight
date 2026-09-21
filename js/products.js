@@ -211,39 +211,39 @@ NOMA.products = [
 });
 
 NOMA.groups = [
-  { slug: 'den-duong-nang-luong-mat-troi', label: 'Đèn đường năng lượng mặt trời', cats: ['duong-aio', 'duong-split'], img: 'assets/noma-page-street.png', lead: 'Chiếu sáng đường phố, đường nội bộ và khu dân cư.' },
-  { slug: 'den-pha-nang-luong-mat-troi', label: 'Đèn pha năng lượng mặt trời', cats: ['pha'], img: 'assets/noma-flood.png', lead: 'Chiếu sáng mạnh cho sân bãi, nhà xưởng và khuôn viên.' },
-  { slug: 'den-san-vuon-nang-luong-mat-troi', label: 'Đèn sân vườn năng lượng mặt trời', cats: ['vuon'], img: 'assets/noma-garden.png', lead: 'Điểm nhấn ánh sáng cho lối đi và cảnh quan.' },
-  { slug: 'den-dan-dung-nang-luong-mat-troi', label: 'Đèn dân dụng năng lượng mặt trời', cats: ['cong', 'cam-bien'], img: 'assets/noma-page-home.png', lead: 'Cổng, tường, ban công và nhu cầu gia đình.' }
+  { slug: 'den-duong-nang-luong-mat-troi', label: 'Đèn đường năng lượng mặt trời', cats: ['duong-aio', 'duong-split'], img: 'assets/noma-hero-street.jpg', lead: 'Đường phố, đường nội bộ, khu dân cư. Catalogue: NL-D100 / NL-D200 / NL-D300 và NL-LT.', catalog: 'Catalogue in dòng đèn đường NL-D100, NL-D200, NL-D300 và NL-LT100–400 (liền thể / rời thể).' },
+  { slug: 'den-pha-nang-luong-mat-troi', label: 'Đèn pha năng lượng mặt trời', cats: ['pha'], img: 'assets/noma-proj-factory.jpg', lead: 'Sân bãi, nhà xưởng, khuôn viên. Catalogue: dòng đèn pha NL-P.', catalog: 'Catalogue in dòng đèn pha NL-P cho sân bãi và khuôn viên ngoài trời.' },
+  { slug: 'den-san-vuon-nang-luong-mat-troi', label: 'Đèn sân vườn năng lượng mặt trời', cats: ['vuon'], img: 'assets/noma-proj-garden.jpg', lead: 'Lối đi và cảnh quan. Catalogue: dòng đèn sân vườn NL-SV.', catalog: 'Catalogue in dòng đèn sân vườn NL-SV cho lối đi và tiểu cảnh.' },
+  { slug: 'den-dan-dung-nang-luong-mat-troi', label: 'Đèn dân dụng năng lượng mặt trời', cats: ['cong', 'cam-bien'], img: 'assets/noma-proj-housing.jpg', lead: 'Cổng, tường, ban công, nhà ở. Catalogue: dòng dân dụng NL-D.', catalog: 'Catalogue in dòng dân dụng NL-D cho cổng, tường và nhà ở.' }
 ];
 
 NOMA.CAT_IMG = {
-  'duong-aio': 'assets/noma-page-street.png',
-  'duong-split': 'assets/noma-street-split.png',
-  'pha': 'assets/noma-flood.png',
-  'vuon': 'assets/noma-garden.png',
-  'cong': 'assets/noma-gate.png',
-  'cam-bien': 'assets/noma-pir.png'
+  'duong-aio': 'assets/noma-prod-street.png',
+  'duong-split': 'assets/noma-street-split.jpg',
+  'pha': 'assets/noma-prod-flood.png',
+  'vuon': 'assets/noma-prod-garden.png',
+  'cong': 'assets/noma-prod-home.png',
+  'cam-bien': 'assets/noma-pir.jpg'
 };
 
 NOMA.SKU_IMG = {
-  'nl-st60': 'assets/noma-page-street.png',
-  'nl-st100': 'assets/noma-page-street.png',
-  'nl-st150': 'assets/noma-page-street.png',
-  'nl-st200': 'assets/noma-page-street.png',
-  'nl-sp120': 'assets/noma-street-split.png',
-  'nl-sp200': 'assets/noma-street-split.png',
-  'nl-fl100': 'assets/noma-flood.png',
-  'nl-fl200': 'assets/noma-flood.png',
-  'nl-fl300': 'assets/noma-flood.png',
-  'nl-fl500': 'assets/noma-flood.png',
-  'nl-gd40': 'assets/noma-garden.png',
-  'nl-gd60': 'assets/noma-garden.png',
-  'nl-pl90': 'assets/noma-garden.png',
-  'nl-gt120': 'assets/noma-gate.png',
-  'nl-wl50': 'assets/noma-gate.png',
-  'nl-bc40': 'assets/noma-balcony.png',
-  'nl-pir80': 'assets/noma-pir.png'
+  'nl-st60': 'assets/noma-prod-street.png',
+  'nl-st100': 'assets/noma-prod-street.png',
+  'nl-st150': 'assets/noma-prod-street.png',
+  'nl-st200': 'assets/noma-prod-street.png',
+  'nl-sp120': 'assets/noma-street-split.jpg',
+  'nl-sp200': 'assets/noma-street-split.jpg',
+  'nl-fl100': 'assets/noma-prod-flood.png',
+  'nl-fl200': 'assets/noma-prod-flood.png',
+  'nl-fl300': 'assets/noma-prod-flood.png',
+  'nl-fl500': 'assets/noma-prod-flood.png',
+  'nl-gd40': 'assets/noma-prod-garden.png',
+  'nl-gd60': 'assets/noma-prod-garden.png',
+  'nl-pl90': 'assets/noma-prod-garden.png',
+  'nl-gt120': 'assets/noma-gate.jpg',
+  'nl-wl50': 'assets/noma-gate.jpg',
+  'nl-bc40': 'assets/noma-balcony.jpg',
+  'nl-pir80': 'assets/noma-pir.jpg'
 };
 
 NOMA.root = function () {
@@ -252,7 +252,7 @@ NOMA.root = function () {
 
 NOMA.imgFor = function (p) {
   var key = (p.id || p.sku || '').toLowerCase();
-  return NOMA.SKU_IMG[key] || NOMA.CAT_IMG[p.cat] || 'assets/noma-page-street.png';
+  return NOMA.SKU_IMG[key] || NOMA.CAT_IMG[p.cat] || 'assets/noma-prod-street.png';
 };
 
 NOMA.groupOf = function (cat) {

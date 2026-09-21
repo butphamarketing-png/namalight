@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#0b4aa8" />
   <title>Dự án | NOMA LIGHT</title>
-  <meta name="description" content="Không gian lắp đèn năng lượng mặt trời NOMA LIGHT — ảnh minh họa theo loại công trình." />
+  <meta name="description" content="Không gian ứng dụng đèn năng lượng mặt trời NOMA LIGHT: đường phố, sân vườn, nhà xưởng, nhà ở." />
   <link rel="canonical" href="../du-an/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css?v=30" />
+  <link rel="stylesheet" href="../css/style.css?v=57" />
 </head>
 <body data-page="projects" data-root="../">
   <div id="header-root"></div>
-  <header class="inner-hero" style="background-image:url(../assets/noma-cover.png)">
+  <header class="inner-hero" style="background-image:url(../assets/noma-proj-street.jpg)">
     <div class="wrap">
       <p class="crumb"><a href="../index.html">Trang chủ</a> / Dự án</p>
-      <h1>Dự án thực tế</h1>
-      <p>NOMA LIGHT đồng hành cùng nhiều loại công trình. Ảnh dưới đây là minh họa theo ứng dụng — chưa gắn địa điểm khách hàng khi chưa có dữ liệu.</p>
+      <h1>Không gian ứng dụng</h1>
+      <p>Bốn nhóm trên catalogue: đường phố, sân vườn, nhà xưởng và nhà ở. Ảnh không gian lắp — liên hệ Minh Trọng để khớp mã đèn với công trình của bạn.</p>
     </div>
   </header>
   <main id="main" class="page-body">
@@ -26,21 +28,21 @@
     </div>
   </main>
   <div id="footer-root"></div>
-  <script src="../js/products.js"></script>
-  <script src="../js/content.js"></script>
-  <script src="../js/site.js?v=2"></script>
+  <script defer src="../js/products.js?v=6"></script>
+  <script defer src="../js/content.js?v=6"></script>
+  <script defer src="../js/site.js?v=13"></script>
   <script>
-    (function () {
+    document.addEventListener('DOMContentLoaded', function () {
       var R = document.body.getAttribute('data-root') || '';
       var el = document.getElementById('project-grid');
       if (!el || !NOMA.projects) return;
       el.innerHTML = NOMA.projects.map(function (p, i) {
         var cls = i === 0 ? ' work--lg' : (i === 3 ? ' work--wide' : '');
         return '<a class="work' + cls + '" href="' + R + 'du-an/' + p.slug + '/">' +
-          '<img src="' + R + p.img + '" alt="' + p.title + '" />' +
+          '<img src="' + R + p.img + '" alt="' + p.title + '" width="1280" height="720" loading="lazy" decoding="async" />' +
           '<span><strong>' + p.title + '</strong><small>' + p.type + ' · ' + p.lamp + '</small></span></a>';
       }).join('');
-    })();
+    });
   </script>
 </body>
 </html>

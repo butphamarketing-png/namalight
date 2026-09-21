@@ -4,62 +4,62 @@ NOMA.projects = [
   {
     slug: 'tuyen-duong-noi-bo',
     title: 'Tuyến đường nội bộ',
-    place: 'Ảnh minh họa',
+    place: 'Đường nội bộ',
     type: 'Đường phố',
     lamp: 'Đèn đường năng lượng mặt trời',
     cat: 'duong-aio',
-    img: 'assets/noma-cover.png',
-    gallery: ['assets/noma-cover.png', 'assets/noma-page-street.png', 'assets/noma-street-aio.png'],
-    summary: 'Giải pháp chiếu sáng cho đường nội bộ, lối đi khu dân cư và tuyến ngoài trời không phụ thuộc điện lưới tại vị trí lắp.',
-    solution: 'Ưu tiên đèn đường phù hợp không gian rộng, tấm pin đón nắng ban ngày và cảm biến ánh sáng để vận hành khi trời tối.'
+    img: 'assets/noma-hero-street.jpg',
+    gallery: ['assets/noma-hero-street.jpg', 'assets/noma-proj-street.jpg', 'assets/noma-card-street.jpg'],
+    summary: 'Chiếu sáng đường nội bộ, lối đi khu dân cư và tuyến ngoài trời — sạc ban ngày, sáng khi trời tối, không kéo điện lưới dọc tuyến.',
+    solution: 'Catalogue NOMA LIGHT giới thiệu đèn đường NL-D100 / NL-D200 / NL-D300 và dòng NL-LT. Minh Trọng tư vấn mã theo bề rộng đường và độ cao cột.'
   },
   {
     slug: 'khong-gian-san-vuon',
     title: 'Không gian sân vườn',
-    place: 'Ảnh minh họa',
+    place: 'Sân vườn & cảnh quan',
     type: 'Sân vườn',
     lamp: 'Đèn sân vườn năng lượng mặt trời',
     cat: 'vuon',
-    img: 'assets/noma-page-garden.png',
-    gallery: ['assets/noma-page-garden.png', 'assets/noma-garden.png', 'assets/noma-lifestyle.png'],
-    summary: 'Chiếu sáng lối đi, tiểu cảnh và khuôn viên nhà ở — kết hợp ánh sáng với cảnh quan.',
-    solution: 'Đèn sân vườn đặt dọc lối đi và điểm nhấn cây xanh, vận hành tự động theo điều kiện ánh sáng.'
+    img: 'assets/noma-proj-garden.jpg',
+    gallery: ['assets/noma-proj-garden.jpg', 'assets/noma-card-garden.jpg', 'assets/noma-sol-yard.jpg'],
+    summary: 'Ánh sáng dẫn lối và điểm nhấn cho tiểu cảnh, lối đi, khuôn viên nhà ở.',
+    solution: 'Nhóm đèn sân vườn NL-SV trên catalogue. Bố trí dọc lối đi và gần cây xanh, tự bật khi trời tối.'
   },
   {
     slug: 'khuon-vien-nha-xuong',
     title: 'Khuôn viên nhà xưởng',
-    place: 'Ảnh minh họa',
+    place: 'Sân bãi & nhà xưởng',
     type: 'Nhà xưởng',
     lamp: 'Đèn pha năng lượng mặt trời',
     cat: 'pha',
-    img: 'assets/noma-flood.png',
-    gallery: ['assets/noma-flood.png', 'img/app-factory.jpg', 'assets/noma-cover.png'],
-    summary: 'Bổ sung chiếu sáng cho sân bãi, cổng và khuôn viên ngoài trời của công trình.',
-    solution: 'Đèn pha hướng vào khu vực cần ánh sáng mạnh, lắp linh hoạt trên tường hoặc trụ.'
+    img: 'assets/noma-proj-factory.jpg',
+    gallery: ['assets/noma-proj-factory.jpg', 'assets/noma-card-flood.jpg', 'assets/noma-sol-works.jpg'],
+    summary: 'Bổ sung ánh sáng cho sân bãi, cổng và khuôn viên ngoài trời của công trình sản xuất.',
+    solution: 'Đèn pha NL-P hướng vào khu vực cần ánh sáng mạnh, gắn tường hoặc trụ — xem catalogue để chọn mã.'
   },
   {
     slug: 'cong-va-nha-o',
     title: 'Cổng và nhà ở',
-    place: 'Ảnh minh họa',
+    place: 'Nhà ở dân dụng',
     type: 'Nhà ở',
     lamp: 'Đèn dân dụng năng lượng mặt trời',
     cat: 'cong',
-    img: 'assets/noma-page-home.png',
-    gallery: ['assets/noma-page-home.png', 'assets/noma-gate.png', 'assets/noma-balcony.png'],
-    summary: 'Chiếu sáng cổng, sân, ban công và khu vực quanh nhà mà không kéo điện lưới ngoài trời.',
-    solution: 'Đèn dân dụng gắn cổng hoặc tường, dễ lắp đặt cho nhu cầu gia đình.'
+    img: 'assets/noma-proj-housing.jpg',
+    gallery: ['assets/noma-proj-housing.jpg', 'assets/noma-contact-villa.jpg', 'assets/noma-card-solar.jpg'],
+    summary: 'Chiếu sáng cổng, sân, ban công quanh nhà mà không kéo dây điện ngoài trời.',
+    solution: 'Dòng dân dụng trên catalogue (NL-D). Gắn cổng hoặc tường, phù hợp gia đình và nhà phố.'
   },
   {
     slug: 'khong-gian-cong-cong',
     title: 'Không gian công cộng',
-    place: 'Ảnh minh họa',
+    place: 'Khuôn viên cộng đồng',
     type: 'Công cộng',
     lamp: 'Đèn đường / đèn pha',
     cat: 'duong-aio',
-    img: 'assets/noma-lifestyle.png',
-    gallery: ['assets/noma-lifestyle.png', 'assets/noma-page-street.png', 'img/app-park.jpg'],
-    summary: 'Gợi ý chiếu sáng cho khuôn viên cộng đồng, lối đi chung và không gian ngoài trời.',
-    solution: 'Kết hợp đèn đường hoặc đèn pha tùy quy mô và mục đích sử dụng.'
+    img: 'assets/noma-sol-street.jpg',
+    gallery: ['assets/noma-sol-street.jpg', 'assets/noma-intro-path.jpg', 'assets/noma-hero-yard.jpg'],
+    summary: 'Gợi ý chiếu sáng khuôn viên cộng đồng, lối đi chung và không gian ngoài trời.',
+    solution: 'Kết hợp đèn đường NL-D / NL-LT hoặc đèn pha NL-P tùy quy mô. Đặt lịch để Minh Trọng gợi ý bố trí.'
   }
 ];
 
@@ -69,12 +69,12 @@ NOMA.articles = [
     title: 'Cách chọn đèn năng lượng mặt trời theo không gian',
     cat: 'Hướng dẫn',
     date: '2026-09-01',
-    img: 'assets/noma-page-street.png',
-    excerpt: 'Đường phố, nhà ở, sân vườn hay nhà xưởng đều cần cách nhìn khác nhau trước khi chọn dòng đèn.',
+    img: 'assets/noma-hero-street.jpg',
+    excerpt: 'Đường phố, nhà ở, sân vườn hay nhà xưởng cần cách nhìn khác nhau trước khi chọn dòng đèn.',
     body: [
-      'Không gian sử dụng là yếu tố đầu tiên khi chọn đèn năng lượng mặt trời. Đường nội bộ cần tầm chiếu xa và độ cao lắp khác với sân vườn hay cổng nhà.',
-      'Tiếp theo, hãy xác định diện tích cần chiếu sáng và điều kiện lắp đặt: vị trí tấm pin có đón nắng không, tường hay cột, hướng nắng ban ngày.',
-      'NOMA LIGHT hỗ trợ tư vấn theo nhu cầu thực tế. Bạn có thể xem catalogue 16 trang hoặc đặt lịch để được gợi ý dòng đèn phù hợp.'
+      'Không gian sử dụng là yếu tố đầu tiên. Đường nội bộ cần tầm chiếu và độ cao cột khác sân vườn hay cổng nhà.',
+      'Tiếp theo, xác định diện tích cần sáng và điều kiện lắp: tấm pin có đón nắng không, gắn tường hay cột.',
+      'Catalogue NOMA LIGHT 16 trang chia bốn nhóm: đèn đường, đèn pha, đèn sân vườn, đèn dân dụng. Hotline / Zalo Minh Trọng 0974 169 141 để chốt mã.'
     ]
   },
   {
@@ -82,12 +82,12 @@ NOMA.articles = [
     title: 'Đèn đường liền thể và rời thể khác nhau thế nào?',
     cat: 'Sản phẩm',
     date: '2026-09-05',
-    img: 'assets/noma-street-aio.png',
+    img: 'assets/noma-street-aio.jpg',
     excerpt: 'Hai kiểu kết cấu phục vụ điều kiện lắp đặt khác nhau — không phải lúc nào cũng chọn cùng một kiểu.',
     body: [
-      'Đèn liền thể gọn, tấm pin và thân đèn thành một khối, thuận tiện khi lắp trên cột có hướng nắng phù hợp.',
-      'Đèn rời thể cho phép đặt tấm pin theo hướng nắng, trong khi thân đèn nằm trên tay cần hoặc vị trí chiếu sáng.',
-      'Nên chọn theo hiện trạng công trình. Catalogue NOMA LIGHT giới thiệu cả hai hướng giải pháp; thông số chi tiết sẽ được bổ sung khi có dữ liệu chính thức.'
+      'Đèn liền thể gọn: tấm pin và thân đèn thành một khối, thuận khi lắp trên cột có hướng nắng phù hợp. Catalogue ghi dòng NL-D.',
+      'Đèn rời thể (NL-LT) cho phép đặt tấm pin theo hướng nắng, thân đèn trên tay cần hoặc vị trí chiếu sáng.',
+      'Chọn theo hiện trạng công trình. Xem catalogue hoặc gửi ảnh hiện trạng cho Minh Trọng để đối chiếu mã in catalogue.'
     ]
   },
   {
@@ -95,12 +95,12 @@ NOMA.articles = [
     title: 'Đèn sân vườn cho lối đi và cảnh quan',
     cat: 'Ứng dụng',
     date: '2026-09-08',
-    img: 'assets/noma-page-garden.png',
+    img: 'assets/noma-proj-garden.jpg',
     excerpt: 'Ánh sáng sân vườn vừa dẫn lối vừa tạo điểm nhấn — không nhất thiết phải chiếu thật mạnh.',
     body: [
-      'Với sân vườn, mục tiêu thường là lối đi an toàn và thẩm mỹ cảnh quan hơn là quang thông lớn như đèn đường.',
-      'Có thể bố trí đèn dọc lối đi, gần cây hoặc bồn hoa. Cảm biến ánh sáng giúp đèn tự bật khi trời tối.',
-      'Xem nhóm Đèn sân vườn trên trang sản phẩm hoặc trang ứng dụng để đối chiếu hình ảnh thực tế.'
+      'Với sân vườn, mục tiêu thường là lối đi an toàn và thẩm mỹ cảnh quan hơn quang thông lớn như đèn đường.',
+      'Bố trí dọc lối đi, gần cây hoặc bồn hoa. Cảm biến ánh sáng giúp đèn tự bật khi trời tối.',
+      'Nhóm đèn sân vườn NL-SV nằm trong catalogue. Trang sản phẩm và trang ứng dụng đối chiếu hình không gian lắp.'
     ]
   },
   {
@@ -108,12 +108,12 @@ NOMA.articles = [
     title: 'Khi nào nên đặt lịch tư vấn chiếu sáng?',
     cat: 'Tư vấn',
     date: '2026-09-12',
-    img: 'assets/noma-lifestyle.png',
-    excerpt: 'Nếu chưa rõ công suất, vị trí lắp hay loại đèn — một cuộc trao đổi ngắn giúp chọn đúng hướng.',
+    img: 'assets/noma-contact-villa.jpg',
+    excerpt: 'Chưa rõ vị trí lắp hay loại đèn — một cuộc trao đổi ngắn giúp chọn đúng nhóm trên catalogue.',
     body: [
-      'Đặt lịch hữu ích khi bạn có nhà xưởng, đường nội bộ, sân vườn mới hoặc đang thay hệ thống chiếu sáng ngoài trời.',
-      'Chuẩn bị thông tin: loại không gian, diện tích gần đúng, ảnh hiện trạng nếu có. Hotline / Zalo Minh Trọng 0974 169 141.',
-      'Form đặt lịch trên website sao chép nội dung để bạn gửi nhanh qua Zalo — chưa có hệ thống CMS backend.'
+      'Đặt lịch khi bạn có nhà xưởng, đường nội bộ, sân vườn mới hoặc đang thay hệ thống chiếu sáng ngoài trời.',
+      'Chuẩn bị: loại không gian, diện tích gần đúng, ảnh hiện trạng nếu có. Email info@nomalight.vn hoặc Zalo Minh Trọng 0974 169 141.',
+      'Form trên website sao chép nội dung để gửi nhanh qua Zalo. Catalogue PDF tải trực tiếp từ trang Catalogue.'
     ]
   }
 ];

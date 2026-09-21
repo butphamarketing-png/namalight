@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /adminbp
 
 Sitemap: https://namalight.vercel.app/sitemap.xml
