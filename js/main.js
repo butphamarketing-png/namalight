@@ -230,27 +230,34 @@
   var searchRoot = document.getElementById('search-results');
   if (searchRoot) {
     var q = (new URLSearchParams(location.search).get('q') || '').trim();
-    var qEl = document.getElementById('search-q');
-    if (qEl) qEl.textContent = q || '—';
-    var ql = q.toLowerCase();
-    function hit(text) { return !ql || (text || '').toLowerCase().indexOf(ql) !== -1; }
-    var prods = NOMA.products.filter(function (p) { return hit(p.name + ' ' + p.blurb + ' ' + p.use); });
-    var projs = (NOMA.projects || []).filter(function (p) { return hit(p.title + ' ' + p.type + ' ' + p.summary); });
-    var arts = (NOMA.articles || []).filter(function (p) { return hit(p.title + ' ' + p.excerpt); });
-    var n = prods.length + projs.length + arts.length;
+    var qInput = document.getElementById('search-input');
+    if (qInput) qInput.value = q;
+    var titleEl = document.getElementById('search-title');
+    if (titleEl) titleEl.textContent = q ? ('Kết quả cho “' + q + '”') : 'Tìm kiếm';
     var nEl = document.getElementById('search-n');
-    if (nEl) nEl.textContent = q ? (n + ' kết quả') : 'Nhập từ khóa để tìm sản phẩm, dự án và tin tức.';
-    function block(title, html) {
-      return html ? '<section class="search-block"><h2>' + title + '</h2>' + html + '</section>' : '';
+    if (!q) {
+      if (nEl) nEl.textContent = 'Nhập từ khóa để tìm sản phẩm, dự án và tin tức.';
+      searchRoot.innerHTML = '';
+    } else {
+      var ql = q.toLowerCase();
+      function hit(text) { return (text || '').toLowerCase().indexOf(ql) !== -1; }
+      var prods = NOMA.products.filter(function (p) { return hit(p.name + ' ' + p.sku + ' ' + p.blurb + ' ' + p.use); });
+      var projs = (NOMA.projects || []).filter(function (p) { return hit(p.title + ' ' + p.type + ' ' + p.summary); });
+      var arts = (NOMA.articles || []).filter(function (p) { return hit(p.title + ' ' + p.excerpt); });
+      var n = prods.length + projs.length + arts.length;
+      if (nEl) nEl.textContent = n + ' kết quả';
+      function block(title, html) {
+        return html ? '<section class="search-block"><h2>' + title + '</h2>' + html + '</section>' : '';
+      }
+      searchRoot.innerHTML =
+        block('Sản phẩm', prods.length ? '<div class="grid-products">' + prods.map(NOMA.cardHtml).join('') + '</div>' : '') +
+        block('Dự án', projs.map(function (p) {
+          return '<a class="search-row" href="' + R + 'du-an/' + p.slug + '/"><strong>' + e(p.title) + '</strong><span>' + e(p.type) + '</span></a>';
+        }).join('')) +
+        block('Tin tức', arts.map(function (p) {
+          return '<a class="search-row" href="' + R + 'tin-tuc/' + p.slug + '/"><strong>' + e(p.title) + '</strong><span>' + e(p.cat) + '</span></a>';
+        }).join('')) +
+        (n === 0 ? '<p class="lede">Không có kết quả cho từ khóa này.</p>' : '');
     }
-    searchRoot.innerHTML =
-      block('Sản phẩm', prods.length ? '<div class="grid-products">' + prods.map(NOMA.cardHtml).join('') + '</div>' : '') +
-      block('Dự án', projs.map(function (p) {
-        return '<a class="search-row" href="' + R + 'du-an/' + p.slug + '/"><strong>' + e(p.title) + '</strong><span>' + e(p.type) + '</span></a>';
-      }).join('')) +
-      block('Tin tức', arts.map(function (p) {
-        return '<a class="search-row" href="' + R + 'tin-tuc/' + p.slug + '/"><strong>' + e(p.title) + '</strong><span>' + e(p.cat) + '</span></a>';
-      }).join('')) +
-      (q && n === 0 ? '<p class="lede">Không có kết quả cho từ khóa này.</p>' : '');
   }
 })();

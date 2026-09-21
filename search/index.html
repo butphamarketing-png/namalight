@@ -8,15 +8,19 @@
   <title>Tìm kiếm | NOMA LIGHT</title>
   <meta name="description" content="Tìm sản phẩm, dự án và tin tức NOMA LIGHT." />
   <link rel="canonical" href="../search/" />
-  <link rel="stylesheet" href="../css/style.css?v=63" />
+  <link rel="stylesheet" href="../css/style.css?v=68" />
 </head>
 <body data-root="../">
   <div id="header-root"></div>
   <header class="inner-hero" style="background:#062a6b">
     <div class="wrap">
       <p class="crumb"><a href="../index.html">Trang chủ</a> / Tìm kiếm</p>
-      <h1>Kết quả cho “<span id="search-q"></span>”</h1>
+      <h1 id="search-title">Tìm kiếm</h1>
       <p id="search-n"></p>
+      <form class="search-form" action="./" method="get" role="search">
+        <input type="search" name="q" id="search-input" placeholder="Tên đèn, mã sản phẩm, dự án…" value="" autocomplete="off" />
+        <button class="btn btn--hero" type="submit">Tìm</button>
+      </form>
     </div>
   </header>
   <main id="main" class="page-body">
@@ -25,7 +29,7 @@
   <div id="footer-root"></div>
   <script defer src="../js/products.js?v=6"></script>
   <script defer src="../js/content.js?v=6"></script>
-  <script defer src="../js/site.js?v=14"></script>
-  <script defer src="../js/main.js?v=7"></script>
+  <script defer src="../js/site.js?v=18"></script>
+  <script defer src="../js/main.js?v=8"></script>
 </body>
 </html>

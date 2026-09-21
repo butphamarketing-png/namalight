@@ -1,4 +1,5 @@
 (function () {
+  document.documentElement.id = 'top';
   var page = document.body.getAttribute('data-page') || '';
   var R = document.body.getAttribute('data-root') || '';
   var groups = (window.NOMA && NOMA.groups) ? NOMA.groups : [];
@@ -10,7 +11,10 @@
     var home = page === 'home';
     var seen = false;
     try { seen = sessionStorage.getItem('noma-boot') === '1'; } catch (err) {}
-    if (!home && seen) return;
+    if (!home || seen) {
+      document.body.classList.remove('noma-booting');
+      return;
+    }
 
     var boot = document.getElementById('noma-boot');
     if (!boot) {
@@ -176,7 +180,7 @@
             '<a href="' + h('dieu-khoan-su-dung/') + '">Điều khoản sử dụng</a>' +
             '<a href="' + h('chinh-sach-bao-hanh/') + '">Chính sách bảo hành</a>' +
           '</p>' +
-          '<a class="to-top" href="#main" aria-label="Lên đầu trang">↑</a>' +
+          '<a class="to-top" href="#top" aria-label="Lên đầu trang">↑</a>' +
         '</div>' +
       '</footer>';
   }
@@ -193,8 +197,14 @@
   }
   if (btn && nav) {
     btn.addEventListener('click', function () { setOpen(!nav.classList.contains('is-open')); });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
   }
   if (scrim) scrim.addEventListener('click', function () { setOpen(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setOpen(false);
+  });
 
   var headEl = document.querySelector('.site-head');
   if (page === 'home' && headEl) {
@@ -228,6 +238,13 @@
       '</a>';
     document.body.appendChild(dock);
   }
+
+  document.addEventListener('click', function (e) {
+    var topBtn = e.target.closest && e.target.closest('.to-top');
+    if (!topBtn) return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   var hero = document.querySelector('[data-hero]');
   if (hero) {
@@ -285,8 +302,8 @@
   }
 
   var voices = document.querySelector('[data-voices]');
-  if (voices) {
-    var vTrack = voices.querySelector('.voices__track');
+  var vTrack = voices ? voices.querySelector('.voices__track') : null;
+  if (voices && vTrack) {
     var vPrev = voices.querySelector('[data-voices-prev]');
     var vNext = voices.querySelector('[data-voices-next]');
     var vDots = voices.querySelectorAll('.voices__dots button');
@@ -421,8 +438,6 @@
       document.querySelectorAll('header.inner-hero, main > section').forEach(function (el) {
         list.push(el);
       });
-      var pr = document.getElementById('product-root');
-      if (pr && pr.children.length) list.push(pr);
       return list;
     }
 
@@ -470,8 +485,14 @@
     });
 
     setTimeout(function () {
+      document.querySelectorAll('[data-fx], .noma-fx-item').forEach(function (el) {
+        el.classList.add('is-in');
+      });
+    }, 1400);
+
+    setTimeout(function () {
       var extra = [];
-      document.querySelectorAll('#catalog-grid .product, #product-root > *').forEach(function (el) {
+      document.querySelectorAll('#catalog-grid .product').forEach(function (el) {
         if (el.classList.contains('noma-fx-item') || el.getAttribute('data-fx')) return;
         el.classList.add('noma-fx-item');
         extra.push(el);

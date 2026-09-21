@@ -295,6 +295,8 @@ button.cat-download {
 @media (max-width: 767px) {
   body[data-page="ecatalogue"] { --cat-head: 52px; }
   .flip-stage { padding: 0 46px; width: 100vw; max-height: 74vh; }
+  .flip-zoom { overflow: hidden; }
+  .flip-zoom::after { display: none; }
   .cat-chrome { gap: 10px; }
 }
 @media (max-width: 980px) {
