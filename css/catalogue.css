@@ -1277,6 +1277,150 @@ body.is-cat-fs .cat-room {
   color: #c9daf5;
 }
 
+.pg-c9 {
+  padding: 12px 12px 22px !important;
+  background: linear-gradient(180deg, #eef5ff 0%, #fff 42%);
+  color: #12305c;
+  overflow: hidden;
+}
+.pg-c9 h2 {
+  margin: 4px 0 6px;
+  max-width: 72%;
+  color: #0a2a78 !important;
+  font-size: clamp(18px, 4.4vw, 26px);
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+.pg-c9 h2 em {
+  display: block;
+  font-style: normal;
+  font-size: 0.78em;
+}
+.pg-c9__lead {
+  max-width: 62%;
+  margin: 0 0 8px;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #4a5b72 !important;
+}
+.pg-c9 .pg-c7__skus { margin-top: 4px; }
+.pg-c9 .pg-c7__skus img { height: 86px; }
+.pg-c9__vals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.pg-c9__vals li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3px;
+}
+.pg-c9__vals span {
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid #1b4f9c;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #1b4f9c;
+}
+.pg-c9__vals svg { width: 14px; height: 14px; }
+.pg-c9__vals strong {
+  font-size: 7.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0a2a78;
+}
+.pg-c9__vals small {
+  font-size: 7px;
+  line-height: 1.3;
+  color: #5a6b80;
+}
+
+.pg-c10 {
+  padding: 12px 12px 22px !important;
+  background: #07183f;
+  color: #fff;
+  overflow: hidden;
+}
+.pg-c10 h2 {
+  margin: 2px 0 6px;
+  color: #fff !important;
+  font-size: clamp(20px, 4.6vw, 30px);
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+.pg-c10 h2 em {
+  font-style: normal;
+  color: #f0c21a;
+}
+.pg-c10__lead {
+  max-width: 78%;
+  margin: 0 0 8px;
+  font-size: 9.5px;
+  line-height: 1.4;
+  color: #d5e4ff !important;
+}
+.pg-c10__pills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+.pg-c10__pills li { text-align: center; }
+.pg-c10__pills strong {
+  display: block;
+  font-size: 7.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.pg-c10__pills span {
+  display: block;
+  font-size: 7px;
+  color: #c9daf5;
+  margin-top: 2px;
+}
+.pg-c10__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin: -24px 0 0;
+  position: relative;
+  z-index: 2;
+}
+.pg-c10__cards figure {
+  margin: 0;
+  background: #0a2d78;
+  overflow: hidden;
+}
+.pg-c10__cards img {
+  width: 100%;
+  height: 54px;
+  object-fit: cover;
+  display: block;
+}
+.pg-c10__cards figcaption { padding: 5px 6px 7px; }
+.pg-c10__cards strong {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.pg-c10__cards span {
+  display: block;
+  margin-top: 2px;
+  font-size: 7.5px;
+  line-height: 1.3;
+  color: #c9daf5;
+}
+
 .print-sheet { padding: 0 !important; background: #fff; }
 .print-sheet__head {
   display: flex;
