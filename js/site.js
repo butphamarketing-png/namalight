@@ -12,97 +12,58 @@
       return '<a href="' + h('san-pham/' + g.slug + '/') + '">' + g.label + '</a>';
     }).join('');
   }
+  function appsMenu() {
+    return [
+      ['ung-dung/', 'Tổng quan ứng dụng'],
+      ['du-an/tuyen-duong-noi-bo/', 'Tuyến đường nội bộ'],
+      ['du-an/khong-gian-san-vuon/', 'Không gian sân vườn'],
+      ['du-an/khuon-vien-nha-xuong/', 'Khuôn viên nhà xưởng'],
+      ['du-an/cong-va-nha-o/', 'Cổng & nhà ở'],
+      ['du-an/khong-gian-cong-cong/', 'Không gian công cộng']
+    ].map(function (x) {
+      return '<a href="' + h(x[0]) + '">' + x[1] + '</a>';
+    }).join('');
+  }
+
+  var navLinks =
+    '<a href="' + h('index.html') + '"' + current('home') + '>Trang chủ</a>' +
+    '<a href="' + h('gioi-thieu/') + '"' + current('about') + '>Giới thiệu</a>' +
+    '<div class="nav__drop">' +
+      '<a href="' + h('san-pham/') + '"' + current('catalog') + '>Sản phẩm <span class="nav__caret" aria-hidden="true"></span></a>' +
+      '<div class="nav__menu">' + productMenu() + '</div>' +
+    '</div>' +
+    '<div class="nav__drop">' +
+      '<a href="' + h('ung-dung/') + '"' + current('apps') + '>Ứng dụng <span class="nav__caret" aria-hidden="true"></span></a>' +
+      '<div class="nav__menu">' + appsMenu() + '</div>' +
+    '</div>' +
+    '<a href="' + h('du-an/') + '"' + current('projects') + '>Dự án</a>' +
+    '<a href="' + h('cong-nghe/') + '"' + current('tech') + '>Công nghệ</a>' +
+    '<a href="' + h('catalogue/') + '"' + current('ecatalogue') + '>Catalogue</a>' +
+    '<a href="' + h('tin-tuc/') + '"' + current('news') + '>Tin tức</a>' +
+    '<a href="' + h('lien-he/') + '"' + current('contact') + '>Liên hệ</a>';
 
   var header = document.getElementById('header-root');
-  if (header && page === 'ecatalogue') {
+  if (header) {
     header.innerHTML =
       '<a class="skip" href="#main">Bỏ qua điều hướng</a>' +
-      '<div class="site-head site-head--slim">' +
-        '<nav class="nav-bar" aria-label="Chính">' +
-          '<div class="wrap nav-bar__inner">' +
-            '<a class="brand brand--slim" href="' + h('index.html') + '" aria-label="NOMA LIGHT — Trang chủ">' +
-              '<span class="brand__mark" aria-hidden="true">' +
-                '<svg viewBox="0 0 36 36" fill="none"><path d="M10 22c4-9 8-14 8-14s4 5 8 14c-5 6-11 6-16 0Z" fill="#f5c518"/><path d="M18 8c0 8-3 12-6 16" stroke="#062a6b" stroke-width="1.4" fill="none"/></svg>' +
-              '</span>' +
-              '<span class="brand__text"><strong>NOMA LIGHT</strong></span>' +
-            '</a>' +
-            '<button class="menu-btn" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
-            '<div class="nav" id="site-nav">' +
-              '<a class="nav__home" href="' + h('index.html') + '"' + current('home') + '>Trang chủ</a>' +
-              '<a href="' + h('gioi-thieu/') + '"' + current('about') + '>Giới thiệu</a>' +
-              '<div class="nav__drop">' +
-                '<a href="' + h('san-pham/') + '"' + current('catalog') + '>Sản phẩm</a>' +
-                '<div class="nav__menu">' + productMenu() + '</div>' +
-              '</div>' +
-              '<a href="' + h('ung-dung/') + '"' + current('apps') + '>Ứng dụng</a>' +
-              '<a href="' + h('du-an/') + '"' + current('projects') + '>Dự án</a>' +
-              '<a href="' + h('cong-nghe/') + '"' + current('tech') + '>Công nghệ</a>' +
-              '<a class="nav__catalogue" href="' + h('catalogue/') + '"' + current('ecatalogue') + '>Catalogue</a>' +
-              '<a href="' + h('tin-tuc/') + '"' + current('news') + '>Tin tức</a>' +
-              '<a href="' + h('lien-he/') + '"' + current('contact') + '>Liên hệ</a>' +
-            '</div>' +
-          '</div>' +
-        '</nav>' +
-      '</div>' +
-      '<div class="nav-scrim" id="nav-scrim" hidden></div>';
-  } else if (header) {
-    header.innerHTML =
-      '<a class="skip" href="#main">Bỏ qua điều hướng</a>' +
-      '<div class="site-head">' +
-      '<div class="topbar">' +
-        '<div class="wrap topbar__inner">' +
-          '<div class="topbar__left">' +
-            '<a href="tel:0974169141">0974 169 141</a>' +
-            '<a href="https://zalo.me/0974169141" target="_blank" rel="noopener">Zalo Minh Trọng</a>' +
-          '</div>' +
-          '<div class="topbar__right">' +
-            '<a href="' + h('san-pham/den-duong-nang-luong-mat-troi/') + '">Đèn đường</a>' +
-            '<a href="' + h('san-pham/den-pha-nang-luong-mat-troi/') + '">Đèn pha</a>' +
-            '<a href="' + h('san-pham/den-san-vuon-nang-luong-mat-troi/') + '">Đèn sân vườn</a>' +
-          '</div>' +
-        '</div>' +
-      '</div>' +
-      '<div class="masthead">' +
-        '<div class="wrap masthead__inner">' +
+      '<div class="site-head' + (page === 'ecatalogue' ? ' site-head--slim' : '') + '">' +
+        '<div class="wrap site-head__bar">' +
           '<a class="brand" href="' + h('index.html') + '" aria-label="NOMA LIGHT — Trang chủ">' +
-            '<span class="brand__mark" aria-hidden="true">' +
-              '<svg viewBox="0 0 36 36" fill="none"><path d="M10 22c4-9 8-14 8-14s4 5 8 14c-5 6-11 6-16 0Z" fill="#f5c518"/><path d="M18 8c0 8-3 12-6 16" stroke="#062a6b" stroke-width="1.4" fill="none"/></svg>' +
-            '</span>' +
-            '<span class="brand__text"><strong>NOMA LIGHT</strong><small>Sáng hơn cho cuộc sống xanh</small></span>' +
-          '</a>' +
-          '<form class="header-search" action="' + h('search/') + '" method="get" role="search">' +
-            '<label class="visually-hidden" for="header-q">Tìm kiếm</label>' +
-            '<input id="header-q" name="q" type="search" placeholder="Tìm sản phẩm, dự án, tin tức..." />' +
-            '<button type="submit" aria-label="Tìm kiếm">' +
-              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>' +
-            '</button>' +
-          '</form>' +
-          '<a class="header-hotline" href="tel:0974169141">' +
-            '<span class="header-hotline__icon" aria-hidden="true">☎</span>' +
-            '<span><small>Hotline đặt hàng</small><strong>0974 169 141</strong></span>' +
+            '<span class="brand__name">NOMA LIGHT<sup>®</sup></span>' +
+            '<span class="brand__tag">Chiếu Sáng Mọi Con Đường</span>' +
           '</a>' +
           '<button class="menu-btn" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
-        '</div>' +
-      '</div>' +
-      '<nav class="nav-bar" aria-label="Chính">' +
-        '<div class="wrap nav-bar__inner">' +
-          '<div class="nav" id="site-nav">' +
-            '<a class="nav__home" href="' + h('index.html') + '"' + current('home') + '>Trang chủ</a>' +
-            '<a href="' + h('gioi-thieu/') + '"' + current('about') + '>Giới thiệu</a>' +
-            '<div class="nav__drop">' +
-              '<a href="' + h('san-pham/') + '"' + current('catalog') + '>Sản phẩm</a>' +
-              '<div class="nav__menu">' + productMenu() + '</div>' +
-            '</div>' +
-            '<a href="' + h('ung-dung/') + '"' + current('apps') + '>Ứng dụng</a>' +
-            '<a href="' + h('du-an/') + '"' + current('projects') + '>Dự án</a>' +
-            '<a href="' + h('cong-nghe/') + '"' + current('tech') + '>Công nghệ</a>' +
-            '<a class="nav__catalogue" href="' + h('catalogue/') + '"' + current('ecatalogue') + '>Catalogue</a>' +
-            '<a href="' + h('tin-tuc/') + '"' + current('news') + '>Tin tức</a>' +
-            '<a href="' + h('lien-he/') + '"' + current('contact') + '>Liên hệ</a>' +
+          '<nav class="nav" id="site-nav" aria-label="Chính">' + navLinks + '</nav>' +
+          '<div class="site-head__tools">' +
+            '<a class="site-search" href="' + h('search/') + '" aria-label="Tìm kiếm">' +
+              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>' +
+            '</a>' +
+            '<a class="site-call" href="tel:0974169141">' +
+              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.5a16 16 0 0 0 6.4 6.4l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>' +
+              '0974 169 141' +
+            '</a>' +
           '</div>' +
-          '<a class="nav-cart" href="' + h('dat-lich/') + '"' + current('booking') + '>Đặt lịch</a>' +
         '</div>' +
-      '</nav>' +
       '</div>' +
       '<div class="nav-scrim" id="nav-scrim" hidden></div>';
   }
@@ -181,4 +142,38 @@
     btn.addEventListener('click', function () { setOpen(!nav.classList.contains('is-open')); });
   }
   if (scrim) scrim.addEventListener('click', function () { setOpen(false); });
+
+  var hero = document.querySelector('[data-hero]');
+  if (hero) {
+    var slides = hero.querySelectorAll('.hero__slide');
+    var dots = hero.querySelectorAll('.hero__dot');
+    var i = 0;
+    function go(n) {
+      i = (n + slides.length) % slides.length;
+      for (var s = 0; s < slides.length; s++) {
+        slides[s].classList.toggle('is-on', s === i);
+        if (dots[s]) {
+          dots[s].classList.toggle('is-on', s === i);
+          dots[s].setAttribute('aria-selected', s === i ? 'true' : 'false');
+        }
+      }
+    }
+    var prev = hero.querySelector('.hero__arrow--prev');
+    var next = hero.querySelector('.hero__arrow--next');
+    var timer;
+    function play() {
+      clearInterval(timer);
+      timer = setInterval(function () { go(i + 1); }, 5000);
+    }
+    if (prev) prev.addEventListener('click', function () { go(i - 1); play(); });
+    if (next) next.addEventListener('click', function () { go(i + 1); play(); });
+    for (var d = 0; d < dots.length; d++) {
+      (function (idx) {
+        dots[idx].addEventListener('click', function () { go(idx); play(); });
+      })(d);
+    }
+    hero.addEventListener('mouseenter', function () { clearInterval(timer); });
+    hero.addEventListener('mouseleave', play);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) play();
+  }
 })();

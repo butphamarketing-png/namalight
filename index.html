@@ -14,508 +14,249 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=29" />
+  <link rel="stylesheet" href="css/style.css?v=39" />
 </head>
 <body data-page="home">
   <div id="header-root"></div>
 
   <main id="main">
-    <section class="hero">
-      <div class="hero__bg" aria-hidden="true">
-        <img
-          src="assets/noma-cover.png"
-          alt="Đèn đường năng lượng mặt trời chiếu sáng khu dân cư lúc chạng vạng"
-        />
-      </div>
-      <div class="wrap hero__inner">
-        <p class="kicker">Đèn năng lượng mặt trời</p>
-        <h1>CHIẾU SÁNG THÔNG MINH<br /><em>KIẾN TẠO TƯƠNG LAI XANH</em></h1>
-        <p class="lede">Tiết kiệm hôm nay, xanh hơn ngày mai.</p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="san-pham/">Khám phá sản phẩm →</a>
-          <a class="btn btn--ghost" href="catalogue/">Xem Catalogue</a>
+    <section class="hero" data-hero aria-label="Hình ảnh chiếu sáng NOMA LIGHT">
+      <div class="hero__slides" aria-hidden="true">
+        <div class="hero__slide is-on">
+          <img src="assets/noma-hero-villa.jpg" alt="" />
         </div>
-        <ul class="hero__feats">
+        <div class="hero__slide">
+          <img src="assets/noma-hero-street.jpg" alt="" />
+        </div>
+        <div class="hero__slide">
+          <img src="assets/noma-hero-yard.jpg" alt="" />
+        </div>
+      </div>
+      <h1 class="visually-hidden">NOMA LIGHT — Giải pháp chiếu sáng bằng năng lượng mặt trời</h1>
+      <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Slide trước"></button>
+      <button class="hero__arrow hero__arrow--next" type="button" aria-label="Slide sau"></button>
+      <div class="hero__dots" role="tablist" aria-label="Slide trang chủ">
+        <button class="hero__dot is-on" type="button" aria-label="Slide 1" aria-selected="true"></button>
+        <button class="hero__dot" type="button" aria-label="Slide 2" aria-selected="false"></button>
+        <button class="hero__dot" type="button" aria-label="Slide 3" aria-selected="false"></button>
+      </div>
+    </section>
+
+    <section class="intro" id="gioi-thieu">
+      <div class="wrap intro__grid">
+        <a class="intro__visual" href="gioi-thieu/">
+          <img src="assets/noma-intro-path.jpg" alt="Đèn đường năng lượng mặt trời dọc lối đi khu dân cư" />
+          <span class="intro__cap">Ánh sáng<br />kiến tạo<br />tương lai</span>
+        </a>
+        <div class="intro__copy">
+          <p class="sol__kicker">Giới thiệu</p>
+          <h2 class="intro__brand">NOMA <em>LIGHT</em></h2>
+          <p>NOMA LIGHT là thương hiệu chuyên cung cấp các giải pháp chiếu sáng năng lượng mặt trời, mang đến không gian sống xanh, an toàn, hiện đại và bền vững cho cộng đồng.</p>
+          <p>Với tinh thần đổi mới và cam kết về chất lượng, chúng tôi không ngừng nghiên cứu, cải tiến sản phẩm và dịch vụ để tạo ra những giải pháp chiếu sáng hiệu quả, phù hợp cho đường phố, khu dân cư, công trình và khu công nghiệp.</p>
+          <ul class="intro__feats">
+            <li>
+              <span aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3c4 4 6 7 6 10a6 6 0 1 1-12 0c0-3 2-6 6-10Z"/></svg>
+              </span>
+              Thân thiện<br />môi trường
+            </li>
+            <li>
+              <span aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3Z"/></svg>
+              </span>
+              Chất lượng<br />ổn định
+            </li>
+            <li>
+              <span aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+              </span>
+              Giải pháp<br />bền vững
+            </li>
+          </ul>
+          <div class="intro__actions">
+            <a class="btn btn--primary" href="gioi-thieu/">Tìm hiểu thêm →</a>
+            <p class="intro__note">Vì một cuộc sống<br />tương lai tốt đẹp hơn</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lineup" id="san-pham">
+      <div class="wrap">
+        <div class="lineup__head">
+          <div>
+            <p class="sol__kicker">Sản phẩm</p>
+            <h2>Hệ sản phẩm <em>NOMA LIGHT</em></h2>
+            <p class="lineup__sub">Đa dạng giải pháp – phù hợp mọi không gian</p>
+          </div>
+          <a class="lineup__all" href="san-pham/">Xem tất cả sản phẩm →</a>
+        </div>
+        <div class="lineup__grid">
+          <article>
+            <a href="san-pham/den-duong-nang-luong-mat-troi/">
+              <img src="assets/noma-prod-street.png" alt="Đèn đường năng lượng mặt trời" />
+            </a>
+            <h3>Đèn đường năng lượng mặt trời</h3>
+            <p>Giải pháp chiếu sáng hiệu quả cho đường phố và hạ tầng ngoài trời.</p>
+            <a href="san-pham/den-duong-nang-luong-mat-troi/">Xem sản phẩm →</a>
+          </article>
+          <article>
+            <a href="san-pham/den-pha-nang-luong-mat-troi/">
+              <img src="assets/noma-prod-flood.png" alt="Đèn pha năng lượng mặt trời" />
+            </a>
+            <h3>Đèn pha năng lượng mặt trời</h3>
+            <p>Chiếu sáng mạnh mẽ cho sân bãi, nhà xưởng và công trình.</p>
+            <a href="san-pham/den-pha-nang-luong-mat-troi/">Xem sản phẩm →</a>
+          </article>
+          <article>
+            <a href="san-pham/den-san-vuon-nang-luong-mat-troi/">
+              <img src="assets/noma-prod-garden.png" alt="Đèn sân vườn năng lượng mặt trời" />
+            </a>
+            <h3>Đèn sân vườn năng lượng mặt trời</h3>
+            <p>Tạo điểm nhấn cho sân vườn, lối đi và cảnh quan.</p>
+            <a href="san-pham/den-san-vuon-nang-luong-mat-troi/">Xem sản phẩm →</a>
+          </article>
+          <article>
+            <a href="san-pham/den-dan-dung-nang-luong-mat-troi/">
+              <img src="assets/noma-prod-home.png" alt="Đèn dân dụng năng lượng mặt trời" />
+            </a>
+            <h3>Đèn dân dụng năng lượng mặt trời</h3>
+            <p>Lựa chọn tiện lợi cho nhà ở, cổng, ban công và không gian ngoài trời.</p>
+            <a href="san-pham/den-dan-dung-nang-luong-mat-troi/">Xem sản phẩm →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band" aria-label="Khẩu hiệu">
+      <img src="assets/noma-quote-mountains.jpg" alt="" />
+      <div class="quote-band__copy">
+        <p>“Chiếu sáng mọi con đường”</p>
+        <small>Cùng NOMA LIGHT kiến tạo cuộc sống xanh</small>
+      </div>
+    </section>
+
+    <section class="tech-globe" id="cong-nghe">
+      <img class="tech-globe__bg" src="assets/noma-tech-lamp.jpg" alt="" />
+      <div class="wrap tech-globe__grid">
+        <div class="tech-globe__copy">
+          <p class="sol__kicker">Công nghệ</p>
+          <h2>Công nghệ tạo nên<br /><em>ánh sáng bền vững</em></h2>
+          <p>Kết hợp giữa năng lượng sạch và công nghệ hiện đại để mang đến giải pháp chiếu sáng hiệu quả, ổn định và thân thiện với môi trường.</p>
+        </div>
+        <ul class="tech-globe__notes">
           <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4 4 6 7 6 10a6 6 0 1 1-12 0c0-3 2-6 6-10Z"/><path d="M9 17c.4 1.2 1.4 2 3 2s2.6-.8 3-2"/></svg>
-            Năng lượng sạch
+            <span></span>
+            <div>
+              <strong>Tấm pin mặt trời</strong>
+              <small>Chuyển đổi năng lượng ánh sáng thành điện năng</small>
+            </div>
           </li>
           <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 1 6 6c0 2.5-1.4 4-3 5.5-.8.8-1 1.5-1 2.5h-4c0-1-.2-1.7-1-2.5C7.4 13 6 11.5 6 9a6 6 0 0 1 6-6Z"/></svg>
-            Chiếu sáng tự động
+            <span></span>
+            <div>
+              <strong>Pin lưu trữ</strong>
+              <small>Lưu trữ năng lượng để sử dụng khi trời tối</small>
+            </div>
           </li>
           <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3Z"/></svg>
-            Bền bỉ ngoài trời
+            <span></span>
+            <div>
+              <strong>LED chiếu sáng</strong>
+              <small>Hiệu suất cao, ánh sáng ổn định</small>
+            </div>
+          </li>
+          <li>
+            <span></span>
+            <div>
+              <strong>Điều khiển thông minh</strong>
+              <small>Tự động vận hành theo điều kiện chiếu sáng</small>
+            </div>
           </li>
         </ul>
       </div>
-      <span class="hero__scroll" aria-hidden="true"></span>
     </section>
 
-    <section class="about" id="gioi-thieu">
-      <div class="wrap about__grid">
-        <div class="about__photo">
-          <img src="img/about-lamp.jpg" alt="Đèn đường năng lượng mặt trời chiếu sáng sân vườn biệt thự" />
+    <section class="proj-mosaic" id="du-an">
+      <div class="wrap proj-mosaic__grid">
+        <div class="proj-mosaic__copy">
+          <p class="sol__kicker">Dự án</p>
+          <h2>Những công trình<br /><em>được thắp sáng</em></h2>
+          <p>NOMA LIGHT đồng hành cùng nhiều dự án trên khắp các tỉnh thành, mang ánh sáng đến cộng đồng và kiến tạo những không gian an toàn, hiện đại hơn.</p>
+          <a class="btn btn--primary" href="du-an/">Xem thêm dự án →</a>
         </div>
-        <div class="about__copy">
-          <p class="about__kicker">Giới thiệu</p>
-          <h2 class="about__brand">NOMA <em>LIGHT</em></h2>
-          <p class="about__tag">Sáng hơn cho cuộc sống xanh</p>
-          <p class="about__lead">
-            NOMA LIGHT là đơn vị chuyên cung cấp giải pháp chiếu sáng bằng năng lượng mặt trời,
-            mang đến sản phẩm chất lượng, hiện đại và bền bỉ. Chúng tôi hướng đến một cuộc sống
-            xanh hơn, tiết kiệm hơn và thân thiện hơn với môi trường.
-          </p>
-          <ul class="about__feats">
-            <li>
-              <span class="about__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3c4 4 6 7 6 10a6 6 0 1 1-12 0c0-3 2-6 6-10Z"/></svg>
-              </span>
-              <strong>Tiết kiệm</strong>
-              <span>Tận dụng nguồn năng lượng mặt trời</span>
-            </li>
-            <li>
-              <span class="about__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 1 6 6c0 2.5-1.4 4-3 5.5-.8.8-1 1.5-1 2.5h-4c0-1-.2-1.7-1-2.5C7.4 13 6 11.5 6 9a6 6 0 0 1 6-6Z"/></svg>
-              </span>
-              <strong>Thông minh</strong>
-              <span>Tự động hoạt động ngày và đêm</span>
-            </li>
-            <li>
-              <span class="about__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3Z"/></svg>
-              </span>
-              <strong>Bền vững</strong>
-              <span>Thân thiện với môi trường</span>
-            </li>
-          </ul>
-          <a class="btn btn--primary" href="gioi-thieu/">Tìm hiểu thêm →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="cats" id="san-pham">
-      <div class="wrap">
-        <p class="cats__kicker">Giải pháp chiếu sáng</p>
-        <h2 class="cats__title">Khám phá dòng sản phẩm <em>NOMA LIGHT</em></h2>
-        <p class="cats__lead">Đa dạng giải pháp chiếu sáng bằng năng lượng mặt trời, phù hợp cho mọi không gian.</p>
-        <div class="cats__grid">
-          <article class="cat-card">
-            <a class="cat-card__img" href="san-pham/den-duong-nang-luong-mat-troi/">
-              <img src="assets/noma-page-street.png" alt="Đèn đường năng lượng mặt trời" />
-            </a>
-            <div class="cat-card__body">
-              <span class="cat-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20 9.2 4h5.6L20 20"/><path d="M12 8v2.2M12 13.2v2.2"/></svg>
-              </span>
-              <h3>Đèn đường<br /><small>Năng lượng mặt trời</small></h3>
-              <a class="cat-card__go" href="san-pham/den-duong-nang-luong-mat-troi/" aria-label="Xem đèn đường">→</a>
-              <p>Giải pháp chiếu sáng công cộng hiệu quả, bền bỉ.</p>
-            </div>
-          </article>
-          <article class="cat-card">
-            <a class="cat-card__img" href="san-pham/den-pha-nang-luong-mat-troi/">
-              <img src="assets/noma-flood.png" alt="Đèn pha năng lượng mặt trời" />
-            </a>
-            <div class="cat-card__body">
-              <span class="cat-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 1 6 6c0 2.5-1.4 4-3 5.5-.8.8-1 1.5-1 2.5h-4c0-1-.2-1.7-1-2.5C7.4 13 6 11.5 6 9a6 6 0 0 1 6-6Z"/></svg>
-              </span>
-              <h3>Đèn pha<br /><small>Năng lượng mặt trời</small></h3>
-              <a class="cat-card__go" href="san-pham/den-pha-nang-luong-mat-troi/" aria-label="Xem đèn pha">→</a>
-              <p>Chiếu sáng mạnh mẽ, phù hợp sân bãi, nhà xưởng.</p>
-            </div>
-          </article>
-          <article class="cat-card">
-            <a class="cat-card__img" href="san-pham/den-san-vuon-nang-luong-mat-troi/">
-              <img src="assets/noma-garden.png" alt="Đèn sân vườn năng lượng mặt trời" />
-            </a>
-            <div class="cat-card__body">
-              <span class="cat-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c4 4 6 7 6 10a6 6 0 1 1-12 0c0-3 2-6 6-10Z"/></svg>
-              </span>
-              <h3>Đèn sân vườn<br /><small>Năng lượng mặt trời</small></h3>
-              <a class="cat-card__go" href="san-pham/den-san-vuon-nang-luong-mat-troi/" aria-label="Xem đèn sân vườn">→</a>
-              <p>Tạo điểm nhấn, tô điểm không gian sống.</p>
-            </div>
-          </article>
-          <article class="cat-card">
-            <a class="cat-card__img" href="san-pham/den-dan-dung-nang-luong-mat-troi/">
-              <img src="assets/noma-gate.png" alt="Đèn dân dụng năng lượng mặt trời" />
-            </a>
-            <div class="cat-card__body">
-              <span class="cat-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10.5 12 4l8 6.5V20H4z"/></svg>
-              </span>
-              <h3>Đèn dân dụng<br /><small>Năng lượng mặt trời</small></h3>
-              <a class="cat-card__go" href="san-pham/den-dan-dung-nang-luong-mat-troi/" aria-label="Xem đèn dân dụng">→</a>
-              <p>Tiện lợi, dễ lắp đặt, phù hợp mọi gia đình.</p>
-            </div>
-          </article>
-        </div>
-        <div class="cats__cta">
-          <a class="btn btn--primary" href="san-pham/">Xem tất cả sản phẩm →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="uses" id="ung-dung">
-      <div class="wrap">
-        <p class="cats__kicker">Ứng dụng thực tế</p>
-        <h2 class="cats__title">NOMA <em>LIGHT</em> hiện diện mọi không gian</h2>
-        <p class="cats__lead">Giải pháp chiếu sáng bền vững cho cuộc sống hiện đại</p>
-        <div class="uses__grid">
-          <a class="use-card use-card--lg" href="san-pham/den-duong-nang-luong-mat-troi/">
-            <img src="assets/noma-page-street.png" alt="Đèn đường phố năng lượng mặt trời" />
-            <span class="use-card__cap">
-              <span>
-                <strong>Đường phố</strong>
-                <small>Chiếu sáng an toàn, tiết kiệm</small>
-              </span>
-            </span>
+        <a class="proj-mosaic__feature" href="du-an/tuyen-duong-noi-bo/">
+          <img src="assets/noma-proj-street.jpg" alt="Minh họa chiếu sáng đường phố" />
+          <span><strong>Đường phố</strong><small>Hệ thống giao thông</small></span>
+        </a>
+        <div class="proj-mosaic__stack">
+          <a href="du-an/cong-va-nha-o/">
+            <img src="assets/noma-proj-housing.jpg" alt="Minh họa khu dân cư" />
+            <span><strong>Khu dân cư</strong><small>An toàn và tiện nghi</small></span>
           </a>
-          <a class="use-card" href="san-pham/den-dan-dung-nang-luong-mat-troi/">
-            <img src="assets/noma-page-home.png" alt="Chiếu sáng nhà ở" />
-            <span class="use-card__cap">
-              <span>
-                <strong>Nhà ở</strong>
-                <small>Không gian sống tiện nghi</small>
-              </span>
-            </span>
+          <a href="du-an/khong-gian-san-vuon/">
+            <img src="assets/noma-proj-garden.jpg" alt="Minh họa sân vườn" />
+            <span><strong>Sân vườn</strong><small>Không gian xanh</small></span>
           </a>
-          <a class="use-card" href="san-pham/den-san-vuon-nang-luong-mat-troi/">
-            <img src="assets/noma-garden.png" alt="Đèn sân vườn" />
-            <span class="use-card__cap">
-              <span>
-                <strong>Sân vườn</strong>
-                <small>Tạo điểm nhấn, thẩm mỹ cao</small>
-              </span>
-            </span>
-          </a>
-          <a class="use-card" href="san-pham/den-pha-nang-luong-mat-troi/">
-            <img src="assets/noma-flood.png" alt="Chiếu sáng nhà xưởng" />
-            <span class="use-card__cap">
-              <span>
-                <strong>Nhà xưởng</strong>
-                <small>Chiếu sáng mạnh mẽ, ổn định</small>
-              </span>
-            </span>
-          </a>
-          <a class="use-card" href="san-pham/den-duong-nang-luong-mat-troi/">
-            <img src="assets/noma-lifestyle.png" alt="Chiếu sáng khu công cộng" />
-            <span class="use-card__cap">
-              <span>
-                <strong>Khu công cộng</strong>
-                <small>Vì cộng đồng xanh hơn</small>
-              </span>
-            </span>
+          <a href="du-an/khuon-vien-nha-xuong/">
+            <img src="assets/noma-proj-factory.jpg" alt="Minh họa khu công nghiệp" />
+            <span><strong>Khu công nghiệp</strong><small>Hiệu quả và bền vững</small></span>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="why" id="loi-ich">
-      <div class="why__visual" aria-hidden="true">
-        <img src="img/why-lamp.jpg" alt="" />
-      </div>
-      <div class="why__inner">
-        <div class="why__copy">
-          <p class="why__kicker">Vì sao chọn</p>
-          <h2>NOMA <em>LIGHT</em> ?</h2>
-          <p class="why__sub">Chất lượng tạo nên sự khác biệt</p>
-          <div class="why__grid">
-            <article>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.5 14.5 12 17l2.5-2.5"/></svg>
-              <h3>Tiết kiệm chi phí</h3>
-              <p>Tận dụng năng lượng mặt trời<br />Chi phí vận hành điện lưới thấp hơn tại điểm lắp</p>
-            </article>
-            <article>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 5v2M12 17v2M5 12h2M17 12h2M7 7l1.4 1.4M15.6 15.6 17 17M17 7l-1.4 1.4M8.4 15.6 7 17"/></svg>
-              <h3>Dễ lắp đặt</h3>
-              <p>Thiết kế thông minh<br />Phù hợp mọi công trình</p>
-            </article>
-            <article>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3Z"/></svg>
-              <h3>Bền bỉ</h3>
-              <p>Hoạt động ổn định<br />Trong mọi điều kiện thời tiết</p>
-            </article>
-            <article>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3c4 4 6 7 6 10a6 6 0 1 1-12 0c0-3 2-6 6-10Z"/></svg>
-              <h3>Thân thiện môi trường</h3>
-              <p>Sử dụng năng lượng sạch<br />Vì tương lai xanh</p>
-            </article>
-            <article>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 1 6 6c0 2.5-1.4 4-3 5.5-.8.8-1 1.5-1 2.5h-4c0-1-.2-1.7-1-2.5C7.4 13 6 11.5 6 9a6 6 0 0 1 6-6Z"/></svg>
-              <h3>Chiếu sáng thông minh</h3>
-              <p>Tự động cảm biến<br />Tiện lợi, an toàn</p>
-            </article>
-            <article>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 15v2a3 3 0 0 0 3 3h1"/><path d="M20 15v2a3 3 0 0 1-3 3h-1"/><path d="M8 15a4 4 0 1 1 0-8 5 5 0 0 1 8 0 4 4 0 1 1 0 8"/></svg>
-              <h3>Hỗ trợ tận tâm</h3>
-              <p>Tư vấn chuyên nghiệp<br />Đồng hành lâu dài</p>
-            </article>
-          </div>
+    <section class="cat-spread" id="catalogue">
+      <div class="wrap cat-spread__grid">
+        <div class="cat-spread__copy">
+          <p class="sol__kicker">Catalogue</p>
+          <h2>Khám phá Catalogue<br /><em>NOMA LIGHT</em></h2>
+          <p>Khám phá toàn bộ dòng sản phẩm và giải pháp chiếu sáng của NOMA LIGHT.</p>
+          <a class="btn--hero" href="catalogue/">Xem catalogue →</a>
         </div>
+        <a class="cat-spread__book" href="catalogue/">
+          <img src="assets/noma-cat-books.jpg" alt="Catalogue sản phẩm NOMA LIGHT" />
+        </a>
       </div>
     </section>
 
-    <section class="works" id="du-an">
-      <div class="wrap">
-        <p class="cats__kicker">Dự án thực tế</p>
-        <h2 class="cats__title">Không gian đã lắp đèn <em>NOMA LIGHT</em></h2>
-        <p class="cats__lead">Ảnh minh họa theo từng loại ứng dụng — gửi ảnh công trình thật khi bạn muốn thay.</p>
-        <div class="works__grid">
-          <a class="work work--feature" href="du-an/tuyen-duong-noi-bo/">
-            <img src="assets/noma-cover.png" alt="Minh họa chiếu sáng tuyến đường nội bộ" />
-            <span><strong>Tuyến đường nội bộ</strong><small>Đèn đường · năng lượng mặt trời</small></span>
-          </a>
-          <div class="works__stack">
-            <a class="work" href="du-an/khong-gian-san-vuon/">
-              <img src="assets/noma-garden.png" alt="Minh họa đèn sân vườn" />
-              <span><strong>Sân vườn</strong><small>Đèn sân vườn</small></span>
-            </a>
-            <a class="work" href="du-an/khuon-vien-nha-xuong/">
-              <img src="assets/noma-flood.png" alt="Minh họa đèn pha nhà xưởng" />
-              <span><strong>Khuôn viên nhà xưởng</strong><small>Đèn pha</small></span>
-            </a>
-            <a class="work" href="du-an/cong-va-nha-o/">
-              <img src="assets/noma-gate.png" alt="Minh họa đèn cổng dân dụng" />
-              <span><strong>Cổng &amp; nhà ở</strong><small>Đèn dân dụng</small></span>
-            </a>
-          </div>
-        </div>
-        <div class="cats__cta">
-          <a class="btn btn--ghost" href="du-an/">Xem thêm không gian lắp đặt →</a>
-        </div>
+    <section class="contact-split" id="lien-he">
+      <div class="wrap contact-split__grid">
+      <div class="contact-split__visual">
+        <img src="assets/noma-contact-villa.jpg" alt="Biệt thự chiếu sáng bằng đèn năng lượng mặt trời" />
+        <p class="contact-split__quote">Ánh sáng kiến tạo<br />cuộc sống tốt đẹp hơn</p>
       </div>
-    </section>
-
-    <section class="techx" id="cong-nghe">
-      <div class="wrap">
-        <p class="cats__kicker">Công nghệ NOMA LIGHT</p>
-        <h2 class="cats__title">Bên trong một bộ đèn <em>năng lượng mặt trời</em></h2>
-        <p class="cats__lead">Sáu thành phần chính phối hợp để sạc ban ngày, sáng khi trời tối.</p>
-        <div class="techx__stage">
-          <ul class="techx__notes">
-            <li><strong>Tấm pin</strong><span>Thu năng lượng mặt trời</span></li>
-            <li><strong>Pin lưu trữ</strong><span>Dự trữ điện cho đêm</span></li>
-            <li><strong>Chip LED</strong><span>Nguồn sáng hiệu suất cao</span></li>
-          </ul>
-          <div class="techx__lamp">
-            <img src="assets/noma-street-aio.png" alt="Đèn năng lượng mặt trời NOMA LIGHT — tấm pin và chip LED" />
+      <div class="contact-split__form">
+        <p class="sol__kicker">Liên hệ</p>
+        <h2>Bạn đang tìm giải pháp chiếu sáng?</h2>
+        <p>Để lại thông tin, NOMA LIGHT sẽ tư vấn giải pháp phù hợp với nhu cầu của bạn.</p>
+        <form id="contact-form" action="https://zalo.me/0974169141" method="get" novalidate>
+          <p class="form-err" id="contact-form-err" role="alert"></p>
+          <div class="contact-split__fields">
+            <label>Họ và tên
+              <input name="name" type="text" required placeholder="" autocomplete="name" />
+            </label>
+            <label>Số điện thoại
+              <input name="phone" type="tel" required placeholder="" autocomplete="tel" />
+            </label>
+            <label class="full">Nhu cầu tư vấn
+              <select name="need">
+                <option value="">Chọn nhu cầu</option>
+                <option>Đèn đường năng lượng mặt trời</option>
+                <option>Đèn pha năng lượng mặt trời</option>
+                <option>Đèn sân vườn</option>
+                <option>Đèn dân dụng</option>
+                <option>Tư vấn công trình</option>
+              </select>
+            </label>
+            <label class="full">Nội dung
+              <textarea name="note" rows="4"></textarea>
+            </label>
           </div>
-          <ul class="techx__notes techx__notes--r">
-            <li><strong>Cảm biến ánh sáng</strong><span>Tự bật / tắt theo trời tối</span></li>
-            <li><strong>Bộ điều khiển</strong><span>Điều phối sạc và chiếu sáng</span></li>
-            <li><strong>Thân đèn</strong><span>Kết cấu ngoài trời</span></li>
-          </ul>
-        </div>
-        <div class="cats__cta">
-          <a class="btn btn--primary" href="cong-nghe/">Xem công nghệ →</a>
-        </div>
+          <button class="btn btn--primary" type="submit">Gửi yêu cầu →</button>
+          <p class="booknow__ok" id="contact-ok" hidden></p>
+        </form>
       </div>
-    </section>
-
-    <section class="bookcat" id="catalogue">
-      <div class="wrap">
-        <p class="cats__kicker">Catalogue sản phẩm</p>
-        <h2 class="cats__title">Khám phá Catalogue <em>NOMA LIGHT</em></h2>
-        <p class="cats__lead">16 trang — lật như sách, xem dòng đèn và giải pháp chiếu sáng.</p>
-
-        <div class="bookcat__row">
-          <div class="bookcat__side">
-            <ul class="bookcat__feats">
-              <li>
-                <span aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 5h10v14H5z"/><path d="M15 8h4v11H9"/></svg>
-                </span>
-                Đa dạng<br />sản phẩm
-              </li>
-              <li>
-                <span aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2M6.5 6.5l1.4 1.4M16.1 16.1l1.4 1.4M17.5 6.5l-1.4 1.4M7.9 16.1l-1.4 1.4"/></svg>
-                </span>
-                Thông tin<br />sản phẩm
-              </li>
-              <li>
-                <span aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="6" width="16" height="12" rx="1"/><circle cx="9" cy="11" r="2"/><path d="m20 16-4.5-4.5L8 19"/></svg>
-                </span>
-                Hình ảnh<br />thực tế
-              </li>
-              <li>
-                <span aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 4h8v4H8z"/><path d="M7 8h10v12H7z"/><path d="M12 12v5M9.5 15.5 12 18l2.5-2.5"/></svg>
-                </span>
-                Dễ dàng<br />xem online
-              </li>
-            </ul>
-            <p class="bookcat__quote">Ánh sáng xanh<br />Cho cuộc sống tốt đẹp hơn</p>
-          </div>
-
-          <div class="bookcat__stage">
-            <a class="bookcat__sticker" href="catalogue/">Xem ngay<br />Catalogue</a>
-            <a class="bookcat__nav bookcat__nav--prev" href="catalogue/" aria-label="Mở catalogue">‹</a>
-            <a class="bookcat__book" href="catalogue/">
-              <img src="img/book-open.jpg" alt="Catalogue sản phẩm NOMA LIGHT 16 mặt" />
-            </a>
-            <a class="bookcat__nav bookcat__nav--next" href="catalogue/" aria-label="Mở catalogue">›</a>
-          </div>
-        </div>
-
-        <p class="bookcat__pager"><span></span><span></span><span class="is-on"></span><span></span><span></span><span></span><span></span><span></span> <strong>01 / 16</strong></p>
-        <div class="bookcat__cta">
-          <a class="btn btn--primary" href="catalogue/">Xem Catalogue</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="booknow" id="dat-lich">
-      <div class="wrap">
-        <p class="cats__kicker">Đặt lịch hẹn</p>
-        <h2 class="cats__title">Tư vấn giải pháp chiếu sáng <em>miễn phí</em></h2>
-        <p class="cats__lead">NOMA LIGHT luôn sẵn sàng đồng hành, mang đến giải pháp chiếu sáng tối ưu cho không gian của bạn.</p>
-
-        <div class="booknow__grid">
-          <aside class="booknow__visual">
-            <div class="booknow__visual-inner">
-              <p class="booknow__quote">Ánh sáng tốt hơn<br /><em>Cuộc sống tốt đẹp hơn</em></p>
-              <ul class="booknow__points">
-                <li>
-                  <span aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
-                  </span>
-                  <div>
-                    <strong>Tư vấn 1:1</strong>
-                    <small>Giải pháp phù hợp nhu cầu</small>
-                  </div>
-                </li>
-                <li>
-                  <span aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h4L18 10a3 3 0 0 0-4-4L4 16v4z"/><path d="m13 7 4 4"/></svg>
-                  </span>
-                  <div>
-                    <strong>Khảo sát tận nơi</strong>
-                    <small>Đánh giá thực tế, chính xác</small>
-                  </div>
-                </li>
-                <li>
-                  <span aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 7h8M8 11h5"/><path d="M7 3h10v18l-5-3-5 3V3z"/></svg>
-                  </span>
-                  <div>
-                    <strong>Báo giá nhanh</strong>
-                    <small>Rõ ràng, minh bạch</small>
-                  </div>
-                </li>
-                <li>
-                  <span aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V6l-8-3-8 3v6c0 6 8 10 8 10z"/></svg>
-                  </span>
-                  <div>
-                    <strong>Đồng hành dài lâu</strong>
-                    <small>Hỗ trợ sau lắp đặt</small>
-                  </div>
-                </li>
-              </ul>
-              <div class="booknow__foot">
-                <a class="booknow__hotline" href="tel:0974169141">
-                  <span aria-hidden="true">☎</span>
-                  <span><small>Hotline tư vấn nhanh</small><strong>0974 169 141</strong></span>
-                </a>
-                <p class="booknow__brand">NOMA LIGHT<br /><em>Kiến tạo tương lai xanh</em></p>
-              </div>
-            </div>
-          </aside>
-
-          <form class="booknow__form" id="book-form" action="https://zalo.me/0974169141" method="get" novalidate>
-            <p class="booknow__sticker">Chúng tôi sẽ<br />liên hệ sớm nhất!</p>
-            <p class="booknow__form-kicker">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 11h16"/></svg>
-              Đặt lịch hẹn tư vấn
-            </p>
-            <p class="booknow__form-lead">Chỉ mất 1 phút để bắt đầu</p>
-            <p class="form-err" id="book-form-err" role="alert"></p>
-            <div class="booknow__fields">
-              <label>Họ và tên <i>*</i>
-                <input name="name" type="text" required placeholder="Nhập họ và tên" autocomplete="name" />
-              </label>
-              <label>Số điện thoại <i>*</i>
-                <input name="phone" type="tel" required placeholder="Nhập số điện thoại" autocomplete="tel" />
-              </label>
-              <label>Email
-                <input name="email" type="text" inputmode="email" placeholder="Nhập email (nếu có)" autocomplete="email" />
-              </label>
-              <label>Khu vực
-                <select name="area">
-                  <option value="">Chọn khu vực</option>
-                  <option>Hà Nội</option>
-                  <option>Hà Nam</option>
-                  <option>Hưng Yên</option>
-                  <option>Nam Định</option>
-                  <option>Ninh Bình</option>
-                  <option>Tỉnh / thành khác</option>
-                </select>
-              </label>
-              <label class="full">Nhu cầu tư vấn
-                <textarea name="need" placeholder="Chia sẻ nhu cầu của bạn (ví dụ: chiếu sáng sân vườn, đường nội bộ, nhà xưởng,…)"></textarea>
-              </label>
-              <label>Chọn thời gian hẹn
-                <input name="date" type="text" inputmode="numeric" placeholder="dd/mm/yyyy" maxlength="10" autocomplete="off" />
-                <small class="field-hint">Không bắt buộc. Ví dụ: 21/09/2026</small>
-              </label>
-              <label>Khung giờ
-                <select name="slot">
-                  <option value="">Chọn khung giờ</option>
-                  <option>08:00 – 10:00</option>
-                  <option>10:00 – 12:00</option>
-                  <option>14:00 – 16:00</option>
-                  <option>16:00 – 18:00</option>
-                </select>
-              </label>
-            </div>
-            <button class="btn btn--primary booknow__submit" type="submit">Đặt lịch hẹn ngay →</button>
-            <p class="booknow__lock">Thông tin của bạn được bảo mật tuyệt đối</p>
-            <p class="booknow__ok" id="book-ok" hidden>Đã sao chép nội dung đặt lịch. Cửa sổ Zalo Minh Trọng sẽ mở để bạn gửi tin.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="ask">
-      <div class="wrap ask__grid">
-        <div class="ask__copy">
-          <p class="ask__kicker">NOMA LIGHT</p>
-          <h2>Bạn đang tìm giải pháp<br /><em>chiếu sáng bằng năng lượng mặt trời</em>?</h2>
-          <p>NOMA LIGHT sẵn sàng tư vấn giải pháp phù hợp cho công trình của bạn.</p>
-          <div class="ask__actions">
-            <a class="btn btn--primary ask__cta" href="dat-lich/">Nhận tư vấn ngay →</a>
-            <a class="ask__phone" href="tel:0974169141">
-              <span aria-hidden="true">☎</span>
-              <span><small>Hotline tư vấn</small><strong>0974 169 141</strong></span>
-            </a>
-          </div>
-          <ul class="ask__feats">
-            <li>
-              <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 19c8-2 12-8 14-16-8 2-14 8-16 16z"/><path d="M8 16c2-1 5-4 7-7"/></svg></span>
-              Tiết kiệm<br />chi phí
-            </li>
-            <li>
-              <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V6l-8-3-8 3v6c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
-              Bền bỉ<br />vượt trội
-            </li>
-            <li>
-              <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2M6.5 6.5l1.4 1.4M16.1 16.1l1.4 1.4M17.5 6.5l-1.4 1.4M7.9 16.1l-1.4 1.4"/></svg></span>
-              Dễ dàng<br />lắp đặt
-            </li>
-            <li>
-              <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4.5 6 4.5 9S15 18 12 21c-3-3-4.5-6-4.5-9S9 6 12 3z"/></svg></span>
-              Thân thiện<br />môi trường
-            </li>
-          </ul>
-        </div>
-        <div class="ask__photo" role="img" aria-label="Đèn sân vườn năng lượng mặt trời NOMA LIGHT"></div>
       </div>
     </section>
   </main>
@@ -523,7 +264,7 @@
   <div id="footer-root"></div>
   <script src="js/products.js"></script>
   <script src="js/content.js"></script>
-  <script src="js/site.js"></script>
+  <script src="js/site.js?v=3"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
