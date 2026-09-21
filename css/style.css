@@ -1385,7 +1385,7 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); color: var(--navy); }
 .spec-note { color: var(--muted); font-size: 12px; margin-top: 12px; }
 
 .site-footer {
-  background: #0b2418;
+  background: #062a6b;
   padding: 48px 0 0;
   color: rgba(255,255,255,0.72);
   font-size: 14px;
@@ -1448,14 +1448,14 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); color: var(--navy); }
 .to-top {
   width: 36px; height: 36px; border-radius: 50%;
   display: grid; place-items: center;
-  background: #1f6b38; color: #fff; text-decoration: none; font-size: 16px;
+  background: #0b4aa8; color: #fff; text-decoration: none; font-size: 16px;
 }
 .to-top:hover { background: var(--green); color: #fff; }
 
 .ask {
   position: relative;
   overflow: hidden;
-  background: #10281c;
+  background: #0b4aa8;
   color: #fff;
 }
 .ask__grid {
@@ -1523,17 +1523,25 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); color: var(--navy); }
 .ask__feats li { display: flex; align-items: center; gap: 10px; }
 .ask__feats span {
   width: 40px; height: 40px; border-radius: 50%;
-  border: 1.5px solid rgba(155,227,106,0.55);
+  border: 1.5px solid rgba(245, 197, 24, 0.55);
   display: grid; place-items: center; color: #f5c518;
 }
 .ask__feats svg { width: 20px; height: 20px; }
 .ask__photo {
   position: relative;
   min-height: 360px;
-  background: #14321f url("../img/ask-garden.jpg?v=1") center / cover no-repeat;
+  background: #062a6b url("../img/ask-garden.jpg?v=1") center / cover no-repeat;
+}
+.ask__photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 74, 168, 0.18) 0%, rgba(6, 42, 107, 0.55) 100%);
+  pointer-events: none;
 }
 .ask__quote {
   position: absolute;
+  z-index: 1;
   right: 24px;
   bottom: 36px;
   margin: 0;
@@ -1641,7 +1649,7 @@ h2 { font-size: clamp(26px, 3.2vw, 36px); color: var(--navy); }
 .cta-band {
   margin: 48px 0 24px;
   padding: 32px;
-  background: #101c16;
+  background: #0b4aa8;
   color: #fff;
   border-radius: 20px;
   display: flex;
