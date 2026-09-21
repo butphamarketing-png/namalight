@@ -1000,6 +1000,123 @@ body.is-cat-fs .cat-room {
   color: rgba(255,255,255,0.7) !important;
 }
 
+.pg-c5 {
+  padding: 14px 14px 22px !important;
+  background: linear-gradient(180deg, #eef5ff 0%, #fff 38%);
+  color: #12305c;
+  overflow: hidden;
+}
+.pg-c5 h2 {
+  margin: 4px 0 8px;
+  max-width: 70%;
+  color: #0a2a78 !important;
+  font-size: clamp(22px, 5vw, 32px);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.pg-c5 h2 em {
+  display: block;
+  font-style: normal;
+  font-size: 0.72em;
+}
+.pg-c5__lead {
+  max-width: 52%;
+  margin: 0 0 8px;
+  font-size: 10px;
+  line-height: 1.45;
+  color: #4a5b72 !important;
+}
+.pg-c5__stack {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  margin: 0;
+  text-align: right;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: #1b4f9c !important;
+}
+.pg-c5__hand {
+  position: absolute;
+  top: 52px;
+  right: 14px;
+  margin: 0;
+  font-family: "Dancing Script", cursive;
+  font-size: 16px;
+  line-height: 1.15;
+  text-align: right;
+  color: #1b4f9c !important;
+  z-index: 2;
+}
+.pg-c5__icons {
+  position: absolute;
+  top: 108px;
+  right: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+  width: 86px;
+}
+.pg-c5__icons li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #1b4f9c !important;
+  line-height: 1.2;
+}
+.pg-c5__icons span {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid #1b4f9c;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.pg-c5__icons svg { width: 14px; height: 14px; }
+.pg-c5__hero {
+  width: 72%;
+  max-height: 38%;
+  object-fit: contain;
+  margin: 4px auto 8px;
+  display: block;
+}
+.pg-c6 {
+  padding: 14px 14px 22px !important;
+  background: #07183f;
+  color: #fff;
+  overflow: hidden;
+}
+.pg-c6 h2 {
+  margin: 2px 0 8px;
+  color: #fff !important;
+  font-size: clamp(22px, 5vw, 32px);
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+.pg-c6 h2 em {
+  font-style: normal;
+  color: #f0c21a;
+}
+.pg-c6__lead {
+  max-width: 72%;
+  margin: 0 0 8px;
+  font-size: 10px;
+  line-height: 1.45;
+  color: #d5e4ff !important;
+}
+
 .print-sheet { padding: 0 !important; background: #fff; }
 .print-sheet__head {
   display: flex;
