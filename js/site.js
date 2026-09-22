@@ -43,7 +43,7 @@
     var shopCss = document.createElement('link');
     shopCss.id = 'noma-shop-css';
     shopCss.rel = 'stylesheet';
-    shopCss.href = h('css/shop.css?v=4');
+    shopCss.href = h('css/shop.css?v=5');
     document.head.appendChild(shopCss);
   }
 
@@ -92,8 +92,14 @@
           '<div class="shop-cat" id="shop-cat">' +
             '<button class="shop-cat__btn" type="button" aria-expanded="false">☰ Danh mục sản phẩm ▾</button>' +
             '<div class="shop-cat__list">' +
-              '<a href="' + h('san-pham/') + '">Tất cả sản phẩm</a>' +
-              productMenu() +
+              '<a href="' + h('san-pham/') + '">Đèn năng lượng mặt trời</a>' +
+              '<a href="' + h('san-pham/den-duong-nang-luong-mat-troi/') + '">Đèn ngoài trời / đèn đường</a>' +
+              '<a href="' + h('san-pham/den-dan-dung-nang-luong-mat-troi/') + '">Đèn dân dụng / trong nhà</a>' +
+              '<a href="' + h('san-pham/den-san-vuon-nang-luong-mat-troi/') + '">Đèn sân vườn</a>' +
+              '<a href="' + h('san-pham/nl-gt120/') + '">Đèn trụ cổng</a>' +
+              '<a href="' + h('san-pham/den-pha-nang-luong-mat-troi/') + '">Đèn pha / công trình</a>' +
+              '<a href="' + h('san-pham/nl-pir80/') + '">Đèn cảm biến</a>' +
+              '<a href="' + h('du-an/') + '">Dự án chiếu sáng</a>' +
             '</div>' +
           '</div>' +
           '<nav class="nav" id="site-nav" aria-label="Chính">' + navLinks + '</nav>' +
@@ -112,51 +118,52 @@
           '<div class="footer-brand">' +
             '<p class="brand-name">NOMA <span>LIGHT</span></p>' +
             '<p class="footer-tag">Sáng hơn cho cuộc sống xanh</p>' +
-            '<p>Giải pháp chiếu sáng bằng năng lượng mặt trời hiện đại, tiết kiệm và thân thiện với môi trường.</p>' +
+          '<p>CÔNG TY TNHH SX-TM NOMA LIGHT cung cấp đèn năng lượng mặt trời: đèn đường, sân vườn, đèn cảm biến, đèn tường. Sứ mệnh: chiếu sáng tiết kiệm, dễ lắp, tư vấn theo công trình.</p>' +
             '<p class="footer-social">' +
               '<a href="https://zalo.me/0974169141" target="_blank" rel="noopener">Zalo Minh Trọng</a>' +
             '</p>' +
           '</div>' +
           '<div>' +
-            '<p class="footer-title">Điều hướng</p>' +
+            '<p class="footer-title">Về chúng tôi</p>' +
             '<p>' +
-              '<a href="' + h('index.html') + '">Trang chủ</a><br />' +
-              '<a href="' + h('gioi-thieu/') + '">Giới thiệu</a><br />' +
+              '<a href="' + h('gioi-thieu/') + '">Giới thiệu NOMA LIGHT</a><br />' +
               '<a href="' + h('san-pham/') + '">Sản phẩm</a><br />' +
-              '<a href="' + h('ung-dung/') + '">Ứng dụng</a><br />' +
-              '<a href="' + h('du-an/') + '">Dự án</a><br />' +
-              '<a href="' + h('cong-nghe/') + '">Công nghệ</a><br />' +
-              '<a href="' + h('catalogue/') + '">Catalogue</a><br />' +
+              '<a href="' + h('catalogue/') + '">Catalogue 8 trang</a><br />' +
               '<a href="' + h('tin-tuc/') + '">Tin tức</a><br />' +
               '<a href="' + h('lien-he/') + '">Liên hệ</a>' +
             '</p>' +
           '</div>' +
           '<div>' +
-            '<p class="footer-title">Sản phẩm</p>' +
+            '<p class="footer-title">Hỗ trợ khách hàng</p>' +
             '<p>' +
-              '<a href="' + h('san-pham/den-duong-nang-luong-mat-troi/') + '">Đèn đường</a><br />' +
-              '<a href="' + h('san-pham/den-pha-nang-luong-mat-troi/') + '">Đèn pha</a><br />' +
-              '<a href="' + h('san-pham/den-san-vuon-nang-luong-mat-troi/') + '">Đèn sân vườn</a><br />' +
-              '<a href="' + h('san-pham/den-dan-dung-nang-luong-mat-troi/') + '">Đèn dân dụng</a>' +
+              '<a href="' + h('chinh-sach-bao-mat/') + '">Chính sách bảo mật</a><br />' +
+              '<a href="' + h('chinh-sach-giao-hang/') + '">Vận chuyển và giao nhận</a><br />' +
+              '<a href="' + h('chinh-sach-doi-tra/') + '">Chính sách đổi trả</a><br />' +
+              '<a href="' + h('chinh-sach-thanh-toan/') + '">Chính sách thanh toán</a><br />' +
+              '<a href="' + h('chinh-sach-bao-hanh/') + '">Chính sách bảo hành</a><br />' +
+              '<a href="' + h('chinh-sach-hoan-tien/') + '">Chính sách hoàn tiền</a><br />' +
+              '<a href="' + h('chinh-sach-kiem-hang/') + '">Chính sách kiểm hàng</a><br />' +
+              '<a href="' + h('chinh-sach-ve-gia/') + '">Chính sách về giá</a><br />' +
+              '<a href="' + h('chinh-sach-xu-ly-khieu-nai/') + '">Xử lý khiếu nại</a>' +
             '</p>' +
           '</div>' +
           '<div class="footer-contact">' +
-            '<p class="footer-title">Liên hệ</p>' +
+            '<p class="footer-title">Kết nối với chúng tôi</p>' +
             '<p class="footer-co">CÔNG TY TNHH SX-TM NOMA LIGHT</p>' +
             '<p>' +
-              '<a href="tel:0974169141">Minh Trọng: 0974 169 141</a><br />' +
+              '<a href="tel:0974169141">Điện thoại: 0974 169 141</a><br />' +
               '<a href="https://zalo.me/0974169141" target="_blank" rel="noopener">Zalo: 0974 169 141</a><br />' +
-              '<a href="mailto:info@nomalight.vn">info@nomalight.vn</a><br />' +
-              'www.nomalight.vn' +
+              '<a href="mailto:info@nomalight.vn">Email: info@nomalight.vn</a><br />' +
+              'Website: www.nomalight.vn' +
             '</p>' +
           '</div>' +
         '</div>' +
         '<div class="wrap footer-bar">' +
           '<p>© 2026 NOMA LIGHT. All rights reserved.</p>' +
           '<p>' +
-            '<a href="' + h('chinh-sach-bao-mat/') + '">Chính sách bảo mật</a>' +
-            '<a href="' + h('dieu-khoan-su-dung/') + '">Điều khoản sử dụng</a>' +
-            '<a href="' + h('chinh-sach-bao-hanh/') + '">Chính sách bảo hành</a>' +
+            '<a href="' + h('chinh-sach-bao-mat/') + '">Bảo mật</a>' +
+            '<a href="' + h('chinh-sach-bao-hanh/') + '">Bảo hành</a>' +
+            '<a href="' + h('chinh-sach-doi-tra/') + '">Đổi trả</a>' +
           '</p>' +
           '<a class="to-top" href="#top" aria-label="Lên đầu trang">↑</a>' +
         '</div>' +
