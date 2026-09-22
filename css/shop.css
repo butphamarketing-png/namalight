@@ -54,11 +54,11 @@ body.is-shop[data-page="ecatalogue"] { background: #8b9198; }
 .site-head.shop-shell .brand__name em,
 .site-head.shop-shell .shop-logo-accent {
   color: #fff !important;
-  font-family: "Great Vibes", cursive;
+  font-family: Roboto, "Be Vietnam Pro", sans-serif !important;
   font-style: normal;
-  font-weight: 400;
-  font-size: 1.22em;
-  letter-spacing: 0;
+  font-weight: 900;
+  font-size: 1em;
+  letter-spacing: inherit;
 }
 .shop-search {
   flex: 1;
@@ -426,18 +426,18 @@ body.is-shop[data-page="home"] .shop-hero__inner {
   padding: 8px 8px 12px 0;
 }
 .shop-banner__logo {
-  margin: 0 0 4px;
-  font-size: 22px;
+  margin: 0 0 6px;
+  font-size: 18px;
   font-weight: 900;
-  letter-spacing: .04em;
+  letter-spacing: .08em;
   color: #fff;
 }
 .shop-banner__logo em {
   color: #fff;
-  font-family: "Great Vibes", cursive;
+  font-family: inherit;
   font-style: normal;
-  font-weight: 400;
-  font-size: 1.35em;
+  font-weight: 900;
+  font-size: 1em;
 }
 .shop-banner__copy h1 {
   margin: 0 0 6px;
@@ -514,13 +514,51 @@ body.is-shop[data-page="home"] .shop-hero__inner {
 }
 .shop-more:hover { background: var(--shop-red); color: #fff; }
 
-.shop-feat {
+.shop-featblock {
   width: min(1240px, calc(100% - 32px));
-  margin: 0 auto;
-  padding-bottom: 8px;
+  margin: 0 auto 20px;
+  display: grid;
+  grid-template-columns: 1.05fr 1.95fr;
+  gap: 12px;
+  align-items: stretch;
 }
-.shop-grid--5 { grid-template-columns: repeat(5, 1fr); }
-.shop-card:hover { outline: 2px solid var(--shop-red); }
+.shop-grid--feat {
+  grid-template-columns: repeat(3, 1fr);
+  width: auto;
+  margin: 0;
+  padding-bottom: 0;
+}
+.shop-card--hero { min-height: 100%; }
+.shop-card--hero .shop-card__art { aspect-ratio: auto; flex: 1; min-height: 280px; }
+.shop-dualpromo {
+  width: min(1240px, calc(100% - 32px));
+  margin: 0 auto 18px;
+  display: grid;
+  grid-template-columns: 1.4fr .9fr;
+  gap: 12px;
+}
+.shop-dualpromo img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.shop-dualpromo a {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0b4aa8, #1570d8);
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 16px;
+  font-size: 18px;
+}
+.shop-section .shop-tabs {
+  justify-content: flex-end;
+  margin-top: -6px;
+}
 .shop-about__grid {
   width: min(1240px, calc(100% - 32px));
   margin: 0 auto;
@@ -602,24 +640,39 @@ body.is-shop[data-page="home"] .shop-hero__inner {
 }
 .shop-card:hover { text-decoration: none; transform: translateY(-2px); }
 .shop-card__art {
-  background: radial-gradient(circle at 50% 42%, #fff 0%, #f3f3f3 100%);
+  background:
+    linear-gradient(#fff 58%, transparent 58%),
+    linear-gradient(135deg, #fff 46%, #0b4aa8 46%);
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  padding: 12px;
+  padding: 28px 12px 18px;
   position: relative;
+}
+.shop-card__art::before {
+  content: "NOMA LIGHT";
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: #0b4aa8;
+  z-index: 1;
 }
 .shop-card__art::after {
   content: "Tư vấn";
   position: absolute;
   top: 8px;
-  left: 8px;
-  background: var(--shop-red);
+  right: 8px;
+  left: auto;
+  background: var(--shop-navy);
   color: #fff;
   font-size: 11px;
   font-weight: 800;
   padding: 3px 8px;
   border-radius: 2px;
+  z-index: 1;
 }
 .shop-card__art img {
   width: 100%;
@@ -1086,7 +1139,8 @@ body.is-shop .noma-dock__ask {
   body.is-shop[data-page="home"] .shop-cat.is-open .shop-cat__list { display: block; }
 }
 @media (max-width: 1024px) {
-  .shop-feat, .shop-banner__body, body.is-shop .shop-pdp, body.is-shop .shop-catpage, body.is-shop .shop-catbanner, body.is-shop .shop-catbanners { grid-template-columns: 1fr; }
+  .shop-featblock, .shop-dualpromo, .shop-banner__body, body.is-shop .shop-pdp, body.is-shop .shop-catpage, body.is-shop .shop-catbanner, body.is-shop .shop-catbanners { grid-template-columns: 1fr; }
+  .shop-grid--feat { grid-template-columns: repeat(2, 1fr); }
   .shop-banner__products { min-height: 160px; }
   .shop-about__grid,
   .shop-contact__grid,

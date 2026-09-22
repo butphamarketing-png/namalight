@@ -43,7 +43,7 @@
     var shopCss = document.createElement('link');
     shopCss.id = 'noma-shop-css';
     shopCss.rel = 'stylesheet';
-    shopCss.href = h('css/shop.css?v=15');
+    shopCss.href = h('css/shop.css?v=18');
     document.head.appendChild(shopCss);
   }
 
