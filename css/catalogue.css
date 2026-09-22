@@ -242,6 +242,9 @@ button.cat-download {
   display: block;
   background: #07183f;
 }
+.page .inner.pg-photo--cover {
+  background: #f4f8fc;
+}
 .pg-photo img {
   width: 100%;
   height: 100%;
@@ -398,10 +401,9 @@ button.cat-download {
   position: absolute;
   display: block;
 }
-.hs-tel { left: 4%; bottom: 10.5%; width: 36%; height: 4.2%; }
-.hs-mail { left: 4%; bottom: 6.4%; width: 36%; height: 3.6%; }
-.hs-web { left: 4%; bottom: 2.6%; width: 36%; height: 3.6%; }
-.hs-qr { right: 4%; bottom: 2.4%; width: 42%; height: 14%; }
+.hs-tel { left: 8%; bottom: 4.6%; width: 28%; height: 3.4%; }
+.hs-mail { left: 38%; bottom: 4.6%; width: 28%; height: 3.4%; }
+.hs-web { left: 68%; bottom: 4.6%; width: 24%; height: 3.4%; }
 
 @media (max-width: 1024px) {
   .flip-stage { padding: 0 52px; width: 94vw; }
