@@ -204,7 +204,10 @@
     var tag = document.querySelector(".brand__tag");
     if (tag && site.tagline) tag.textContent = site.tagline;
     var brand = document.querySelector(".brand__name");
-    if (brand && site.shortName) brand.innerHTML = site.shortName + "<sup>®</sup>";
+    if (brand && site.shortName) {
+      var pretty = String(site.shortName).replace(/LIGHT/i, '<span class="shop-logo-accent">LIGHT</span>');
+      brand.innerHTML = pretty + "<sup>®</sup>";
+    }
   }
 
   w.NomaCms = {

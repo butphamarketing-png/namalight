@@ -43,7 +43,7 @@
     var shopCss = document.createElement('link');
     shopCss.id = 'noma-shop-css';
     shopCss.rel = 'stylesheet';
-    shopCss.href = h('css/shop.css?v=5');
+    shopCss.href = h('css/shop.css?v=15');
     document.head.appendChild(shopCss);
   }
 
@@ -68,23 +68,23 @@
   } else if (header) {
     header.innerHTML =
       '<a class="skip" href="#main">Bỏ qua điều hướng</a>' +
-      '<div class="shop-top">' +
-        '<span>Thương hiệu chuyên đèn năng lượng mặt trời NOMA LIGHT</span>' +
-        '<span>Tư vấn Minh Trọng · 0974 169 141</span>' +
+        '<div class="shop-top">' +
+        '<span>Thương hiệu chuyên cung cấp đèn năng lượng mặt trời tại Việt Nam</span>' +
+        '<span>Thương hiệu Việt · Tư vấn Minh Trọng</span>' +
       '</div>' +
       '<div class="site-head shop-shell">' +
         '<div class="shop-head">' +
           '<a class="brand" href="' + h('index.html') + '" aria-label="NOMA LIGHT — Trang chủ">' +
-            '<span class="brand__name">NOMA LIGHT<sup>®</sup></span>' +
+            '<span class="brand__name">NOMA <span class="shop-logo-accent">LIGHT</span><sup>®</sup></span>' +
             '<span class="brand__tag">Chiếu Sáng Mọi Con Đường</span>' +
           '</a>' +
           '<form class="shop-search" action="' + h('search/') + '" method="get" role="search">' +
             '<input type="search" name="q" placeholder="Nhập từ khóa tìm kiếm..." aria-label="Tìm kiếm" />' +
-            '<button type="submit">Tìm kiếm</button>' +
+            '<button type="submit" aria-label="Tìm kiếm">Tìm</button>' +
           '</form>' +
           '<div class="shop-tools">' +
-            '<a class="shop-tools__hotline" href="tel:0974169141">0974 169 141<small>Hotline</small></a>' +
-            '<a href="https://zalo.me/0974169141" target="_blank" rel="noopener">Zalo<small>Minh Trọng</small></a>' +
+            '<a class="shop-tools__hotline" href="tel:0974169141"><span class="shop-tools__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg></span><span>0974 169 141<small>Hotline</small></span></a>' +
+            '<a class="shop-tools__bag" href="' + h('catalogue/') + '"><span class="shop-tools__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7V6a5 5 0 0 1 10 0v1h3l-1.2 14H5.2L4 7h3zm2 0h6V6a3 3 0 0 0-6 0v1z"/></svg></span><span>Catalogue<small>8 trang</small></span></a>' +
           '</div>' +
           '<button class="menu-btn" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
         '</div>' +
@@ -92,17 +92,18 @@
           '<div class="shop-cat" id="shop-cat">' +
             '<button class="shop-cat__btn" type="button" aria-expanded="false">☰ Danh mục sản phẩm ▾</button>' +
             '<div class="shop-cat__list">' +
-              '<a href="' + h('san-pham/') + '">Đèn năng lượng mặt trời</a>' +
-              '<a href="' + h('san-pham/den-duong-nang-luong-mat-troi/') + '">Đèn ngoài trời / đèn đường</a>' +
-              '<a href="' + h('san-pham/den-dan-dung-nang-luong-mat-troi/') + '">Đèn dân dụng / trong nhà</a>' +
-              '<a href="' + h('san-pham/den-san-vuon-nang-luong-mat-troi/') + '">Đèn sân vườn</a>' +
-              '<a href="' + h('san-pham/nl-gt120/') + '">Đèn trụ cổng</a>' +
-              '<a href="' + h('san-pham/den-pha-nang-luong-mat-troi/') + '">Đèn pha / công trình</a>' +
-              '<a href="' + h('san-pham/nl-pir80/') + '">Đèn cảm biến</a>' +
-              '<a href="' + h('du-an/') + '">Dự án chiếu sáng</a>' +
+              '<a href="' + h('san-pham/') + '"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></i> Đèn năng lượng mặt trời</a>' +
+              '<a href="' + h('san-pham/den-duong-nang-luong-mat-troi/') + '"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V9l8-5 8 5v11"/><path d="M10 20v-6h4v6"/></svg></i> Đèn ngoài trời / đèn đường</a>' +
+              '<a href="' + h('san-pham/den-dan-dung-nang-luong-mat-troi/') + '"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10.5 12 3l9 7.5V21H3z"/></svg></i> Đèn dân dụng / trong nhà</a>' +
+              '<a href="' + h('san-pham/den-san-vuon-nang-luong-mat-troi/') + '"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21V11"/><path d="M7 14c2-6 10-6 10 0"/><path d="M5 21h14"/></svg></i> Đèn sân vườn</a>' +
+              '<a href="' + h('san-pham/nl-gt120/') + '"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V8l8-5 8 5v13"/><path d="M10 21v-7h4v7"/></svg></i> Đèn trụ cổng</a>' +
+              '<a href="' + h('san-pham/den-pha-nang-luong-mat-troi/') + '"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M12 14v4"/><path d="M7 9a5 5 0 1 1 10 0c0 3-2.5 4-5 5-2.5-1-5-2-5-5z"/></svg></i> Đèn pha / công trình</a>' +
+              '<a href="' + h('san-pham/nl-pir80/') + '"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/></svg></i> Đèn cảm biến</a>' +
+              '<a href="' + h('du-an/') + '"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="10" width="7" height="11"/><rect x="14" y="3" width="7" height="18"/></svg></i> Dự án chiếu sáng</a>' +
             '</div>' +
           '</div>' +
           '<nav class="nav" id="site-nav" aria-label="Chính">' + navLinks + '</nav>' +
+          '<div class="shop-social"><a class="is-zalo" href="https://zalo.me/0974169141" target="_blank" rel="noopener" aria-label="Zalo Minh Trọng">Zalo</a></div>' +
         '</div>' +
       '</div>' +
       '<div class="nav-scrim" id="nav-scrim" hidden></div>';
@@ -208,7 +209,7 @@
     var dock = document.createElement('div');
     dock.className = 'noma-dock';
     dock.innerHTML =
-      '<a class="noma-dock__ask" href="' + h('lien-he/') + '">Tư vấn</a>' +
+      '<a class="noma-dock__ask" href="' + h('lien-he/') + '">Yêu cầu tư vấn</a>' +
       '<a class="noma-dock__zalo" href="https://zalo.me/0974169141" target="_blank" rel="noopener" aria-label="Chat Zalo Minh Trọng">' +
         '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.6c0 2.7 1.5 5.1 3.8 6.7L5 21.5l3.4-1.3c1.1.3 2.3.5 3.6.5 5.5 0 10-3.9 10-8.6S17.5 3 12 3zm4.6 10.2c-.2.5-1.1 1-1.6 1.1-.4.1-.9.2-2.9-.6-2.4-1-4-3.4-4.1-3.6-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.7 2 .8 2.1.1.2.1.3 0 .5-.1.2-.2.3-.4.5-.2.2-.3.3-.1.6.2.3.9 1.5 2 2.4 1.3 1.1 2.4 1.4 2.7 1.6.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.9.9 2.2 1.1.3.2.5.2.6.4.1.2 0 .9-.4 1.4z"/></svg>' +
       '</a>' +
@@ -490,7 +491,7 @@
   if (!document.body.classList.contains('noma-booting')) startSectionFx();
   else setTimeout(startSectionFx, 4800);
 
-  var cmsSrc = (document.body.getAttribute('data-root') || '') + 'js/noma-cms.js';
+  var cmsSrc = (document.body.getAttribute('data-root') || '') + 'js/noma-cms.js?v=2';
   var cmsEl = document.createElement('script');
   cmsEl.src = cmsSrc;
   cmsEl.async = false;

@@ -50,7 +50,7 @@
       if (note && note.hasAttribute('required') && !String(note.value).trim()) { msgs.push('Nhập nội dung cần tư vấn.'); mark(note); }
       if (msgs.length) {
         if (err) { err.textContent = msgs[0]; err.classList.add('is-on'); }
-        var first = form.querySelector('label.is-invalid input, label.is-invalid textarea, label.is-invalid select');
+        var first = form.querySelector('label.is-invalid input, label.is-invalid textarea, label.is-invalid select, input.is-invalid, input');
         if (first) first.focus();
         return;
       }
@@ -121,35 +121,89 @@
       }
       var g = NOMA.groupOf(p.cat);
       document.title = p.name + ' | NOMA LIGHT';
-      var related = NOMA.products.filter(function (x) { return x.cat === p.cat && x.id !== p.id; }).slice(0, 3);
+      var related = NOMA.products.filter(function (x) { return x.cat === p.cat && x.id !== p.id; }).slice(0, 4);
+      var specRows = [
+        ['Mã sản phẩm', p.sku],
+        ['Nhóm', g.label],
+        ['Kiểu lắp', NOMA.formLabels[p.form] || p.form || '—'],
+        ['Tình trạng', 'Liên hệ Minh Trọng để chốt tồn kho'],
+        ['Thương hiệu', 'NOMA LIGHT'],
+        ['Ứng dụng', p.use],
+        ['Điều khiển', p.control],
+        ['Độ cao / vị trí', p.height],
+        ['Bảo hành', 'Theo catalogue / phiếu xuất']
+      ];
+      var specHtml = '<table class="shop-specs">' + specRows.map(function (row) {
+        return '<tr><th>' + e(row[0]) + '</th><td>' + e(row[1] || '—') + '</td></tr>';
+      }).join('') + '</table>';
       root.innerHTML =
+        '<div class="shop-pdp">' +
+        '<div class="shop-pdp__main">' +
         '<p class="crumb"><a href="' + R + 'index.html">Trang chủ</a> / <a href="' + R + 'san-pham/">Sản phẩm</a> / <a href="' + NOMA.groupHref(g) + '">' + e(g.label) + '</a> / ' + e(p.name) + '</p>' +
         '<div class="pd">' +
           '<div class="pd__visual">' +
             '<img src="' + R + NOMA.imgFor(p) + '" alt="' + e(p.name) + '" />' +
+            '<div class="pd__thumbs">' +
+              '<img src="' + R + NOMA.imgFor(p) + '" alt="" />' +
+              related.slice(0, 2).map(function (x) { return '<img src="' + R + NOMA.imgFor(x) + '" alt="" />'; }).join('') +
+            '</div>' +
           '</div>' +
           '<div class="pd__info">' +
-            '<p class="eyebrow">' + e(g.label) + '</p>' +
+            '<p class="shop-kicker">' + e(g.label) + '</p>' +
             '<h1>' + e(p.name) + '</h1>' +
             '<p class="shop-price">Liên hệ</p>' +
-            '<p class="lede">' + e(p.use) + '</p>' +
+            '<ul class="shop-meta">' +
+              '<li>Mã sản phẩm: <strong>' + e(p.sku) + '</strong></li>' +
+              '<li>Thương hiệu: <strong>NOMA LIGHT</strong></li>' +
+              '<li>Tình trạng: <strong>Liên hệ Minh Trọng</strong></li>' +
+            '</ul>' +
+            '<p class="lede">' + e(p.blurb || p.use) + '</p>' +
+            '<p class="shop-qty">Số lượng <span>1</span> <small>Chốt số lượng khi báo giá</small></p>' +
             '<div class="hero__actions">' +
-              '<a class="btn btn--primary" href="https://zalo.me/0974169141" target="_blank" rel="noopener">Tư vấn Zalo</a>' +
+            '<a class="btn btn--primary shop-buy" href="https://zalo.me/0974169141" target="_blank" rel="noopener">Liên hệ báo giá</a>' +
               '<a class="btn btn--ghost" href="tel:0974169141">0974 169 141</a>' +
               '<a class="btn btn--ghost" href="' + R + 'catalogue/">Xem Catalogue</a>' +
+            '</div>' +
+            '<div class="shop-ask">' +
+              '<p>Tư vấn nhanh qua Zalo</p>' +
+              '<form id="pdp-ask">' +
+                '<p class="form-err" id="pdp-ask-err" role="alert"></p>' +
+                '<input name="name" type="text" required placeholder="Họ và tên *" autocomplete="name" />' +
+                '<input name="phone" type="tel" required placeholder="Số điện thoại *" autocomplete="tel" />' +
+                '<input name="note" type="hidden" value="' + e(p.sku) + '" />' +
+                '<button type="submit">Tư vấn ngay</button>' +
+              '</form>' +
             '</div>' +
           '</div>' +
         '</div>' +
         '<h2 class="pd__h">Thông số kỹ thuật</h2>' +
-        '<p class="spec-note">' + e(g.catalog || 'Xem catalogue 8 trang NOMA LIGHT.') + ' Liên hệ Minh Trọng 0974 169 141 hoặc <a href="' + R + 'catalogue/">mở catalogue</a> để đối chiếu mã in. Website không công bố watt, pin hay IP ngoài catalogue.</p>' +
+        specHtml +
+        '<p class="spec-note">Đối chiếu mã in trên catalogue 8 trang. Công suất / pin / IP chốt theo phiếu — website không niêm yết số liệu mẫu khác hãng.</p>' +
         '<h2 class="pd__h">Ứng dụng</h2>' +
         '<p>' + e(p.use) + '</p>' +
-        '<div class="pd-apps"><img src="' + R + g.img + '" alt="" /></div>' +
-        '<div class="cta-band">' +
-          '<h2>Bạn cần tư vấn sản phẩm phù hợp?</h2>' +
-          '<a class="btn btn--primary" href="' + R + 'dat-lich/">Đặt lịch tư vấn</a>' +
+        '<h2 class="pd__h">Bộ sản phẩm khi giao</h2>' +
+        '<ul><li>Thân đèn ' + e(p.name) + '</li><li>Phụ kiện lắp (theo kiểu liền thể / rời thể)</li><li>Hướng dẫn sử dụng</li><li>Phiếu bảo hành theo lô</li></ul>' +
         '</div>' +
+        '<aside>' +
+          '<div class="shop-sidebox"><h3>NOMA LIGHT</h3>' +
+            '<p><strong>Hỗ trợ toàn quốc</strong><br />Gọi / Zalo chốt mã lắp</p>' +
+            '<p><strong>Đổi trả</strong><br />Theo phiếu xuất khi giao sai / lỗi</p>' +
+            '<p><strong>Bảo hành</strong><br />Theo thời hạn trên catalogue</p>' +
+            '<p><strong>Cam kết</strong><br />Tư vấn đúng nhóm đèn</p>' +
+          '</div>' +
+          '<div class="shop-sidebox"><h3>Thông tin mua hàng</h3>' +
+            '<p><a href="tel:0974169141">Hotline: 0974 169 141</a>' +
+            '<a href="' + R + 'chinh-sach-bao-mat/">Chính sách bảo mật</a>' +
+            '<a href="' + R + 'chinh-sach-giao-hang/">Vận chuyển và giao nhận</a>' +
+            '<a href="' + R + 'chinh-sach-doi-tra/">Chính sách đổi trả</a>' +
+            '<a href="' + R + 'chinh-sach-thanh-toan/">Chính sách thanh toán</a>' +
+            '<a href="' + R + 'chinh-sach-bao-hanh/">Chính sách bảo hành</a></p>' +
+          '</div>' +
+        '</aside></div>' +
         (related.length ? '<h2 class="pd__h">Sản phẩm liên quan</h2><div class="grid-products">' + related.map(NOMA.cardHtml).join('') + '</div>' : '');
+      bindLeadForm(document.getElementById('pdp-ask'), 'pdp-ask-err', null, function (fd) {
+        return ['NOMA LIGHT — tư vấn ' + p.sku, 'Họ tên: ' + (fd.get('name') || ''), 'SĐT: ' + (fd.get('phone') || '')];
+      });
     }
   }
 
@@ -160,6 +214,34 @@
     if (g) {
       var list = NOMA.products.filter(function (p) { return g.cats.indexOf(p.cat) !== -1; });
       catPage.innerHTML = list.map(NOMA.cardHtml).join('') || '<p class="lede">Danh mục đang được cập nhật.</p>';
+      var host = catPage.parentNode;
+      if (host && !host.classList.contains('shop-catpage')) {
+        var layout = document.createElement('div');
+        layout.className = 'shop-catpage';
+        var aside = document.createElement('aside');
+        aside.className = 'shop-aside';
+        aside.innerHTML = '<p class="shop-aside__title">Danh mục sản phẩm</p>' + NOMA.groups.map(function (x) {
+          return '<a href="' + NOMA.groupHref(x) + '"' + (x.slug === slug ? ' class="is-on"' : '') + '>' + e(x.label) + '</a>';
+        }).join('') + '<a href="' + R + 'san-pham/">Tất cả sản phẩm</a>';
+        var mainCol = document.createElement('div');
+        var banner = document.createElement('div');
+        banner.className = 'shop-catbanners';
+        banner.innerHTML =
+          '<div class="shop-catbanner"><div><h2>' + e(g.label).toUpperCase() + '</h2><p>' + e(g.lead) + '</p></div><img src="' + R + g.img + '" alt="" /></div>' +
+          '<div class="shop-catbanner shop-catbanner--cta"><div><h2>CATALOGUE 8 TRANG</h2><p>Đối chiếu mã NOMA LIGHT, gọi Minh Trọng 0974 169 141 hoặc Zalo để chốt lắp.</p></div><img src="' + R + 'assets/noma-prod-street.png" alt="" /></div>';
+        var tabs = document.createElement('div');
+        tabs.className = 'shop-tabs';
+        tabs.innerHTML = list.map(function (p) {
+          return '<a href="' + NOMA.productHref(p) + '">' + e(p.sku) + '</a>';
+        }).join('');
+        host.insertBefore(layout, catPage);
+        layout.appendChild(aside);
+        layout.appendChild(mainCol);
+        mainCol.appendChild(banner);
+        mainCol.appendChild(tabs);
+        mainCol.appendChild(catPage);
+        catPage.classList.add('shop-grid', 'grid-products');
+      }
     }
   }
 
