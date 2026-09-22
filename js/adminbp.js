@@ -322,7 +322,7 @@
         "</nav>" +
         '<div class="adminbp-status-grid">' +
           '<article class="adminbp-status-card is-ok"><small>Website</small><strong>NOMA LIGHT</strong><span>namalight.vercel.app</span></article>' +
-          '<article class="adminbp-status-card is-ok"><small>Catalogue</small><strong>16 trang + PDF</strong><span>Tải về đã bật</span></article>' +
+          '<article class="adminbp-status-card is-ok"><small>Catalogue</small><strong>8 trang + PDF</strong><span>Tải về đã bật</span></article>' +
           '<article class="adminbp-status-card is-ok"><small>Liên hệ</small><strong>' + NomaCms.getLeads().length + " yêu cầu</strong><span>Lưu trên trình duyệt quản trị</span></article>" +
         "</div>" +
         '<h2 class="adminbp-dash-sub">Lượt truy cập khách hàng</h2>' + visitsPanel(true) +

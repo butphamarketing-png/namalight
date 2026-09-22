@@ -11,67 +11,63 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css?v=76" />
+  <link rel="stylesheet" href="../css/style.css?v=77" />
+  <link rel="stylesheet" href="../css/shop.css?v=4" />
 </head>
 <body data-page="catalog" data-root="../">
   <div id="header-root"></div>
-  <header class="inner-hero" style="background-image:url(../assets/noma-hero-street.jpg)">
+  <header class="inner-hero">
     <div class="wrap">
       <p class="crumb"><a href="../index.html">Trang chủ</a> / Sản phẩm</p>
-      <p class="cats__kicker" style="color:#f5c518">Giải pháp chiếu sáng</p>
       <h1>Sản phẩm NOMA LIGHT</h1>
-      <p>Bốn nhóm đèn năng lượng mặt trời cho đường phố, sân bãi, sân vườn và nhà ở.</p>
+      <p>Bốn nhóm đèn năng lượng mặt trời — báo giá và chốt mã qua Minh Trọng.</p>
     </div>
   </header>
   <main id="main">
-    <section class="wrap alt-row">
-      <img src="../assets/noma-proj-street.jpg" alt="Đèn đường năng lượng mặt trời NOMA LIGHT" width="1280" height="720" loading="lazy" decoding="async" />
-      <div>
-        <h2>Đèn đường năng lượng mặt trời</h2>
-        <p>Đường phố, đường nội bộ, khu dân cư. Catalogue: NL-D100 / NL-D200 / NL-D300 và NL-LT.</p>
-        <a class="btn btn--primary" href="den-duong-nang-luong-mat-troi/">Xem sản phẩm</a>
+    <section class="shop-section">
+      <div class="shop-section__head">
+        <h2>Nhóm sản phẩm</h2>
+        <a href="../catalogue/">Catalogue 8 trang →</a>
+      </div>
+      <div class="shop-grid">
+        <a class="shop-card" href="den-duong-nang-luong-mat-troi/">
+          <div class="shop-card__art"><img src="../assets/noma-prod-street.png" alt="Đèn đường NOMA LIGHT" width="600" height="600" /></div>
+          <h3>Đèn đường năng lượng mặt trời</h3>
+          <p class="shop-card__sku">NL-D / NL-LT</p>
+          <p class="shop-card__cta">Liên hệ</p>
+        </a>
+        <a class="shop-card" href="den-pha-nang-luong-mat-troi/">
+          <div class="shop-card__art"><img src="../assets/noma-prod-flood.png" alt="Đèn pha NOMA LIGHT" width="600" height="600" /></div>
+          <h3>Đèn pha năng lượng mặt trời</h3>
+          <p class="shop-card__sku">NL-P</p>
+          <p class="shop-card__cta">Liên hệ</p>
+        </a>
+        <a class="shop-card" href="den-san-vuon-nang-luong-mat-troi/">
+          <div class="shop-card__art"><img src="../assets/noma-prod-garden.png" alt="Đèn sân vườn NOMA LIGHT" width="600" height="600" /></div>
+          <h3>Đèn sân vườn năng lượng mặt trời</h3>
+          <p class="shop-card__sku">NL-SV</p>
+          <p class="shop-card__cta">Liên hệ</p>
+        </a>
+        <a class="shop-card" href="den-dan-dung-nang-luong-mat-troi/">
+          <div class="shop-card__art"><img src="../assets/noma-prod-home.png" alt="Đèn dân dụng NOMA LIGHT" width="600" height="600" /></div>
+          <h3>Đèn dân dụng năng lượng mặt trời</h3>
+          <p class="shop-card__sku">Cổng · tường · nhà ở</p>
+          <p class="shop-card__cta">Liên hệ</p>
+        </a>
       </div>
     </section>
-    <section class="wrap alt-row alt-row--flip">
-      <img src="../assets/noma-card-flood.jpg" alt="Đèn pha năng lượng mặt trời NOMA LIGHT" width="1152" height="864" loading="lazy" decoding="async" />
-      <div>
-        <h2>Đèn pha năng lượng mặt trời</h2>
-        <p>Sân bãi, nhà xưởng, khuôn viên. Catalogue: dòng đèn pha NL-P.</p>
-        <a class="btn btn--primary" href="den-pha-nang-luong-mat-troi/">Xem sản phẩm</a>
+    <section class="shop-section">
+      <div class="shop-section__head">
+        <h2>Model đang giới thiệu</h2>
+        <span id="count"></span>
       </div>
-    </section>
-    <section class="wrap alt-row">
-      <img src="../assets/noma-card-garden.jpg" alt="Đèn sân vườn năng lượng mặt trời NOMA LIGHT" width="1152" height="864" loading="lazy" decoding="async" />
-      <div>
-        <h2>Đèn sân vườn năng lượng mặt trời</h2>
-        <p>Lối đi và cảnh quan. Catalogue: dòng đèn sân vườn NL-SV.</p>
-        <a class="btn btn--primary" href="den-san-vuon-nang-luong-mat-troi/">Xem sản phẩm</a>
-      </div>
-    </section>
-    <section class="wrap alt-row alt-row--flip">
-      <img src="../assets/noma-card-solar.jpg" alt="Đèn dân dụng năng lượng mặt trời NOMA LIGHT" width="1152" height="864" loading="lazy" decoding="async" />
-      <div>
-        <h2>Đèn dân dụng năng lượng mặt trời</h2>
-        <p>Cổng, tường, ban công, nhà ở. Catalogue: dòng dân dụng NL-D.</p>
-        <a class="btn btn--primary" href="den-dan-dung-nang-luong-mat-troi/">Xem sản phẩm</a>
-      </div>
-    </section>
-    <section class="wrap" style="padding:24px 0 72px">
-      <p class="cats__kicker">Danh sách</p>
-      <h2 class="cats__title" style="text-align:left">Model đang giới thiệu trên website</h2>
-      <p class="lede">Mã in catalogue (NL-D, NL-P, NL-SV, NL-LT) là bản chính thức. Danh sách dưới đây giúp duyệt theo nhóm — chốt mã với Minh Trọng.</p>
-      <p class="lede" id="count"></p>
-      <div class="grid-products" id="catalog-grid"></div>
-      <div class="cats__cta">
-        <a class="btn btn--primary" href="../catalogue/">Xem Catalogue</a>
-        <a class="btn btn--ghost" href="../dat-lich/">Đặt lịch tư vấn</a>
-      </div>
+      <div class="shop-grid grid-products" id="catalog-grid"></div>
     </section>
   </main>
   <div id="footer-root"></div>
-  <script defer src="../js/products.js?v=6"></script>
+  <script defer src="../js/products.js?v=7"></script>
   <script defer src="../js/content.js?v=6"></script>
-  <script defer src="../js/site.js?v=20"></script>
-  <script defer src="../js/main.js?v=10"></script>
+  <script defer src="../js/site.js?v=24"></script>
+  <script defer src="../js/main.js?v=12"></script>
 </body>
 </html>

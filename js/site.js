@@ -6,59 +6,9 @@
 
   function h(path) { return R + path; }
 
-  (function bootScreen() {
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var home = page === 'home';
-    var seen = false;
-    try { seen = sessionStorage.getItem('noma-boot') === '1'; } catch (err) {}
-    if (!home || seen) {
-      document.body.classList.remove('noma-booting');
-      return;
-    }
-
-    var boot = document.getElementById('noma-boot');
-    if (!boot) {
-      boot = document.createElement('div');
-      boot.id = 'noma-boot';
-      boot.className = 'noma-boot';
-      boot.setAttribute('role', 'status');
-      boot.setAttribute('aria-label', 'Đang tải NOMA LIGHT');
-      boot.innerHTML =
-        '<div class="noma-boot__bg"></div>' +
-        '<div class="noma-boot__vignette"></div>' +
-        '<div class="noma-boot__mark">' +
-          '<span class="noma-boot__halo" aria-hidden="true"></span>' +
-          '<span class="noma-boot__shine" aria-hidden="true"></span>' +
-          '<p class="noma-boot__logo">NOMA <em>LIGHT</em><sup>®</sup></p>' +
-          '<p class="noma-boot__tag">Chiếu Sáng Mọi Con Đường</p>' +
-        '</div>';
-      document.body.insertBefore(boot, document.body.firstChild);
-    }
-    document.body.classList.add('noma-booting');
-    try { sessionStorage.setItem('noma-boot', '1'); } catch (err2) {}
-    boot.addEventListener('click', hide);
-
-    var minMs = reduce ? 400 : 2200;
-    var started = Date.now();
-    var done = false;
-    function hide() {
-      if (done) return;
-      done = true;
-      boot.classList.add('is-out');
-      document.body.classList.remove('noma-booting');
-      startSectionFx();
-      setTimeout(function () {
-        if (boot && boot.parentNode) boot.parentNode.removeChild(boot);
-      }, 800);
-    }
-    function maybeHide() {
-      var wait = Math.max(0, minMs - (Date.now() - started));
-      setTimeout(hide, wait);
-    }
-    if (document.readyState === 'complete') maybeHide();
-    else window.addEventListener('load', maybeHide);
-    setTimeout(hide, reduce ? 1200 : 4500);
-  })();
+  document.body.classList.remove('noma-booting');
+  var staleBoot = document.getElementById('noma-boot');
+  if (staleBoot && staleBoot.parentNode) staleBoot.parentNode.removeChild(staleBoot);
 
   function current(id) {
     return page === id ? ' aria-current="page"' : '';
@@ -84,25 +34,24 @@
   var navLinks =
     '<a href="' + h('index.html') + '"' + current('home') + '>Trang chủ</a>' +
     '<a href="' + h('gioi-thieu/') + '"' + current('about') + '>Giới thiệu</a>' +
-    '<div class="nav__drop">' +
-      '<a href="' + h('san-pham/') + '"' + current('catalog') + '>Sản phẩm <span class="nav__caret" aria-hidden="true"></span></a>' +
-      '<div class="nav__menu">' + productMenu() + '</div>' +
-    '</div>' +
-    '<div class="nav__drop">' +
-      '<a href="' + h('ung-dung/') + '"' + current('apps') + '>Ứng dụng <span class="nav__caret" aria-hidden="true"></span></a>' +
-      '<div class="nav__menu">' + appsMenu() + '</div>' +
-    '</div>' +
-    '<a href="' + h('du-an/') + '"' + current('projects') + '>Dự án</a>' +
-    '<a href="' + h('cong-nghe/') + '"' + current('tech') + '>Công nghệ</a>' +
-    '<a href="' + h('catalogue/') + '"' + current('ecatalogue') + '>Catalogue</a>' +
     '<a href="' + h('tin-tuc/') + '"' + current('news') + '>Tin tức</a>' +
-    '<a href="' + h('lien-he/') + '"' + current('contact') + '>Liên hệ</a>';
+    '<a href="' + h('lien-he/') + '"' + current('contact') + '>Liên hệ</a>' +
+    '<a href="' + h('catalogue/') + '"' + current('ecatalogue') + '>Catalogue</a>';
+
+  document.body.classList.add('is-shop');
+  if (!document.getElementById('noma-shop-css')) {
+    var shopCss = document.createElement('link');
+    shopCss.id = 'noma-shop-css';
+    shopCss.rel = 'stylesheet';
+    shopCss.href = h('css/shop.css?v=4');
+    document.head.appendChild(shopCss);
+  }
 
   var header = document.getElementById('header-root');
-  if (header) {
+  if (header && page === 'ecatalogue') {
     header.innerHTML =
       '<a class="skip" href="#main">Bỏ qua điều hướng</a>' +
-      '<div class="site-head' + (page === 'ecatalogue' ? ' site-head--slim' : '') + '">' +
+      '<div class="site-head site-head--slim">' +
         '<div class="wrap site-head__bar">' +
           '<a class="brand" href="' + h('index.html') + '" aria-label="NOMA LIGHT — Trang chủ">' +
             '<span class="brand__name">NOMA LIGHT<sup>®</sup></span>' +
@@ -111,14 +60,43 @@
           '<button class="menu-btn" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
           '<nav class="nav" id="site-nav" aria-label="Chính">' + navLinks + '</nav>' +
           '<div class="site-head__tools">' +
-            '<a class="site-search" href="' + h('search/') + '" aria-label="Tìm kiếm">' +
-              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>' +
-            '</a>' +
-            '<a class="site-call" href="tel:0974169141">' +
-              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.5a16 16 0 0 0 6.4 6.4l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>' +
-              '<span class="site-call__num">0974 169 141</span>' +
-            '</a>' +
+            '<a class="site-call" href="tel:0974169141"><span class="site-call__num">0974 169 141</span></a>' +
           '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="nav-scrim" id="nav-scrim" hidden></div>';
+  } else if (header) {
+    header.innerHTML =
+      '<a class="skip" href="#main">Bỏ qua điều hướng</a>' +
+      '<div class="shop-top">' +
+        '<span>Thương hiệu chuyên đèn năng lượng mặt trời NOMA LIGHT</span>' +
+        '<span>Tư vấn Minh Trọng · 0974 169 141</span>' +
+      '</div>' +
+      '<div class="site-head shop-shell">' +
+        '<div class="shop-head">' +
+          '<a class="brand" href="' + h('index.html') + '" aria-label="NOMA LIGHT — Trang chủ">' +
+            '<span class="brand__name">NOMA LIGHT<sup>®</sup></span>' +
+            '<span class="brand__tag">Chiếu Sáng Mọi Con Đường</span>' +
+          '</a>' +
+          '<form class="shop-search" action="' + h('search/') + '" method="get" role="search">' +
+            '<input type="search" name="q" placeholder="Nhập từ khóa tìm kiếm..." aria-label="Tìm kiếm" />' +
+            '<button type="submit">Tìm kiếm</button>' +
+          '</form>' +
+          '<div class="shop-tools">' +
+            '<a class="shop-tools__hotline" href="tel:0974169141">0974 169 141<small>Hotline</small></a>' +
+            '<a href="https://zalo.me/0974169141" target="_blank" rel="noopener">Zalo<small>Minh Trọng</small></a>' +
+          '</div>' +
+          '<button class="menu-btn" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
+        '</div>' +
+        '<div class="shop-bar">' +
+          '<div class="shop-cat" id="shop-cat">' +
+            '<button class="shop-cat__btn" type="button" aria-expanded="false">☰ Danh mục sản phẩm ▾</button>' +
+            '<div class="shop-cat__list">' +
+              '<a href="' + h('san-pham/') + '">Tất cả sản phẩm</a>' +
+              productMenu() +
+            '</div>' +
+          '</div>' +
+          '<nav class="nav" id="site-nav" aria-label="Chính">' + navLinks + '</nav>' +
         '</div>' +
       '</div>' +
       '<div class="nav-scrim" id="nav-scrim" hidden></div>';
@@ -205,31 +183,25 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') setOpen(false);
   });
-
-  var headEl = document.querySelector('.site-head');
-  if (page === 'home' && headEl) {
-    headEl.classList.add('site-head--over');
-    function syncHead() {
-      var y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-      headEl.classList.toggle('is-solid', y > 36);
-    }
-    syncHead();
-    window.addEventListener('scroll', syncHead, { passive: true });
-    document.addEventListener('scroll', syncHead, { passive: true });
-    var heroWatch = document.querySelector('[data-hero]');
-    if (heroWatch && 'IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        var e = entries[0];
-        var overHero = e && e.isIntersecting && e.intersectionRatio > 0.42;
-        headEl.classList.toggle('is-solid', !overHero);
-      }, { threshold: [0, 0.25, 0.42, 0.6, 1] }).observe(heroWatch);
+  var catBox = document.getElementById('shop-cat');
+  if (catBox) {
+    var catBtn = catBox.querySelector('.shop-cat__btn');
+    if (catBtn) {
+      catBtn.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+        catBox.classList.toggle('is-open');
+        catBtn.setAttribute('aria-expanded', catBox.classList.contains('is-open') ? 'true' : 'false');
+      });
     }
   }
+
+  var headEl = document.querySelector('.site-head');
 
   if (page !== 'ecatalogue') {
     var dock = document.createElement('div');
     dock.className = 'noma-dock';
     dock.innerHTML =
+      '<a class="noma-dock__ask" href="' + h('lien-he/') + '">Tư vấn</a>' +
       '<a class="noma-dock__zalo" href="https://zalo.me/0974169141" target="_blank" rel="noopener" aria-label="Chat Zalo Minh Trọng">' +
         '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.6c0 2.7 1.5 5.1 3.8 6.7L5 21.5l3.4-1.3c1.1.3 2.3.5 3.6.5 5.5 0 10-3.9 10-8.6S17.5 3 12 3zm4.6 10.2c-.2.5-1.1 1-1.6 1.1-.4.1-.9.2-2.9-.6-2.4-1-4-3.4-4.1-3.6-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.7 2 .8 2.1.1.2.1.3 0 .5-.1.2-.2.3-.4.5-.2.2-.3.3-.1.6.2.3.9 1.5 2 2.4 1.3 1.1 2.4 1.4 2.7 1.6.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.9.9 2.2 1.1.3.2.5.2.6.4.1.2 0 .9-.4 1.4z"/></svg>' +
       '</a>' +

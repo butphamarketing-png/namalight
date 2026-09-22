@@ -131,16 +131,17 @@
           '<div class="pd__info">' +
             '<p class="eyebrow">' + e(g.label) + '</p>' +
             '<h1>' + e(p.name) + '</h1>' +
+            '<p class="shop-price">Liên hệ</p>' +
             '<p class="lede">' + e(p.use) + '</p>' +
             '<div class="hero__actions">' +
-              '<a class="btn btn--primary" href="' + R + 'dat-lich/">Đặt lịch tư vấn</a>' +
+              '<a class="btn btn--primary" href="https://zalo.me/0974169141" target="_blank" rel="noopener">Tư vấn Zalo</a>' +
               '<a class="btn btn--ghost" href="tel:0974169141">0974 169 141</a>' +
-              '<a class="btn btn--ghost" href="' + R + 'catalogue/">Xem Catalogue sản phẩm</a>' +
+              '<a class="btn btn--ghost" href="' + R + 'catalogue/">Xem Catalogue</a>' +
             '</div>' +
           '</div>' +
         '</div>' +
         '<h2 class="pd__h">Thông số kỹ thuật</h2>' +
-        '<p class="spec-note">' + e(g.catalog || 'Xem catalogue 16 trang NOMA LIGHT.') + ' Liên hệ Minh Trọng 0974 169 141 hoặc <a href="' + R + 'catalogue/">mở catalogue</a> để đối chiếu mã in. Website không công bố watt, pin hay IP ngoài catalogue.</p>' +
+        '<p class="spec-note">' + e(g.catalog || 'Xem catalogue 8 trang NOMA LIGHT.') + ' Liên hệ Minh Trọng 0974 169 141 hoặc <a href="' + R + 'catalogue/">mở catalogue</a> để đối chiếu mã in. Website không công bố watt, pin hay IP ngoài catalogue.</p>' +
         '<h2 class="pd__h">Ứng dụng</h2>' +
         '<p>' + e(p.use) + '</p>' +
         '<div class="pd-apps"><img src="' + R + g.img + '" alt="" /></div>' +

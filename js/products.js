@@ -295,18 +295,13 @@ NOMA.cardHtml = function (p) {
   var href = NOMA.productHref(p);
   var img = NOMA.root() + NOMA.imgFor(p);
   return (
-    '<article class="product product--photo">' +
-      '<a class="product__visual" href="' + href + '">' +
+    '<a class="shop-card product product--photo" href="' + href + '">' +
+      '<div class="shop-card__art product__visual">' +
         '<img src="' + e(img) + '" alt="' + e(p.name) + '" loading="lazy" />' +
-      '</a>' +
-      '<div class="product__body">' +
-        '<p class="product__meta"><span>' + e(NOMA.catLabel(p.cat)) + '</span></p>' +
-        '<h3><a href="' + href + '">' + e(p.name) + '</a></h3>' +
-        '<p>' + e(p.blurb) + '</p>' +
-        '<div class="product__row">' +
-          '<a class="btn btn--ghost" href="' + href + '">Xem chi tiết</a>' +
-        '</div>' +
       '</div>' +
-    '</article>'
+      '<h3>' + e(p.name) + '</h3>' +
+      '<p class="shop-card__sku">' + e(p.sku || NOMA.catLabel(p.cat)) + '</p>' +
+      '<p class="shop-card__cta">Liên hệ</p>' +
+    '</a>'
   );
 };

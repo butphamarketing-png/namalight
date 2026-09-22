@@ -74,7 +74,7 @@ NOMA.articles = [
     body: [
       'Không gian sử dụng là yếu tố đầu tiên. Đường nội bộ cần tầm chiếu và độ cao cột khác sân vườn hay cổng nhà.',
       'Tiếp theo, xác định diện tích cần sáng và điều kiện lắp: tấm pin có đón nắng không, gắn tường hay cột.',
-      'Catalogue NOMA LIGHT 16 trang chia bốn nhóm: đèn đường, đèn pha, đèn sân vườn, đèn dân dụng. Hotline / Zalo Minh Trọng 0974 169 141 để chốt mã.'
+      'Catalogue NOMA LIGHT 8 trang chia bốn nhóm: đèn đường, đèn pha, đèn sân vườn, đèn dân dụng. Hotline / Zalo Minh Trọng 0974 169 141 để chốt mã.'
     ]
   },
   {

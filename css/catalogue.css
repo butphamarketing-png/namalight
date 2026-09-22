@@ -275,6 +275,125 @@ button.cat-download {
   inset: 0;
   z-index: 2;
 }
+.page .inner.pg-cover {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #07183f;
+  overflow: hidden;
+}
+.pg-cover__bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background: #0b4aa8;
+}
+.pg-cover__mark {
+  flex: 0 0 auto;
+  margin: 18px 22px 0 28px;
+  font-size: clamp(16px, 2.8vh, 26px);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #07183f;
+}
+.pg-cover__tag {
+  flex: 0 0 auto;
+  margin: 4px 22px 0 28px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a227;
+  font-weight: 600;
+}
+.pg-cover h1 {
+  flex: 0 0 auto;
+  margin: 10px 22px 0 28px;
+  font-size: clamp(22px, 4vh, 40px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: #07183f;
+}
+.pg-cover__sub {
+  flex: 0 0 auto;
+  margin: 6px 22px 8px 28px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a5568;
+}
+.pg-cover__hero {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 0 24px 8px;
+}
+.pg-cover__hero img {
+  width: auto;
+  height: auto;
+  max-width: 86%;
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+.pg-cover__foot {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px 14px 28px;
+  background: #07183f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.pg-cover__foot a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.page .inner.pg-wait {
+  justify-content: center;
+  padding: 48px 36px;
+  background:
+    linear-gradient(180deg, #f7f9fc 0%, #fff 42%, #fff 100%);
+  color: #07183f;
+}
+.pg-wait__kicker {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #0b4aa8;
+}
+.pg-wait__num {
+  margin: 18px 0 8px;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #d9dee8;
+}
+.pg-wait h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 800;
+}
+.pg-wait p {
+  margin: 0;
+  max-width: 28ch;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5b6573;
+}
+
 .pg-hotspots a {
   position: absolute;
   display: block;
