@@ -178,7 +178,7 @@
         '</div>' +
         '<h2 class="pd__h">Thông số kỹ thuật</h2>' +
         specHtml +
-        '<p class="spec-note">Đối chiếu mã in trên catalogue 8 trang. Công suất / pin / IP chốt theo phiếu — website không niêm yết số liệu mẫu khác hãng.</p>' +
+        '<p class="spec-note">Đối chiếu mã in trên catalogue 16 trang. Công suất / pin / IP chốt theo phiếu — website không niêm yết số liệu mẫu khác hãng.</p>' +
         '<h2 class="pd__h">Ứng dụng</h2>' +
         '<p>' + e(p.use) + '</p>' +
         '<h2 class="pd__h">Bộ sản phẩm khi giao</h2>' +

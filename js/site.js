@@ -6,9 +6,43 @@
 
   function h(path) { return R + path; }
 
-  document.body.classList.remove('noma-booting');
-  var staleBoot = document.getElementById('noma-boot');
-  if (staleBoot && staleBoot.parentNode) staleBoot.parentNode.removeChild(staleBoot);
+  (function bootScreen() {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var home = page === 'home';
+    var seen = false;
+    try { seen = sessionStorage.getItem('noma-boot') === '1'; } catch (err) {}
+    if (!home || seen) {
+      document.body.classList.remove('noma-booting');
+      var staleBoot = document.getElementById('noma-boot');
+      if (staleBoot && staleBoot.parentNode) staleBoot.parentNode.removeChild(staleBoot);
+      return;
+    }
+    var boot = document.getElementById('noma-boot');
+    if (!boot) return;
+    document.body.classList.add('noma-booting');
+    try { sessionStorage.setItem('noma-boot', '1'); } catch (err2) {}
+    boot.addEventListener('click', hide);
+    var minMs = reduce ? 400 : 2200;
+    var started = Date.now();
+    var done = false;
+    function hide() {
+      if (done) return;
+      done = true;
+      boot.classList.add('is-out');
+      document.body.classList.remove('noma-booting');
+      startSectionFx();
+      setTimeout(function () {
+        if (boot && boot.parentNode) boot.parentNode.removeChild(boot);
+      }, 800);
+    }
+    function maybeHide() {
+      var wait = Math.max(0, minMs - (Date.now() - started));
+      setTimeout(hide, wait);
+    }
+    if (document.readyState === 'complete') maybeHide();
+    else window.addEventListener('load', maybeHide);
+    setTimeout(hide, reduce ? 1200 : 4500);
+  })();
 
   function current(id) {
     return page === id ? ' aria-current="page"' : '';
@@ -31,15 +65,32 @@
     }).join('');
   }
 
-  var navLinks =
+  var shopNav =
     '<a href="' + h('index.html') + '"' + current('home') + '>Trang chủ</a>' +
     '<a href="' + h('gioi-thieu/') + '"' + current('about') + '>Giới thiệu</a>' +
     '<a href="' + h('tin-tuc/') + '"' + current('news') + '>Tin tức</a>' +
     '<a href="' + h('lien-he/') + '"' + current('contact') + '>Liên hệ</a>' +
     '<a href="' + h('catalogue/') + '"' + current('ecatalogue') + '>Catalogue</a>';
+  var homeNav =
+    '<a href="' + h('index.html') + '"' + current('home') + '>Trang chủ</a>' +
+    '<a href="' + h('gioi-thieu/') + '"' + current('about') + '>Giới thiệu</a>' +
+    '<div class="nav__drop">' +
+      '<a href="' + h('san-pham/') + '"' + current('catalog') + '>Sản phẩm <span class="nav__caret" aria-hidden="true"></span></a>' +
+      '<div class="nav__menu">' + productMenu() + '</div>' +
+    '</div>' +
+    '<div class="nav__drop">' +
+      '<a href="' + h('ung-dung/') + '"' + current('apps') + '>Ứng dụng <span class="nav__caret" aria-hidden="true"></span></a>' +
+      '<div class="nav__menu">' + appsMenu() + '</div>' +
+    '</div>' +
+    '<a href="' + h('du-an/') + '"' + current('projects') + '>Dự án</a>' +
+    '<a href="' + h('cong-nghe/') + '"' + current('tech') + '>Công nghệ</a>' +
+    '<a href="' + h('catalogue/') + '"' + current('ecatalogue') + '>Catalogue</a>' +
+    '<a href="' + h('tin-tuc/') + '"' + current('news') + '>Tin tức</a>' +
+    '<a href="' + h('lien-he/') + '"' + current('contact') + '>Liên hệ</a>';
+  var navLinks = shopNav;
 
-  document.body.classList.add('is-shop');
-  if (!document.getElementById('noma-shop-css')) {
+  if (page !== 'home') document.body.classList.add('is-shop');
+  if (page !== 'home' && !document.getElementById('noma-shop-css')) {
     var shopCss = document.createElement('link');
     shopCss.id = 'noma-shop-css';
     shopCss.rel = 'stylesheet';
@@ -65,6 +116,29 @@
         '</div>' +
       '</div>' +
       '<div class="nav-scrim" id="nav-scrim" hidden></div>';
+  } else if (header && page === 'home') {
+    header.innerHTML =
+      '<a class="skip" href="#main">Bỏ qua điều hướng</a>' +
+      '<div class="site-head site-head--over">' +
+        '<div class="wrap site-head__bar">' +
+          '<a class="brand" href="' + h('index.html') + '" aria-label="NOMA LIGHT — Trang chủ">' +
+            '<span class="brand__name">NOMA LIGHT<sup>®</sup></span>' +
+            '<span class="brand__tag">Chiếu Sáng Mọi Con Đường</span>' +
+          '</a>' +
+          '<button class="menu-btn" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
+          '<nav class="nav" id="site-nav" aria-label="Chính">' + homeNav + '</nav>' +
+          '<div class="site-head__tools">' +
+            '<a class="site-search" href="' + h('search/') + '" aria-label="Tìm kiếm">' +
+              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>' +
+            '</a>' +
+            '<a class="site-call" href="tel:0974169141">' +
+              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.5a16 16 0 0 0 6.4 6.4l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>' +
+              '<span class="site-call__num">0974 169 141</span>' +
+            '</a>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="nav-scrim" id="nav-scrim" hidden></div>';
   } else if (header) {
     header.innerHTML =
       '<a class="skip" href="#main">Bỏ qua điều hướng</a>' +
@@ -84,7 +158,7 @@
           '</form>' +
           '<div class="shop-tools">' +
             '<a class="shop-tools__hotline" href="tel:0974169141"><span class="shop-tools__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 7a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg></span><span>0974 169 141<small>Hotline</small></span></a>' +
-            '<a class="shop-tools__bag" href="' + h('catalogue/') + '"><span class="shop-tools__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7V6a5 5 0 0 1 10 0v1h3l-1.2 14H5.2L4 7h3zm2 0h6V6a3 3 0 0 0-6 0v1z"/></svg></span><span>Catalogue<small>8 trang</small></span></a>' +
+            '<a class="shop-tools__bag" href="' + h('catalogue/') + '"><span class="shop-tools__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7V6a5 5 0 0 1 10 0v1h3l-1.2 14H5.2L4 7h3zm2 0h6V6a3 3 0 0 0-6 0v1z"/></svg></span><span>Catalogue<small>16 trang</small></span></a>' +
           '</div>' +
           '<button class="menu-btn" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
         '</div>' +
@@ -112,6 +186,62 @@
   var footer = document.getElementById('footer-root');
   if (footer && page === 'ecatalogue') {
     footer.remove();
+  } else if (footer && page === 'home') {
+    footer.innerHTML =
+      '<footer class="site-footer">' +
+        '<div class="wrap footer-grid">' +
+          '<div class="footer-brand">' +
+            '<p class="brand-name">NOMA <span>LIGHT</span></p>' +
+            '<p class="footer-tag">Sáng hơn cho cuộc sống xanh</p>' +
+            '<p>Giải pháp chiếu sáng bằng năng lượng mặt trời hiện đại, tiết kiệm và thân thiện với môi trường.</p>' +
+            '<p class="footer-social">' +
+              '<a href="https://zalo.me/0974169141" target="_blank" rel="noopener">Zalo Minh Trọng</a>' +
+            '</p>' +
+          '</div>' +
+          '<div>' +
+            '<p class="footer-title">Điều hướng</p>' +
+            '<p>' +
+              '<a href="' + h('index.html') + '">Trang chủ</a><br />' +
+              '<a href="' + h('gioi-thieu/') + '">Giới thiệu</a><br />' +
+              '<a href="' + h('san-pham/') + '">Sản phẩm</a><br />' +
+              '<a href="' + h('ung-dung/') + '">Ứng dụng</a><br />' +
+              '<a href="' + h('du-an/') + '">Dự án</a><br />' +
+              '<a href="' + h('cong-nghe/') + '">Công nghệ</a><br />' +
+              '<a href="' + h('catalogue/') + '">Catalogue</a><br />' +
+              '<a href="' + h('tin-tuc/') + '">Tin tức</a><br />' +
+              '<a href="' + h('lien-he/') + '">Liên hệ</a>' +
+            '</p>' +
+          '</div>' +
+          '<div>' +
+            '<p class="footer-title">Sản phẩm</p>' +
+            '<p>' +
+              '<a href="' + h('san-pham/den-duong-nang-luong-mat-troi/') + '">Đèn đường</a><br />' +
+              '<a href="' + h('san-pham/den-pha-nang-luong-mat-troi/') + '">Đèn pha</a><br />' +
+              '<a href="' + h('san-pham/den-san-vuon-nang-luong-mat-troi/') + '">Đèn sân vườn</a><br />' +
+              '<a href="' + h('san-pham/den-dan-dung-nang-luong-mat-troi/') + '">Đèn dân dụng</a>' +
+            '</p>' +
+          '</div>' +
+          '<div class="footer-contact">' +
+            '<p class="footer-title">Liên hệ</p>' +
+            '<p class="footer-co">CÔNG TY TNHH SX-TM NOMA LIGHT</p>' +
+            '<p>' +
+              '<a href="tel:0974169141">Minh Trọng: 0974 169 141</a><br />' +
+              '<a href="https://zalo.me/0974169141" target="_blank" rel="noopener">Zalo: 0974 169 141</a><br />' +
+              '<a href="mailto:info@nomalight.vn">info@nomalight.vn</a><br />' +
+              'www.nomalight.vn' +
+            '</p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrap footer-bar">' +
+          '<p>© 2026 NOMA LIGHT. All rights reserved.</p>' +
+          '<p>' +
+            '<a href="' + h('chinh-sach-bao-mat/') + '">Chính sách bảo mật</a>' +
+            '<a href="' + h('dieu-khoan-su-dung/') + '">Điều khoản sử dụng</a>' +
+            '<a href="' + h('chinh-sach-bao-hanh/') + '">Chính sách bảo hành</a>' +
+          '</p>' +
+          '<a class="to-top" href="#top" aria-label="Lên đầu trang">↑</a>' +
+        '</div>' +
+      '</footer>';
   } else if (footer) {
     footer.innerHTML =
       '<footer class="site-footer">' +
@@ -129,7 +259,7 @@
             '<p>' +
               '<a href="' + h('gioi-thieu/') + '">Giới thiệu NOMA LIGHT</a><br />' +
               '<a href="' + h('san-pham/') + '">Sản phẩm</a><br />' +
-              '<a href="' + h('catalogue/') + '">Catalogue 8 trang</a><br />' +
+              '<a href="' + h('catalogue/') + '">Catalogue 16 trang</a><br />' +
               '<a href="' + h('tin-tuc/') + '">Tin tức</a><br />' +
               '<a href="' + h('lien-he/') + '">Liên hệ</a>' +
             '</p>' +
@@ -204,8 +334,35 @@
   }
 
   var headEl = document.querySelector('.site-head');
+  if (page === 'home' && headEl) {
+    function syncHead() {
+      var y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      headEl.classList.toggle('is-solid', y > 36);
+    }
+    syncHead();
+    window.addEventListener('scroll', syncHead, { passive: true });
+    var heroWatch = document.querySelector('[data-hero]');
+    if (heroWatch && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        var entry = entries[0];
+        var overHero = entry && entry.isIntersecting && entry.intersectionRatio > 0.42;
+        headEl.classList.toggle('is-solid', !overHero);
+      }, { threshold: [0, 0.25, 0.42, 0.6, 1] }).observe(heroWatch);
+    }
+  }
 
-  if (page !== 'ecatalogue') {
+  if (page === 'home') {
+    var homeDock = document.createElement('div');
+    homeDock.className = 'noma-dock';
+    homeDock.innerHTML =
+      '<a class="noma-dock__zalo" href="https://zalo.me/0974169141" target="_blank" rel="noopener" aria-label="Chat Zalo Minh Trọng">' +
+        '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.6c0 2.7 1.5 5.1 3.8 6.7L5 21.5l3.4-1.3c1.1.3 2.3.5 3.6.5 5.5 0 10-3.9 10-8.6S17.5 3 12 3zm4.6 10.2c-.2.5-1.1 1-1.6 1.1-.4.1-.9.2-2.9-.6-2.4-1-4-3.4-4.1-3.6-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.7 2 .8 2.1.1.2.1.3 0 .5-.1.2-.2.3-.4.5-.2.2-.3.3-.1.6.2.3.9 1.5 2 2.4 1.3 1.1 2.4 1.4 2.7 1.6.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.9.9 2.2 1.1.3.2.5.2.6.4.1.2 0 .9-.4 1.4z"/></svg>' +
+      '</a>' +
+      '<a class="noma-dock__call" href="tel:0974169141" aria-label="Gọi 0974 169 141">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.5a16 16 0 0 0 6.4 6.4l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>' +
+      '</a>';
+    document.body.appendChild(homeDock);
+  } else if (page !== 'ecatalogue') {
     var dock = document.createElement('div');
     dock.className = 'noma-dock';
     dock.innerHTML =
